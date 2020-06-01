@@ -2,6 +2,27 @@
 bundle.js
 bundle.js.map
 
+<<<<<<< HEAD
+=======
+# Ignore bundler config.
+/.bundle
+bundle.js.map
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+/node_modules
+/yarn-error.log
+
+/public/assets
+.byebug_history
+>>>>>>> 86e7be54794ecf159b9fa3ef985b2792efc008d4
 
 # Ignore master key for decrypting credentials and more.
 master.key
