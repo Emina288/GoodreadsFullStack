@@ -18,8 +18,16 @@ class Welcome extends React.Component {
             )
         } else {
             return(
-            <div> 
-                <LoginFormContainer />
+            <div className={"home-page"}>
+                <header className={"home-nav"}>
+                <div className={"home-nav-title"}>
+                    good<span className={"reads"}>reads</span>
+                </div> 
+                <div className={"home-login"}>
+                  <LoginFormContainer />
+                </div>
+                </header> 
+
                 <SignupFormContainer />
             </div>
             )

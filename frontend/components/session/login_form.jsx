@@ -21,9 +21,8 @@ class LoginForm extends React.Component {
     
       render() {
         return (
-          <div className="login-form">
+          <div>
             <form>
-            <h1>goodreads</h1>
               <input type="text"
                 value={this.state.email}
                 onChange={this.handleInput('email')} />
