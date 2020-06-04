@@ -32,8 +32,9 @@ class SignupForm extends React.Component {
           )
         } else {
         return (
-          <div className="signup-form">
+          <div className="splash-signup">
             <form>
+              <h3 id={"new"}>New here? Create a free account!</h3>
               <input
                 type="text"
                 value={this.state.name}
@@ -52,7 +53,7 @@ class SignupForm extends React.Component {
                 onChange={this.handleInput('password')} 
                 className="signup-input-boxes" 
                 placeholder="Password" />
-              <button onClick={this.handleSubmit} className="signupbox">Sign up</button>
+              <button onClick={this.handleSubmit} className="signup-submit">Sign up</button>
             </form>
           </div>
         )

@@ -2,6 +2,11 @@ import React from "react";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
 import Logo from "./head-title.png";
+import Redirect from "react-router/Redirect";
+import Title from "./tit.png";
+import {
+    Link
+  } from 'react-router-dom';
 
 class Welcome extends React.Component {
     constructor(props) {
@@ -27,22 +32,36 @@ class Welcome extends React.Component {
             return(
             <div className={"splash-page"}>
                 <header className={"splash-header"}>
-                <div className={"splash-nav-title"}>
-                    goodreads<span className={"reads"}>fullstack</span>
-                </div> 
+
+                    <div className={"spash-nav-title"}>
+
+                <a href={"/"} className={"title"}>
+                    <img src={Title} />
+                </a>
+                </div>
+
+
+
                 <div className={"splash-login"}>
                   <LoginFormContainer />
                 </div>
+
                 </header> 
-                <p>Try out our site!:)</p>
-                  <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
-                <div className={"splash-signup-logo"}>
-                    <img src={Logo} />
+
+                
+               
+                <div className={"signup"}>
+          
+                    <img src={Logo} className={"logo"}/>
+
 
                 <div className={"splash-signup"}>
                      <SignupFormContainer />
                 </div>
                 </div>
+                <p>Try out our site!:)</p>
+                <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
+
             </div>
             )
         }
