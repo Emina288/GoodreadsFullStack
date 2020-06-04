@@ -1,13 +1,13 @@
 import React from "react";
-import Redirect from "react-router-dom/Redirect";
 
-
-class SignupForm extends React.Component {
+class SignupOnly extends React.Component {
     constructor(props) {
         super(props);
         this.state = {name: "", email: "", password: ""};
     
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+
       }
     
       handleInput(type) {
@@ -20,19 +20,32 @@ class SignupForm extends React.Component {
         e.preventDefault();
         this.props.signup(this.state)
       }
+
+      renderErrors() {
+        return(
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error-${i}`}>
+                <p>{error}</p>
+                <p>dadadad</p>
+              </li>
+            ))}
+          </ul>
+        );
+      }
     
       render() {
-        if (this.props.errors.length > 0) {
-          return (
-          <div>
-
-            <Redirect to="/signup" />
-
-          </div>
-          )
+        if (this.props.user) {
+            return (
+                <div>
+                    <p>Hello {this.props.user.name}</p>
+                    <button onClick={this.props.logout}>Sign out!</button>
+                </div>
+            )
         } else {
-        return (
-          <div className="signup-form">
+          return (
+            <div>
+              {this.renderErrors()}
             <form>
               <input
                 type="text"
@@ -60,4 +73,4 @@ class SignupForm extends React.Component {
     }
 }
 
-export default SignupForm;
+export default SignupOnly;

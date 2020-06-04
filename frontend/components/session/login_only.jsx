@@ -1,12 +1,12 @@
 import React from "react";
-import Redirect from "react-router-dom/Redirect";
 
-class LoginForm extends React.Component {
+class LoginOnly extends React.Component {
     constructor(props) {
         super(props);
         this.state = {email: "", password: ""};
     
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
       }
     
       handleInput(type) {
@@ -20,20 +20,30 @@ class LoginForm extends React.Component {
         this.props.login(this.state)
       };
 
-     
+      renderErrors() {
+        return(
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+    
       render() {
-        if (this.props.errors.length > 0) {
-          return (
-          <div>
-
-            <Redirect to="/login" />
-
-          </div>
-          )
+        if (this.props.user) {
+            return (
+                <div>
+                    <p>Hello {this.props.user.name}</p>
+                    <button onClick={this.props.logout}>Sign out!</button>
+                </div>
+            )
         } else {
-
           return (
             <div>
+              {this.renderErrors()}
               <form>
                 <input type="text"
                   value={this.state.email}
@@ -50,7 +60,7 @@ class LoginForm extends React.Component {
             </div>
           )
         }
-      }
+    }
 };
 
-export default LoginForm;
+export default LoginOnly;

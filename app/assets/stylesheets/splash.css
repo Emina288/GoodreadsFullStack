@@ -1,0 +1,49 @@
+.splash-page {
+    margin: 0;
+    height: 370px;
+    background-image: url(nav_bar.png);
+}
+
+.splash-header {
+    
+    display: flex;
+    justify-content: center;
+    height: 65px;
+    padding-top: 10px;
+    color: #382110;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.splash-nav-title {
+    margin-right: 450px;
+    font-size: 50px;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 50;
+    color: #382110 
+}
+
+.reads {
+    font-weight: 500;
+    font-weight: 300;
+    color: burlywood;
+
+}
+
+.splash-login {
+    margin-top: 20px;
+    height: 100px;
+    margin-right: 85px;
+
+}
+
+.splash-signup-logo {
+
+    display: flex;
+    justify-content: center;
+}
+
+.splash-signup {
+    height: 100px;
+    margin-right: 85px;
+}
