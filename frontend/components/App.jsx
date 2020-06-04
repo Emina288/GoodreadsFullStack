@@ -9,14 +9,15 @@ import {
 } from 'react-router-dom';
 import LoginOnlyContainer from "../components/session/login_only_container";
 import SignupOnlyContainer from "../components/session/signup_only_container";
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 const App = () => (
   <div>
     
     <Route path="/" exact component={WelcomeContainer} />
-    <Route path="/signup" exact component={SignupOnlyContainer} />
-    <Route path="/login" exact component={LoginOnlyContainer} />
+    <AuthRoute exact path="/signup" exact component={SignupOnlyContainer} />
+    <AuthRoute exact path="/login" exact component={LoginOnlyContainer} />
     
     
     
