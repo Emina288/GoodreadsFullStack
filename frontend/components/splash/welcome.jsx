@@ -1,9 +1,7 @@
 import React from "react";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
-import Logo from "./head-title.png";
 import Redirect from "react-router/Redirect";
-import Title from "./tit.png";
 import {
     Link
   } from 'react-router-dom';
@@ -36,7 +34,7 @@ class Welcome extends React.Component {
                     <div className={"spash-nav-title"}>
 
                 <a href={"/"} className={"title"}>
-                    <img src={Title} />
+                    <img src={window.title} />
                 </a>
                 </div>
 
@@ -52,15 +50,16 @@ class Welcome extends React.Component {
                
                 <div className={"signup"}>
           
-                    <img src={Logo} className={"logo"}/>
+                    <img src={window.logo} className={"logo"}/>
 
 
                 <div className={"splash-signup"}>
                      <SignupFormContainer />
                 </div>
                 </div>
-                <p>Try out our site!:)</p>
+                <div className={"demo"}>
                 <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
+                </div>
 
             </div>
             )

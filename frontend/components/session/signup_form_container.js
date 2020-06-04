@@ -2,7 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  Link,
+  HashRouter,
+  withRouter
+} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,7 +20,12 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  signup: user => dispatch(signup(user)),
+
+  signup: user => {
+    return(
+      dispatch(signup(user))
+    )
+  }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignupForm));

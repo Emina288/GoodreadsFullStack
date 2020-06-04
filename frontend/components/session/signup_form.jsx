@@ -1,10 +1,18 @@
 import React from "react";
 import Redirect from "react-router-dom/Redirect";
+import {
+  Route,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
 
 
 class SignupForm extends React.Component {
     constructor(props) {
+       
         super(props);
+        console.log(this.props);
         this.state = {name: "", email: "", password: ""};
     
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,19 +26,11 @@ class SignupForm extends React.Component {
     
       handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state)
+        const history = this.props.history;
+        this.props.signup(this.state).then(null, () => history.push('/signup'))
       }
     
       render() {
-        if (this.props.errors.length > 0) {
-          return (
-          <div>
-
-            <Redirect to="/signup" />
-
-          </div>
-          )
-        } else {
         return (
           <div className="splash-signup">
             <form>
@@ -41,7 +41,7 @@ class SignupForm extends React.Component {
                 onChange={this.handleInput('name')}
                 className="signup-input-boxes" 
                 placeholder="Name"/>
-              <input
+            <input
                 type="text"
                 value={this.state.email}
                 onChange={this.handleInput('email')}
@@ -58,7 +58,6 @@ class SignupForm extends React.Component {
           </div>
         )
       }
-    }
 }
 
 export default SignupForm;

@@ -27,7 +27,6 @@ class SignupOnly extends React.Component {
             {this.props.errors.map((error, i) => (
               <li key={`error-${i}`}>
                 <p>{error}</p>
-                <p>dadadad</p>
               </li>
             ))}
           </ul>

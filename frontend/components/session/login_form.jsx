@@ -17,22 +17,13 @@ class LoginForm extends React.Component {
     
       handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state)
+        const history = this.props.history;
+        this.props.login(this.state).then(null, () => history.push('/login'))
       };
 
      
       render() {
-        if (this.props.errors.length > 0) {
-          return (
-          <div>
-
-            <Redirect to="/login" />
-
-          </div>
-          )
-        } else {
-
-          return (
+        return (
             <div>
               <form>
                 <input type="text"
@@ -48,8 +39,7 @@ class LoginForm extends React.Component {
                 <button onClick={this.handleSubmit}>Sign In!</button>
               </form>
             </div>
-          )
-        }
+        )
       }
 };
 

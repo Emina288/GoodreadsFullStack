@@ -2,7 +2,7 @@
 .splash-page {
     margin: 0;
     height: 370px;
-    background-image: url(nav_bar.png);
+    background-image: url("nav_bar.png");
 }
 
 .splash-header {
@@ -53,3 +53,27 @@
     margin-right: 186px;
     padding-top: 24px;
 } 
+
+.demo {
+    position: absolute;
+    bottom: 550px;
+}
+
+.demo-btn{
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 14px;
+    background-color: rgb(170, 168, 165);
+    font-size: 18px;
+    line-height: 22px;
+    width: 85px;
+    display: block;
+    position: relative;
+    color: white;
+
+}
+
+
+.demo-btn:hover{
+    background-color: wheat;
+}

@@ -2,7 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { login } from "../../actions/session_actions";
 import LoginForm from "./login_form";
-import { Link } from "react-router-dom";
+import {
+    Route,
+    Switch,
+    Link,
+    HashRouter,
+    withRouter
+  } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -17,4 +23,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm));
