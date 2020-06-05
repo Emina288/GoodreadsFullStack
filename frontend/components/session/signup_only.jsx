@@ -42,29 +42,43 @@ class SignupOnly extends React.Component {
                 </div>
             )
         } else {
+          let klass;
+          if (this.props.errors.length > 0) {
+            klass = "errors"
+          } else {
+            klass = "no-errors"
+          }
           return (
-            <div>
-              {this.renderErrors()}
-            <form>
+            <div className={"signup-only"}>
+             <img src={window.bookrow} className={"book-row"}/>
+              <a href={"/"} className={"title2"}>
+                    <img src={window.title} width="197" height="43" />
+              </a>
+            <form className={"signup-only-form"}>
+            <div className={klass}>
+                {this.renderErrors()}
+              </div>
               <input
                 type="text"
                 value={this.state.name}
                 onChange={this.handleInput('name')}
                 className="signup-input-boxes" 
-                placeholder="Name"/>
+                placeholder="Name"
+                className={"signup-only-boxes"}/>
               <input
                 type="text"
                 value={this.state.email}
                 onChange={this.handleInput('email')}
                 className="signup-input-boxes" 
-                placeholder="Email"/>
+                className={"signup-only-boxes"}/>
               <input
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')} 
                 className="signup-input-boxes" 
-                placeholder="Password" />
-              <button onClick={this.handleSubmit} className="signupbox">Sign up</button>
+                className={"signup-only-boxes"}
+                 />
+              <button onClick={this.handleSubmit} className={"signup-only-btn"}>Sign up</button>
             </form>
           </div>
         )

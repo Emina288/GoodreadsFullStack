@@ -5,6 +5,8 @@ import Redirect from "react-router/Redirect";
 import {
     Link
   } from 'react-router-dom';
+  import Footer from "../footer";
+  import MainContent from "../main_con";
 
 class Welcome extends React.Component {
     constructor(props) {
@@ -60,6 +62,21 @@ class Welcome extends React.Component {
                 <div className={"demo"}>
                 <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
                 </div>
+
+                <div>
+                     <MainContent />
+                 </div>
+
+                 <footer>
+  
+                 <div>
+                    <Footer />
+                 </div>
+    
+                 </footer>
+  
+
+                
 
             </div>
             )

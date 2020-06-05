@@ -16,21 +16,25 @@ class LoginForm extends React.Component {
       }
     
       handleSubmit(e) {
-        e.preventDefault();
-        const history = this.props.history;
-        this.props.login(this.state).then(null, () => history.push('/login'))
-      };
+        const form = document.getElementById("signin-form");
+        if (form.checkValidity()) {
+         e.preventDefault();
+         const history = this.props.history;
+         this.props.login(this.state).then(null, () => history.push('/login'))
+        }
+      }; 
 
      
       render() {
         return (
             <div>
-              <form className={"signin"}>
-                <input type="text"
+              <form className={"signin"} id={"signin-form"}>
+                <input type="email"
                   value={this.state.email}
                   onChange={this.handleInput('email')} 
                   className="login-input-boxes" 
-                  placeholder="Email address" />
+                  placeholder="Email address" 
+                  required/>
 
                 <input type="password"
                   value={this.state.password}

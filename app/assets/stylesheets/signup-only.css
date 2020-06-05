@@ -1,0 +1,68 @@
+.signup-only-form {
+    display: inline-block;
+    height: 300px;
+    width: 592px;
+    background-color: white;
+    padding: 28px 10px 34px 10px;
+    margin: 10px;
+    text-align: center;
+  
+}
+
+.signup-only {
+    background-image: url(tan-bg-texture);
+    display: block;
+    width: 100%;
+    height: 950px;
+    position: absolute;
+    text-align: center;
+}
+
+.book-row {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.errors {
+    background-color: #fdb7ad;
+    border: 1px solid #FA604A;
+    border-radius: 3px;
+    margin: 16px 0;
+    padding: 12px;
+    text-align: center;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+}
+
+.signup-only-boxes {
+  width: 300px;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 80px;
+  bottom: 700px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signup-only-btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333333;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 14px 20px;
+    margin: 8px 0;
+}
+
+.signup-only-btn:hover {
+    background-color:rgb(233, 230, 208);
+}
