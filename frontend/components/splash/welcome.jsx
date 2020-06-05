@@ -34,7 +34,7 @@ class Welcome extends React.Component {
                     <div className={"spash-nav-title"}>
 
                 <a href={"/"} className={"title"}>
-                    <img src={window.title} />
+                    <img src={window.title} width="197" height="43" />
                 </a>
                 </div>
 
