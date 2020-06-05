@@ -61,8 +61,6 @@ class Welcome extends React.Component {
                 <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
                 </div>
 
-                
-
             </div>
             )
         }
