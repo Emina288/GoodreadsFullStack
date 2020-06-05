@@ -11,6 +11,7 @@ import LoginOnlyContainer from "../components/session/login_only_container";
 import SignupOnlyContainer from "../components/session/signup_only_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Footer from "./footer";
+import MainContent from "./main_con.jsx";
 
 
 const App = () => (
@@ -19,10 +20,16 @@ const App = () => (
     <Route path="/" exact component={WelcomeContainer} />
     <AuthRoute exact path="/signup" component={SignupOnlyContainer} />
     <AuthRoute exact path="/login" component={LoginOnlyContainer} />
+
+    <div>
+      <MainContent />
+    </div>
     
+    <div>
+        <Footer />
+    </div>
     
-    
-    <Footer />
+
     
   </div>
 );

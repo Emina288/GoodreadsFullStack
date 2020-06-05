@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
                 className="signup-input-boxes" 
                 placeholder="Password"
                 pattern="[A-Za-z0-9]{6,}" title="Password has to be longer that 6 char" required  />
-              <input type="submit" onClick={this.handleSubmit} className="signup-submit" value="emian" />
+              <input type="submit" onClick={this.handleSubmit} className="signup-submit" value="Sign up" />
             </form>
           </div>
         )

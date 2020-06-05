@@ -1,12 +1,18 @@
 import React from "react";
-import {Link } from "react-router-dom";
 
 
 class Footer extends React.Component {
-    constructor(props) {
-        super(props)
+    render() {
+        return (
+                <div>
+                    <div className={"foot-div"} />
+                    <div className={"footer"}>
+                        <h1>emina</h1>
+                    </div>
+                </div>
+        )
     }
-}
 
+}
 
 export default Footer;

@@ -1,0 +1,45 @@
+.main-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: block;
+  margin-right: 633px;
+  align-items: center;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.books {
+  padding-top: 10px;
+  margin-left: 380px;
+
+}
+
+.book-prew {
+  display: block;
+  color: #4d2600;
+  margin-left: 100px;
+  background-image: url("back.png");
+  width: 305px;
+  padding: 20px;
+  font-style: oblique;
+  border-radius: 5px;
+  border: 2px solid  #4d2600;;
+
+}
+
+.book-prew p {
+  text-align: center;
+}
+
+.book-prew h4 {
+  font-weight: bold;
+}
