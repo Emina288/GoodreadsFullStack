@@ -59,9 +59,23 @@ class Welcome extends React.Component {
                      <SignupFormContainer />
                 </div>
                 </div>
+
                 <div className={"demo"}>
                 <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
                 </div>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
 
                 <div>
                      <MainContent />

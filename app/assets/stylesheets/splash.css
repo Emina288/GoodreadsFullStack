@@ -4,6 +4,7 @@
     height: 370px;
     background-image: url(nav_bar.png);
     background-position: center;
+    display: block;
 }
 
 .splash-header {
