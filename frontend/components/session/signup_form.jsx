@@ -25,15 +25,21 @@ class SignupForm extends React.Component {
       }
     
       handleSubmit(e) {
+       
+      const form = document.getElementById("signup-form");
+       if (form.checkValidity()) {
         e.preventDefault();
         const history = this.props.history;
         this.props.signup(this.state).then(null, () => history.push('/signup'))
+       } 
+
+
       }
     
       render() {
         return (
           <div className="splash-signup">
-            <form>
+            <form id="signup-form">
               <h3 id={"new"}>New here? Create a free account!</h3>
               <input
                 type="text"
@@ -42,18 +48,20 @@ class SignupForm extends React.Component {
                 className="signup-input-boxes" 
                 placeholder="Name"/>
             <input
-                type="text"
+                type="email"
                 value={this.state.email}
-                onChange={this.handleInput('email')}
                 className="signup-input-boxes" 
-                placeholder="Email Address"/>
+                onChange={this.handleInput('email')}
+                placeholder="Email address"
+                required />
               <input
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')} 
                 className="signup-input-boxes" 
-                placeholder="Password" />
-              <button onClick={this.handleSubmit} className="signup-submit">Sign up</button>
+                placeholder="Password"
+                pattern="[A-Za-z0-9]{6,}" title="Password has to be longer that 6 char" required  />
+              <input type="submit" onClick={this.handleSubmit} className="signup-submit" value="emian" />
             </form>
           </div>
         )

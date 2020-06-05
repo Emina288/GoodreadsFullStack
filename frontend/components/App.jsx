@@ -10,6 +10,7 @@ import {
 import LoginOnlyContainer from "../components/session/login_only_container";
 import SignupOnlyContainer from "../components/session/signup_only_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Footer from "./footer";
 
 
 const App = () => (
@@ -20,6 +21,8 @@ const App = () => (
     <AuthRoute exact path="/login" component={LoginOnlyContainer} />
     
     
+    
+    <Footer />
     
   </div>
 );

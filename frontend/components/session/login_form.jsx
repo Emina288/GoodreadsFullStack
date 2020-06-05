@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
                   value={this.state.email}
                   onChange={this.handleInput('email')} 
                   className="login-input-boxes" 
-                  placeholder="Email Address" />
+                  placeholder="Email address" />
 
                 <input type="password"
                   value={this.state.password}

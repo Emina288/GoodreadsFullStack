@@ -3,12 +3,13 @@
     margin: 0;
     height: 370px;
     background-image: url("nav_bar.png");
+    background-position: center;
 }
 
 .splash-header {
     height: 65px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     
     /* display: flex;
@@ -23,14 +24,14 @@
 
 .title {
     display: block;
-    padding-left: 158px;
+    margin-right: 435px;
     padding-top: 4px;
     
 }
 
 .splash-login {
     display: block;
-    padding-right: 146px;
+
 }
 
  
@@ -38,20 +39,20 @@
 .signup {
 
     display: flex;
-    justify-content: space-between;
-    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo {
-    padding-left: 450px;
     padding-top: 58px;
+    margin-right: 130px;
+    margin-left: 75px;
 
 }
 
 .splash-signup {
     height: 100px;
-    margin-right: 186px;
-    padding-top: 18px;
+  
 } 
 
 .demo {
