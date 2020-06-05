@@ -2,7 +2,7 @@
 .splash-page {
     margin: 0;
     height: 370px;
-    background-image: url("nav_bar.png");
+    background-image: url(nav_bar.png);
     background-position: center;
 }
 
