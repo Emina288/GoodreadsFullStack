@@ -5,7 +5,6 @@ class Footer extends React.Component {
     render() {
         return (
                 <div>
-                    <div className={"foot-div"} />
                     <div className={"footer"}>
                         <div className={"column1"}>
                             <h3>About</h3>
@@ -13,7 +12,7 @@ class Footer extends React.Component {
                             <br/>
                             <a href="https://github.com/Emina288">Github</a>
                             <br/>
-                            <a href="https://facebook.com">Facebook</a>
+                            < a href="mailto:eminaramovic@hotmail.com">Email me </a>
                             <br/>
                             <a href="https://instagram.com">Instagram</a>
                         </div>
@@ -29,7 +28,19 @@ class Footer extends React.Component {
                             <a href="https://en.wikipedia.org/wiki/Oh,_the_Places_You%27ll_Go!">Kids</a>
                         </div>
 
+                        <div className={"column3"}> 
+                            <a href="https://apps.apple.com/app/apple-store/id355833469">
+                                <img src={window.app} width="135px" height="40px"/>
+                            </a>
+
+                            <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                                <img src={window.play} width="135px" height="40px"/>
+                            </a>
+
+                        </div>
+
                     </div>
+
                 </div>
         )
     }

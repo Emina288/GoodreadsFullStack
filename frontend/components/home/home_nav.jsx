@@ -36,7 +36,7 @@ class HomeNav extends React.Component {
         return(
             <div className={"home-nav"}> 
                 <div className={"home-title"}>
-                    <a href="/home" >
+                    <a href="/#" >
                         <img src={window.title} width="197" height="43"  />
                     </a>
                 </div>
