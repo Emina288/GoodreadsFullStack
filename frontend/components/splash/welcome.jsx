@@ -7,6 +7,7 @@ import {
   } from 'react-router-dom';
   import Footer from "../footer";
   import MainContent from "../main_con";
+  import Home from "../home/home";
 
 class Welcome extends React.Component {
     constructor(props) {
@@ -24,8 +25,7 @@ class Welcome extends React.Component {
         if (this.props.user) {
             return (
                 <div>
-                    <p>Hello {this.props.user.name}</p>
-                    <button onClick={this.props.logout}>Sign out!</button>
+                   <Home logout={this.props.logout} user= {this.props.user} />
                 </div>
             )
         } else {
