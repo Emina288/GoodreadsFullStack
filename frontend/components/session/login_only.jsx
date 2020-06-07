@@ -56,6 +56,19 @@ class LoginOnly extends React.Component {
               
           
               <form className={"login-only-form"} >
+              <h1 >
+                Sign in to Goodreads
+              </h1>
+
+                <a href="/#" className={"fb"}>
+                  <img src={window.fb} width="302" height="50px" />
+                </a>
+
+                <a href="/#">
+                  <img src={window.amazon} width="302" height="50px" />
+                </a>
+
+                <img src={window.or} width="250" height="30px" />
 
               <div className={klass}>
                 {this.renderErrors()}

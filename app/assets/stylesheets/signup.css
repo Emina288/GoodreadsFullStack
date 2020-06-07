@@ -8,6 +8,7 @@
         font-style: bold;
         font-weight: normal;
         font-family: 'Lato', sans-serif;
+        
     }
 
     .signup-input-boxes{
@@ -45,4 +46,19 @@
     
     .signupbox:hover{
         background-color: #FFD56D;
+    }
+
+    .signup-only-form h1 {
+        color: #382110;
+        background-color: transparent;
+        padding: 0 0 2px 0;
+        font-size: 20px;
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #382110;
+        line-height: 24px;
+        margin: 4px 0px 4px 0px;
+    
     }

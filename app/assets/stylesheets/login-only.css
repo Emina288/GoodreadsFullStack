@@ -1,11 +1,16 @@
 .login-only-form {
     display: inline-block;
-    height: 300px;
-    width: 592px;
+    height: 592px;
+    width: 600px;
     background-color: white;
     padding: 28px 10px 34px 10px;
-    margin: 10px;
+    margin: 15px;
     text-align: center;
+    border: 1px solid #d0d0c8;
+    border-radius: 4px;
+    -moz-box-shadow: 0px 1px 1px #d0d0c8;
+    -webkit-box-shadow: 0px 1px 1px #d0d0c8;
+    box-shadow: 0px 1px 1px #d0d0c8;
   
 }
 
@@ -32,6 +37,7 @@
     border-radius: 3px;
     margin: 16px 0;
     padding: 12px;
+    font-size: 12px;
     text-align: center;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 18px;
@@ -61,8 +67,35 @@
     line-height: 1;
     padding: 14px 20px;
     margin: 8px 0;
+    margin-right:150px;
 }
 
 .login-only-btn:hover {
     background-color:rgb(233, 230, 208);
+}
+
+.fb {
+    margin-bottom: 18px;
+    margin-top: 10px
+}
+
+.login-only-form h1 {
+    color: #382110;
+    background-color: transparent;
+    padding: 0 0 2px 0;
+    font-size: 20px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #382110;
+    line-height: 24px;
+    margin: 4px 0px 4px 0px;
+
+}
+
+.title2 {
+    position: absolute;
+    left: 15px;
+    top: 20px;
 }
