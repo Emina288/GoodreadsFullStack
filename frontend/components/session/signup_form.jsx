@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
         this.state = {name: "", email: "", password: ""};
     
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
       }
     
       handleInput(type) {
@@ -34,6 +35,19 @@ class SignupForm extends React.Component {
 
 
       }
+
+      handleSubmitDemo(e) {
+        
+        e.preventDefault();
+
+
+       this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
+
+        
+        
+        
+
+    }
     
       render() {
         return (
@@ -60,7 +74,8 @@ class SignupForm extends React.Component {
                 className="signup-input-boxes" 
                 placeholder="Password"
                 pattern="[A-Za-z0-9]{6,}" title="Password has to be longer that 6 char" required  />
-              <input type="submit" onClick={this.handleSubmit} className="signup-submit" value="Sign up" />
+              <input type="submit" onClick={this.handleSubmit} className={"btns"} value="Sign up" />
+              <input type="submit" onClick={this.handleSubmitDemo} className={"btns"} value="Demo" />
             </form>
           </div>
         )

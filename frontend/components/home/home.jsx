@@ -2,7 +2,10 @@ import React from "react";
 import HomeNav from "./home_nav";
 import HomeCont from "./home_cont";
 
-class Home extends React.Component {
+import {connect} from 'react-redux';
+import { login, logout } from "../../actions/session_actions";
+
+class HomeWithoutLoginProps extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -11,14 +14,26 @@ class Home extends React.Component {
         return (
             <div>
                 <header >
-                    <HomeNav logout ={this.props.logout}/>
+                    <HomeNav logout ={this.props.logout} user={this.props.user}/>
                 </header>
 
-                    <HomeCont /> 
+                    <HomeCont />
             </div>
         )
     }
 
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  user: state.entities.users[state.session.id],
+  session: state.session
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout()),
+  login: user => dispatch(login(user))
+});
+
+const HomeWithLoginProps = connect(mapStateToProps, mapDispatchToProps)(HomeWithoutLoginProps);
+
+export default HomeWithLoginProps;

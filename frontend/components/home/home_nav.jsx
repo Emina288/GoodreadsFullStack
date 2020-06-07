@@ -5,7 +5,7 @@ class HomeNav extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.state = {klass: "dropdown-content"}
+        this.state = {klass: "dropdown-content", klass2: "dropdown-btn"}
         this.handleBtn = this.handleBtn.bind(this);
 
     }
@@ -20,10 +20,10 @@ class HomeNav extends React.Component {
 
     handleBtn(e) {
         e.preventDefault;
-        if (this.state.klass === "dropdown-content") {
-        this.setState({klass: "show"});
+        if (this.state.klass === "dropdown-content" && this.state.klass2 === "dropdown-btn" ) {
+        this.setState({klass: "show", klass2: "dropdown-btn2"});
         } else {
-            this.setState({klass: "dropdown-content"});
+            this.setState({klass: "dropdown-content", klass2: "dropdown-btn"});
         }
     }
 
@@ -31,7 +31,7 @@ class HomeNav extends React.Component {
 
     render() {
         const user = this.props.user;
-        const logout = this.props.logout;
+        // const logout = this.props.logout;
 
         return(
             <div className={"home-nav"}> 
@@ -53,9 +53,9 @@ class HomeNav extends React.Component {
                 </form>
 
                 <div className={"dropdown"}>
-                    <button onClick={this.handleBtn} className={"dropdown-btn"}>Profile</button>
+                    <img src={window.profile} onClick={this.handleBtn} className={this.state.klass2} />
                     <div className={this.state.klass} >
-                        <h3>Demo</h3>
+                        <h3>{user.name}</h3>
                     <a href="#" onClick={this.handleClick}>Sign out! </a>
                         <a href="https://github.com/Emina288">Github</a>
                         < a href="mailto:eminaramovic@hotmail.com">Emina </a>

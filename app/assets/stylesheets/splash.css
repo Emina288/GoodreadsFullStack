@@ -56,24 +56,7 @@
   
 } 
 
-.demo {
-    position: absolute;
-    bottom: 600px;
-}
 
-.demo-btn{
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 14px;
-    background-color: rgb(170, 168, 165);
-    font-size: 18px;
-    line-height: 22px;
-    width: 85px;
-    display: block;
-    position: relative;
-    color: white;
-
-}
 
 
 .demo-btn:hover{

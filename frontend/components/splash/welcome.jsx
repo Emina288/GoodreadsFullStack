@@ -8,28 +8,54 @@ import {
   import Footer from "../footer";
   import MainContent from "../main_con";
   import Home from "../home/home";
+import {login} from "../../util/session_api_util";
 
 class Welcome extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = this.props.session;
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
+    // handleSubmit(e) {
+        
+    //     e.preventDefault();
+
+
+    //    this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
+
+        
+        
+        
+
+    // }
+
+    componentDidMount() {
+
+        const { user, history } = this.props;
+
+        if (user) {
+
+            history.push("/home");
+
+        }
+
     }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+
+        if (this.props.user !== prevProps.user) {
+            this.props.history.push("/home");
+
+            
+        }
+
+    }    
 
     render() {
-        if (this.props.user) {
-            return (
-                <div>
-                   <Home logout={this.props.logout} user= {this.props.user} />
-                </div>
-            )
-        } else {
-            return(
+       
+        return(
             <div className={"splash-page"}>
                 <header className={"splash-header"}>
 
@@ -60,9 +86,9 @@ class Welcome extends React.Component {
                 </div>
                 </div>
 
-                <div className={"demo"}>
+                {/* <div className={"demo"}>
                 <button onClick={this.handleSubmit} className={"demo-btn"}>Demo</button>
-                </div>
+                </div> */}
 
                 <br/>
                 <br/>
@@ -93,8 +119,8 @@ class Welcome extends React.Component {
                 
 
             </div>
-            )
-        }
+        );
+
     }
 }
 
