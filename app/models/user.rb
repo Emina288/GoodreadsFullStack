@@ -20,6 +20,10 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token!
 
+    has_many :books_and_user
+
+    has_many: :books, through: :books_and_user
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
