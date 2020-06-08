@@ -7,6 +7,7 @@ class LoginOnly extends React.Component {
     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
       }
     
       handleInput(type) {
@@ -19,6 +20,15 @@ class LoginOnly extends React.Component {
         e.preventDefault();
         this.props.login(this.state)
       };
+
+      handleSubmitDemo(e) {
+        
+        e.preventDefault();
+
+
+       this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
+
+      }
 
       renderErrors() {
         return(
@@ -60,13 +70,11 @@ class LoginOnly extends React.Component {
                 Sign in to Goodreads
               </h1>
 
-                <a href="/#" className={"fb"}>
-                  <img src={window.fb} width="302" height="50px" />
-                </a>
+              
+                <input type="submit" onClick={this.handleSubmitDemo} className={"btns"} value="Demo" />
 
-                <a href="/#">
-                  <img src={window.amazon} width="302" height="50px" />
-                </a>
+                <br/>
+             
 
                 <img src={window.or} width="250" height="30px" />
 
@@ -87,6 +95,12 @@ class LoginOnly extends React.Component {
                   />
       
                 <button onClick={this.handleSubmit} className={"login-only-btn"}>Sign In!</button>
+                <br/>
+                <br/>
+                <div className={"member"}>
+                  Not a member? 
+                <a href="/#/signup">  Sign up</a>
+                </div>
               </form>
             </div>
           )

@@ -42,9 +42,9 @@ class HomeNav extends React.Component {
                 </div>
 
                 <div className={"home-books"}>
-                    <a href="https://github.com/Emina288">Home</a>
-                    <a href="https://github.com/Emina288">My Books</a>
-                    <a href="https://github.com/Emina288">Browse</a>
+                    <a href="https://github.com/Emina288" className={"home-books-a"}>Home</a>
+                    <a href="https://github.com/Emina288" className={"home-books-a"}>My Books</a>
+                    <a href="https://github.com/Emina288" className={"home-books-a"}>Browse</a>
                 </div>
 
                 <form className={"example"} >
@@ -55,10 +55,14 @@ class HomeNav extends React.Component {
                 <div className={"dropdown"}>
                     <img src={window.profile} onClick={this.handleBtn} className={this.state.klass2} />
                     <div className={this.state.klass} >
-                        <h3>{user.name}</h3>
-                    <a href="#" onClick={this.handleClick}>Sign out! </a>
-                        <a href="https://github.com/Emina288">Github</a>
-                        < a href="mailto:eminaramovic@hotmail.com">Emina </a>
+
+                        <ul>
+                        <li className={"nm"}>{user.name}</li>
+                    
+                        <li className={"nn"}><a href="https://github.com/Emina288" className={"nn"}>Github</a></li>
+                        <li className={"nn"}>< a href="mailto:eminaramovic@hotmail.com" className={"nn"}>Emina </a></li>
+                        <li className={"nn"}><a href="#" onClick={this.handleClick} className={"nn"}>Sign out! </a></li>
+                        </ul>
                     </div>
                 </div>
 

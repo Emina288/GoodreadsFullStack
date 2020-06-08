@@ -7,6 +7,7 @@ class SignupOnly extends React.Component {
     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
 
       }
     
@@ -20,6 +21,16 @@ class SignupOnly extends React.Component {
         e.preventDefault();
         this.props.signup(this.state)
       }
+
+      handleSubmitDemo(e) {
+        
+        e.preventDefault();
+
+
+       this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
+
+      }
+
 
       renderErrors() {
         return(
@@ -59,14 +70,9 @@ class SignupOnly extends React.Component {
                 Sign up to Goodreads
               </h1>
 
-                <a href="/#" className={"fb"}>
-                  <img src={window.fb} width="302" height="50px" />
-                </a>
+              <input type="submit" onClick={this.handleSubmitDemo} className={"btns"} value="Demo" />
 
-                <a href="/#">
-                  <img src={window.amazon} width="302" height="50px" />
-                </a>
-
+               <br/>
                 <img src={window.or} width="250" height="30px" />
 
             <div className={klass}>
@@ -93,6 +99,12 @@ class SignupOnly extends React.Component {
                 className={"signup-only-boxes"}
                  />
               <button onClick={this.handleSubmit} className={"signup-only-btn"}>Sign up</button>
+              <br/>
+                <br/>
+                <div className={"member"}>
+                  Already a member? 
+                <a href="/#/login">  Sign in</a>
+                </div>
             </form>
           </div>
         )
