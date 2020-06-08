@@ -15,9 +15,9 @@ class Book < ApplicationRecord
     validates :title, :author_id, :description, :gender, :book_url, presence: true 
 
     
-    belongs_to :author, 
+    belongs_to :author 
    
     has_many :books_and_user
 
-    has_many: users, through: :books_and_user
+    has_many :users, through: :books_and_user
 end

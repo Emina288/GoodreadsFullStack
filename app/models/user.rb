@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
     has_many :books_and_user
 
-    has_many: :books, through: :books_and_user
+    has_many :books, through: :books_and_user
 
     def password=(password)
         @password = password
