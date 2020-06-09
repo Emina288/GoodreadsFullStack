@@ -1,4 +1,4 @@
-import { ADD_AUTHOR} from '../actions/author_actions';
+import { ADD_AUTHOR, ADD_AUTHORS} from '../actions/author_actions';
 
 const authorsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -11,6 +11,13 @@ const authorsReducer = (state = {}, action) => {
                 state, 
                  {[newAuthor.id]: newAuthor }
             );
+        case ADD_AUTHORS:
+            const allAuthors = Object.values(action.authors);
+            const newState = {};
+            allAuthors.forEach(author => {
+                newState[author.id] = author;
+            });
+                return newState;
         default:
             return state;
     }

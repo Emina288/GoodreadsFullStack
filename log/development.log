@@ -37314,3 +37314,4 @@ Processing by Api::BooksController#show as JSON
 Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.8ms)
 
 
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m

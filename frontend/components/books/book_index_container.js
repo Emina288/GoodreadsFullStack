@@ -4,11 +4,11 @@ import BookIndex from './book_index';
 import { fetchBooks } from '../../actions/book_actions';
 
 const mapStateToProps = state => ({
-  books: Object.values(state.entities.books)
+  books: Object.values(state.entities.books),
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchBooks: () => dispatch(fetchBooks())
+  fetchBooks: () => dispatch(fetchBooks()), 
 });
 
 export default withRouter(connect(

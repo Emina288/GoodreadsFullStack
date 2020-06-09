@@ -9,6 +9,7 @@ class BookIndex extends Component {
 
   componentDidMount() {
     this.props.fetchBooks();
+
   }
 
     render() {

@@ -12,16 +12,14 @@ class BookIndexItem extends React.Component {
 
   handleClick () {
     const bookId = this.props.book.id;
-    console.log(bookId);
-    console.log(this.props.history)
     this.props.history.push(`/books/${bookId}`);
   }
 
+
   render() {
     const { book } = this.props;
-    console.log(book)
     return (
-      <div>
+      <div className={"book-item"}> 
         <figure>
           <img src={eval(`window.${book.book_url}`)} alt={book.title} onClick={this.handleClick} />
         </figure>
@@ -29,8 +27,8 @@ class BookIndexItem extends React.Component {
           <li>
             <h2>{book.title}</h2>
           </li>
+          <li>Author: </li>
           <li>About this book: {book.description}</li>
-          <li>Author: {book.author_id}</li>
         </ul>
       </div>
     );

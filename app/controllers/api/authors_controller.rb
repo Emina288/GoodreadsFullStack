@@ -3,4 +3,9 @@ class Api::AuthorsController < ApplicationController
         @author = Author.find(params[:id])
         
     end
+
+    def index
+        @authors = Authors.all
+    end
+    
 end
