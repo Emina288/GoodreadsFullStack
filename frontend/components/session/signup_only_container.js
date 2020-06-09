@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { logout, signup } from "../../actions/session_actions";
+import { logout, signup, login } from "../../actions/session_actions";
 import SignupOnly from "./signup_only";
 import { Link } from "react-router-dom";
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         signup: user => dispatch(signup(user)),
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        login: (user) => dispatch(login(user)),
     }
 };
 

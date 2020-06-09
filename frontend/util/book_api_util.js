@@ -1,7 +1,7 @@
 export const fetchBooks = () => {
     return (
         $.ajax ({
-            url: 'api/books',
+            url: '/api/books',
             method: 'GET'
         })
     )

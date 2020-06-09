@@ -9,6 +9,7 @@ import {
   import MainContent from "../main_con";
   import Home from "../home/home";
 import {login} from "../../util/session_api_util";
+import BookIndex from "../books/book_index";
 
 class Welcome extends React.Component {
 
@@ -102,6 +103,7 @@ class Welcome extends React.Component {
                 <br/>
                 <br/>
                 <br/>
+
 
                 <div>
                      <MainContent />

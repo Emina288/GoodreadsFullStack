@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
         log_in!(@user)
         render "api/users/show"
       else
-        render json: ["Sorry, that email or password isn't right. You can reset your password."], status: 401
+        render json: ["Sorry, that email or password isn't right."], status: 401
       end
     end
   

@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class BookIndex extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+import BookIndexItem from './book_index_item';
 
-    componentDidMount() {
-        this.props.fetchBooks();
-    }
+class BookIndex extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchBooks();
+  }
 
     render() {
-        if (this.props.books.length === 0) {
-            return (
-                <span>No books</span>
-            )
-        }
-        
-        const bookList = this.props.books.map(book => {
-            return <li key={book.id}>{book.title}</li>
-        });
+      if (this.props.books.length === 0) {
+          return (
+              <span>Getting all books....</span>
+          )
+      }
+      
+      const bookList = this.props.books.map(book => {
+          return <BookIndexItem key={book.id} book={book} history={this.props.history}/>
+      });
 
-        return (
-            <>
-                <h3>All the books!</h3>
-                <ul>
-                    {bookList}
-                </ul>
-            </>
-        )
-    }
+      return (
+          <div className={"books-index"}>
+              <h3>All the books so far!</h3>
+              <ul>
+                  {bookList}
+              </ul>
+          </div>
+      )
+  }
 }
+
 export default BookIndex;

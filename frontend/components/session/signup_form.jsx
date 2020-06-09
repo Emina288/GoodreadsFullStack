@@ -26,27 +26,19 @@ class SignupForm extends React.Component {
     
       handleSubmit(e) {
        
-      const form = document.getElementById("signup-form");
-       if (form.checkValidity()) {
-        e.preventDefault();
-        const history = this.props.history;
-        this.props.signup(this.state).then(null, () => history.push('/signup'))
-       } 
+        const form = document.getElementById("signup-form");
+        if (form.checkValidity()) {
+          e.preventDefault();
+          const history = this.props.history;
+          this.props.signup(this.state).then(null, () => history.push('/signup'))
+        } 
 
 
       }
 
-      handleSubmitDemo(e) {
-        
+      handleSubmitDemo(e) {       
         e.preventDefault();
-
-
        this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
-
-        
-        
-        
-
     }
     
       render() {

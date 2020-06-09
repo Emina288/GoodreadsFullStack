@@ -12,8 +12,9 @@ const booksReducer = (state = {}, action) => {
                  {[newBook.id]: newBook }
             );
         case ADD_BOOKS:
+            const allBooks = Object.values(action.books);
             const newState = {};
-            action.books.forEach(book => {
+            allBooks.forEach(book => {
                 newState[book.id] = book;
             });
             return newState;
