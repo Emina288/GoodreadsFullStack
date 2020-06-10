@@ -1,15 +1,10 @@
 import React from "react";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
-import Redirect from "react-router/Redirect";
-import {
-    Link
-  } from 'react-router-dom';
-  import Footer from "../footer";
-  import MainContent from "../main_con";
-  import Home from "../home/home";
-import {login} from "../../util/session_api_util";
-import BookIndex from "../books/book_index";
+
+import Footer from "../footer";
+import MainContent from "../main_con";
+
 
 class Welcome extends React.Component {
 

@@ -1,5 +1,5 @@
 import React from "react";
-import MainContent from "../main_con";
+import BookIndexContainer from "../books/book_index_container";
 
 class HomeCont extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class HomeCont extends React.Component {
 
             <div className="color" >
 
-           <MainContent />
+           <BookIndexContainer />
 
            </div>
         )

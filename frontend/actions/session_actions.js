@@ -4,6 +4,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_USERS = "RECEIVE_USERS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS"
 
 export const receiveUsers = (users) => {
     return {
@@ -31,6 +32,12 @@ export const receiveErrors = (errors) => {
         errors
     }
 };
+
+export const clearErrors = () => {
+    return {
+    type: CLEAR_ERRORS
+    }
+}
 
 export const fetchUsers = () => dispatch => (
     APIUtil.fetchUsers().then(users => (dispatch(receiveUsers(users))))

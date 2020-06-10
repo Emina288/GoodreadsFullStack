@@ -2,16 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
-// import * as APIUtil from "./actions/session_actions";
-// import * as BooksAPIUtil from "./actions/book_actions";
-// import * as AuthorAPIUtil from "./actions/author_actions"
+// import { searchBooks } from "./util/book_api_util";
+// import * as BOOKACTIONS from "./actions/book_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   let store;
-  // let store = configureStore();
+
+  // window.searchBooks = searchBooks
+  // let store = configureStore()
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
+  // window.search = BOOKACTIONS.searchBooks;
 
 
   // window.fetchBooks = BooksAPIUtil.fetchBooks;

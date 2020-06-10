@@ -4,10 +4,15 @@ import React from "react";
 class HomeNav extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.state = {klass: "dropdown-content", klass2: "dropdown-btn"}
-        this.handleBtn = this.handleBtn.bind(this);
 
+        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            klass: "dropdown-content", 
+            klass2: "dropdown-btn",
+            searchValue: "",
+        }
+        this.handleBtn = this.handleBtn.bind(this);
+        this.search = this.search.bind(this);
     }
 
     handleClick(e) {
@@ -27,11 +32,15 @@ class HomeNav extends React.Component {
         }
     }
 
+    search(keyword) {
+        this.props.searchBooks(keyword);
+    }
 
+  
 
     render() {
         const user = this.props.user;
-        // const logout = this.props.logout;
+        console.log(this.state);
 
         return(
             <div className={"home-nav"}> 
@@ -48,8 +57,25 @@ class HomeNav extends React.Component {
                 </div>
 
                 <form className={"example"} >
-                    <input type="text" placeholder="Search books" name="search2" />
-                    <button type="submit"><i className={"fa fa-search"}></i></button>
+                    <input 
+                    type="text" 
+                    placeholder="Search books" 
+                    value={this.state.searchValue}
+                    onChange={event => {
+                      this.setState({ searchValue: event.target.value })
+                    }}                   
+                    />
+                    <button type="submit"
+                    
+                    onClick={() => {
+                        
+                        console.log("Hi")
+                        
+                        this.search(this.state.searchValue);
+                        
+                        }}
+                    
+                    ><i className={"fa fa-search"}  > </i></button>
                 </form>
 
                 <div className={"dropdown"}>

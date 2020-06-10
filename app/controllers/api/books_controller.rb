@@ -1,7 +1,23 @@
 class Api::BooksController < ApplicationController
     def index
-        @books = Book.all
+
+        if params[:q] then
+          
+          @books = []
+          Book.all.each { |book| 
+            if (book.title.downcase.include? params[:q].downcase) || (book.isbn.include? params[:q]) || (book.author.name.downcase.include? params[:q].downcase) then
+              @books << book 
+            end
+
+          }
+          
+          if @books.length === 0 then render JSON.generate("No Books were found for keyword #{params[:q]}") end
+                    
+        else
+          @books = Book.all
       end
+    end
+
     
       def show
         @book = Book.find(params[:id])

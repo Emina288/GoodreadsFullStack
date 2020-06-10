@@ -15,3 +15,13 @@ export const fetchBook = bookId => {
         })
     )
 };
+
+export const searchBooks = (keyword) => {
+    return (
+        $.ajax ({
+            url: `/api/books?q=${keyword}`,
+            method: "GET",
+            data: { keyword }
+        })
+    )
+};

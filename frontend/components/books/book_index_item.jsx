@@ -27,7 +27,7 @@ class BookIndexItem extends React.Component {
           <li>
             <h2>{book.title}</h2>
           </li>
-          <li>Author: </li>
+          <li>Author: {book.author} </li>
           <li>About this book: {book.description}</li>
         </ul>
       </div>
