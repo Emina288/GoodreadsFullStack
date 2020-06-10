@@ -11,21 +11,7 @@ class Welcome extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.session;
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // handleSubmit(e) {
-        
-    //     e.preventDefault();
-
-
-    //    this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
-
-        
-        
-        
-
-    // }
 
     componentDidMount() {
 
@@ -43,10 +29,7 @@ class Welcome extends React.Component {
 
         if (this.props.user !== prevProps.user) {
             this.props.history.push("/home");
-
-            
         }
-
     }    
 
     render() {
@@ -101,7 +84,7 @@ class Welcome extends React.Component {
 
 
                 <div>
-                     <MainContent />
+                     <MainContent books={this.props.books} fetchBooks={this.props.fetchBooks}  history={this.props.history} />
                  </div>
 
                  <footer>

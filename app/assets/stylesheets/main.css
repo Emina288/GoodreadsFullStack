@@ -1,45 +1,117 @@
-.main-cont {
+.splash-content {
+  flex-direction: row;
+  align-content: center;
+}
+
+.splash-head {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.main {
-  display: block;
-  margin-right: 633px;
   align-items: center;
 }
 
-.book {
+.splash-head div{
+  display: block;
+  width: 276px;
+  text-align: left;
+
+}
+
+.splash-head div:last-child {
+  margin-right: 500px;
+}
+
+.splash-head div:first-child {
+  margin-left: 370px;
+  margin-right: 100px;
+}
+
+
+.splash-head div p {
+  color: #333333;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 18px 0;
+}
+
+.splash-head div h2 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    clear: both;
+    margin: 20px 0 10px 0 10px;
+    color: #000;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.content-box {
+  display: block;
+  width: 800px;
+  height: 435px;
+  background-color: #f4f2e9;
+  margin-left: 369px;
+  border-radius: 10px;
+  padding-left: 16px;
+  padding-top: 18px;
+  padding: 18px 16px 5px 16px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  text-align: left;
+}
+
+.content-box h2 {
+  margin-bottom: 20px;
+  
+}
+
+.emina {
+  margin-bottom: 50px;
+}
+
+.emina-txt {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.content-box img {
+  cursor: pointer;
+}
+
+.emina-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emina-img div img {
+  margin-right: 40px;
+}
+
+.arr1 {
+  position: absolute;
+  left: 850px;
+  bottom: 220px;
+}
+
+.arr2 {
+  position: absolute;
+  left: 850px;
+  bottom: 20px;
 
 }
 
-.books {
-  padding-top: 10px;
-  margin-left: 380px;
-
+.content-box h3 {
+  font-size: 10px;
 }
 
-.book-prew {
-  display: block;
-  color: #4d2600;
-  margin-left: 100px;
-  background-image: url(back.png);
-  width: 305px;
-  padding: 20px;
-  font-style: oblique;
-  border-radius: 5px;
-  border: 2px solid  #4d2600;
-
-}
-
-.book-prew p {
-  text-align: center;
-}
-
-.book-prew h4 {
+.da {
+  float: right;
+  width: 110px;
+  font-size: 12px;
   font-weight: bold;
+ 
 }
+
+
