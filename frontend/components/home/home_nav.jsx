@@ -40,7 +40,7 @@ class HomeNav extends React.Component {
 
     render() {
         const user = this.props.user;
-        console.log(this.state);
+    
 
         return(
             <div className={"home-nav"}> 
@@ -69,7 +69,7 @@ class HomeNav extends React.Component {
                     
                     onClick={() => {
                         
-                        console.log("Hi")
+                    
                         
                         this.search(this.state.searchValue);
                         

@@ -7,7 +7,7 @@ const usersReducer = (oldState = {}, action) => {
 
             const newState = Object.assign({}, oldState, {[action.user.id]: action.user})
             
-            console.log("usersDecures.RECEIVE_CURRENT_USER", oldState, newState);
+        
 
             return newState;
 
