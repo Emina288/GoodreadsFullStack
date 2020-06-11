@@ -5,11 +5,10 @@ const authorsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case ADD_AUTHOR:
-            const newAuthor = action.author;
             return Object.assign(
                 {}, 
                 state, 
-                 {[newAuthor.id]: newAuthor }
+                 {[action.author.id]: action }
             );
         case ADD_AUTHORS:
             const allAuthors = Object.values(action.authors);

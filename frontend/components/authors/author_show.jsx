@@ -26,6 +26,7 @@ class AuthorShow extends React.Component {
         return (
             <div>
                 <p>{author.name}</p>
+                <p>{author.bio}</p>
             </div>
         );
     }

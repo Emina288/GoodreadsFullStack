@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_043817) do
+ActiveRecord::Schema.define(version: 2020_06_10_152120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_06_08_043817) do
     t.string "description", null: false
     t.string "gender", null: false
     t.string "book_url", null: false
+    t.string "writer"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
     t.index ["title"], name: "index_books_on_title"

@@ -9,10 +9,9 @@ class BookIndex extends Component {
 
   componentDidMount() {
     this.props.fetchBooks();
-
   }
 
-    render() {
+    render() {   
       if (this.props.books.length === 0) {
           return (
               <span>Getting all books....</span>
@@ -25,10 +24,12 @@ class BookIndex extends Component {
 
       return (
           <div className={"books-index"}>
-              <h3>All the books so far!</h3>
-              <ul>
-                  {bookList}
-              </ul>
+             <div>
+                <img className={"wlcm"} src={window.welcome} width="600" height="180" />
+              </div>
+              <div>
+              {bookList}
+              </div>
           </div>
       )
   }

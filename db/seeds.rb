@@ -51,6 +51,7 @@ books = Book.create!([{
         title: "The Da Vinci Code",
         isbn: "1234567890113",
         author_id: dan.id,
+        writer: "Dan Brown",
         description:"While in Paris on business, Harvard symbologist Robert Langdon receives an urgent late-night phone call: the elderly curator of the Louvre has been murdered inside the museum. Near the body, police have found a baffling cipher. Solving the enigmatic riddle, Langdon is stunned to discover it leads to a trail of clues hidden in the works of da Vinci…clues visible for all to see…and yet ingeniously disguised by the painter.",
         gender: "action", 
         book_url:"code"
@@ -59,6 +60,7 @@ books = Book.create!([{
     title: "The Lost Symbol",
     isbn: "1234567890114",
     author_id: dan.id,
+    writer: "Dan Brown",
     description:"
     The Lost Symbol is a masterstroke of storytelling–a deadly race through a real-world labyrinth of codes, secrets, and unseen truths… all under the watchful eye of Brown’s most terrifying villain to date. Set within the hidden chambers, tunnels, and temples of Washington, D.C., The Lost Symbol accelerates through a startling landscape toward an unthinkable finale.",
     gender: "action", 
@@ -68,6 +70,7 @@ books = Book.create!([{
     title: "Angels and Demons",
     isbn: "1234567890115",
     author_id: dan.id,
+    writer: "Dan Brown",
     description:"When world-renowned Harvard symbologist Robert Langdon is summoned to a Swiss research facility to analyze a mysterious symbol — seared into the chest of a murdered physicist — he discovers evidence of the unimaginable: the resurgence of an ancient secret brotherhood known as the Illuminati… the most powerful underground organization ever to walk the earth.",
     gender: "action", 
     book_url:"angels"
@@ -76,6 +79,7 @@ books = Book.create!([{
     title: "The Current",
     isbn: "1234567890116",
     author_id: tim.id,
+    writer: "Tim Johnston",
     description:"Grief, suspicion, the innocent and the guilty—all stir to life in this cold northern town where a young woman can come home, but still not be safe. Brilliantly plotted and unrelentingly propulsive, The Current is a beautifully realized story about the fragility of life, the power of the past, and the need, always, to fight back.",
     gender: "fiction", 
     book_url:"curr"
@@ -84,6 +88,7 @@ books = Book.create!([{
     title: "Harry Potter and the Cursed Child ",
     isbn: "1234567890117",
     author_id: j.id,
+    writer: "Joanne Rowling",
     description:"Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. The play received its world premiere in London’s West End on 30th July 2016.",
     gender: "action", 
     book_url:"harry"
@@ -92,6 +97,7 @@ books = Book.create!([{
     title: "Outsider",
     isbn: "1234567890118",
     author_id: king.id,
+    writer: "Stephen King",
     description:"In Flint City, Oklahoma, police detective Ralph Anderson arrests the popular English teacher and Little League coach, Terry Maitland, in front of a crowd of baseball spectators. Maitland is charged with the rape and mutilation of Frankie Peterson, an eleven-year-old boy. Maitland hires his friend and lawyer, Howie Gold, to assist him. However, Detective Anderson has eyewitness accounts and forensic evidence which clearly pinpoints Maitland as the main, and only, suspect. In the meantime, eager reporters harass Maitland's wife, Marcy and their two daughters, Sarah and Grace.",
     gender: "action", 
     book_url:"out"
@@ -100,6 +106,7 @@ books = Book.create!([{
     title: "Washington Black",
     isbn: "1234567890119",
     author_id: esi.id,
+    writer:"Esi Edugyan",
     description:"Washington Black is the third novel by Canadian author Esi Edugyan. The novel was published in 2018 by HarperCollins in Canada and by Knopf Publishers internationally. A bildungsroman, the story follows the early life of George Washington Wash Black, chronicling his escape from slavery and his subsequent adventures.",
     gender: "action", 
     book_url:"was"
@@ -107,6 +114,7 @@ books = Book.create!([{
     title: "The Vegeterian ",
     isbn: "1234567890120",
     author_id: kang.id,
+    writer:"Han Kang",
     description:"The Vegetarian (Korean: 채식주의자; RR: Chaesikjuuija) is a South Korean three-part novel written by Han Kang and first published in 2007. Based on Kang's 1997 short story The Fruit of My Woman, The Vegetarian is set in modern-day Seoul and tells the story of Yeong-hye, a part-time graphic artist and home-maker, whose decision to stop eating meat after a bloody, nightmarish dream about human cruelty leads to devastating consequences in her personal and familial life.",
     gender: "action", 
     book_url:"vege"
@@ -114,6 +122,7 @@ books = Book.create!([{
     title: "The city of Veils",
     isbn: "1234567890121",
     author_id: usher.id,
+    writer:"S. Usher Evans",
     description:"From bestselling author S. Usher Evans comes the first book in a brand new young adult fantasy series filled with masked mischief and mystery. Fans of Throne of Glass and The Kiss of Deception will fall in love with this brilliant series about a runaway-princess-turned-vigilante who must resume her royal duties when her father and brother are murdered. ",
     gender: "action", 
     book_url:"veils"

@@ -3,7 +3,7 @@ import {withRouter} from 'react-router';
 import BookIndex from './book_index';
 import { fetchBooks } from '../../actions/book_actions';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   books: Object.values(state.entities.books),
 });
 
@@ -15,3 +15,4 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(BookIndex));
+

@@ -10,10 +10,11 @@ export const receiveAuthor = author => {
     };
 };
 
-export const receiveAuthors = () => {
+export const receiveAuthors = (authors) => {
     return {
         type: ADD_AUTHORS,
-        books
+        authors
+
     };
 };
 

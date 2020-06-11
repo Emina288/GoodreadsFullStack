@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 // import { searchBooks } from "./util/book_api_util";
-// import * as BOOKACTIONS from "./actions/book_actions";
+// import * as ACTIONS from "./actions/author_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
   // window.search = BOOKACTIONS.searchBooks;
+ 
 
 
   // window.fetchBooks = BooksAPIUtil.fetchBooks;

@@ -24,7 +24,7 @@ class HomeNav extends React.Component {
     }
 
     handleBtn(e) {
-        e.preventDefault;
+        e.preventDefault();
         if (this.state.klass === "dropdown-content" && this.state.klass2 === "dropdown-btn" ) {
         this.setState({klass: "show", klass2: "dropdown-btn2"});
         } else {
@@ -34,6 +34,7 @@ class HomeNav extends React.Component {
 
     search(keyword) {
         this.props.searchBooks(keyword);
+        this.setState({searchValue: ""})
     }
 
   
@@ -56,7 +57,10 @@ class HomeNav extends React.Component {
                     <a  href="/books" className={"home-books-a"}>Browse</a>
                 </div>
 
-                <form className={"example"} >
+                <form className={"example"}  onSubmit={(e) => {
+                            e.preventDefault()
+                            this.search(this.state.searchValue)}
+                        } >
                     <input 
                     type="text" 
                     placeholder="Search books" 
@@ -65,17 +69,7 @@ class HomeNav extends React.Component {
                       this.setState({ searchValue: event.target.value })
                     }}                   
                     />
-                    <button type="submit"
-                    
-                    onClick={() => {
-                        
-                    
-                        
-                        this.search(this.state.searchValue);
-                        
-                        }}
-                    
-                    ><i className={"fa fa-search"}  > </i></button>
+                    <button type="submit" ><i className={"fa fa-search"}> </i></button>
                 </form>
 
                 <div className={"dropdown"}>
