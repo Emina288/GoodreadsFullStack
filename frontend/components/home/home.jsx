@@ -1,9 +1,10 @@
 import React from "react";
 import HomeNav from "./home_nav";
 import HomeCont from "./home_cont";
+import {withRouter} from 'react-router';
 
 import {connect} from 'react-redux';
-import { login, logout } from "../../actions/session_actions";
+import { login, logout, signup } from "../../actions/session_actions";
 import { searchBooks } from "../../actions/book_actions";
 
 class HomeWithoutLoginProps extends React.Component {
@@ -15,7 +16,7 @@ class HomeWithoutLoginProps extends React.Component {
         return (
             <div>
                 <header >
-                    <HomeNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks}/>
+                    <HomeNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
                 </header>
 
                     <HomeCont />
@@ -33,9 +34,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   login: user => dispatch(login(user)),
+  signup: user => dispatch(signup(user)),
   searchBooks: keyword => dispatch(searchBooks(keyword))
 });
 
-const HomeWithLoginProps = connect(mapStateToProps, mapDispatchToProps)(HomeWithoutLoginProps);
+const HomeWithLoginProps = withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeWithoutLoginProps));
 
 export default HomeWithLoginProps;

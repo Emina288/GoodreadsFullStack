@@ -10,7 +10,8 @@ class Welcome extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.props.session;
+        this.state = {searchValue: ""}
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -24,6 +25,16 @@ class Welcome extends React.Component {
         }
 
     }
+
+    handleSubmit() {
+        this.props.history.push("/search");
+    }
+
+    search(keyword) {
+        this.props.searchBooks(keyword);
+        this.setState({searchValue: ""})
+    }
+
 
     componentDidUpdate(prevProps, prevState, snapshot) {
 
@@ -85,6 +96,23 @@ class Welcome extends React.Component {
 
                 <div>
                      <MainContent books={this.props.books} fetchBooks={this.props.fetchBooks}  history={this.props.history} />
+                     <br/>
+                     <br/>
+                     <div className={"splash-search"}> 
+                     <h2>Search and browse books</h2>
+                     <form className={"example1"} onSubmit={this.handleSubmit}>
+                         
+                        <input 
+                        type="text" 
+                        placeholder="Title/ Author/ ISBN" 
+                        value={this.state.searchValue}
+                        onChange={event => {
+                        this.setState({ searchValue: event.target.value })
+                        }}                   
+                        />
+                        <button type="submit" ><i className={"fa fa-search"}> </i></button>
+                    </form>
+                    </div>
                  </div>
 
                  <footer>

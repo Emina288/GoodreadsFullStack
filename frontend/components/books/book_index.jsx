@@ -24,9 +24,9 @@ class BookIndex extends Component {
 
       return (
           <div className={"books-index"}>
-             <div>
+             {/* <div>
                 <img className={"wlcm"} src={window.welcome} width="600" height="180" />
-              </div>
+              </div> */}
               <div>
               {bookList}
               </div>

@@ -14,6 +14,7 @@ import HomeContainer from "./home/home";
 import BookIndexContainer from "./books/book_index_container";
 import BookShowContainer from "./books/book_show_container";
 import AuthorShowContainer from "./authors/author_show_container";
+import SearchContainer from "./search/search_container";
 
 const App = () => (
   <div>
@@ -21,7 +22,7 @@ const App = () => (
      <Route exact path='/books' component={BookIndexContainer}/>
     <Route path='/books/:bookId' component={BookShowContainer} /> 
     <Route path='/authors/:authorId' component={AuthorShowContainer} /> 
-
+    <Route path='/search' exact component={SearchContainer} />
     <AuthRoute exact path="/signup" component={SignupOnlyContainer} />
     <AuthRoute exact path="/login" component={LoginOnlyContainer} />
     <ProtectedRoute exact path="/home" component={HomeContainer}/>

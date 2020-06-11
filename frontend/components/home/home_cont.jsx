@@ -10,8 +10,8 @@ class HomeCont extends React.Component {
         return(
 
             <div className="color" >
-
-           <BookIndexContainer />
+                <h3>What!!!!!</h3>
+           {/* <BookIndexContainer /> */}
 
            </div>
         )

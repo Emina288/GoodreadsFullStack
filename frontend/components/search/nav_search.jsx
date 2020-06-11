@@ -1,7 +1,8 @@
 import React from "react";
+import {withRouter} from 'react-router';
 
 
-class HomeNav extends React.Component {
+class SearchNav extends React.Component {
     constructor(props) {
         super(props);
 
@@ -60,7 +61,10 @@ class HomeNav extends React.Component {
                     <a  href="/books" className={"home-books-a"}>Browse</a>
                 </div>
 
-                <form className={"example"}   onSubmit={this.handleSubmit}>
+                <form className={"example"}  onSubmit={(e) => {
+                            e.preventDefault()
+                            this.search(this.state.searchValue)}
+                        }>
                     <input 
                     type="text" 
                     placeholder="Search books" 
@@ -71,6 +75,10 @@ class HomeNav extends React.Component {
                     />
                     <button type="submit" ><i className={"fa fa-search"}> </i></button>
                 </form>
+
+                <div>
+
+                {user ? 
 
                 <div className={"dropdown"}>
                     <img src={window.profile} onClick={this.handleBtn} className={this.state.klass2} />
@@ -84,6 +92,16 @@ class HomeNav extends React.Component {
                         <li className={"nn"}><a href="#" onClick={this.handleClick} className={"nn"}>Sign out! </a></li>
                         </ul>
                     </div>
+                </div> : 
+                <div>
+                    <div className={"home-books"}>  
+                         <a href="#/login" className={"home-books-a"}>Signin</a>
+                         <a href="#/signup" className={"home-books-a"}>Join</a>
+                         
+                     </div>
+
+                </div>
+                }
                 </div>
 
             </div>
@@ -91,4 +109,4 @@ class HomeNav extends React.Component {
     }
 }
 
-export default HomeNav;
+export default SearchNav;

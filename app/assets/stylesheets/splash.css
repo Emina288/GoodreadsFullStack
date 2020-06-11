@@ -62,3 +62,66 @@
 .demo-btn:hover{
     background-color: wheat;
 }
+
+.splash-search {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+form.example1 input[type=text] {
+    padding: 10px;
+    border-right: 0.1px solid white;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    float: left;
+    border-radius: 5px 0px 0px 5px;
+    width: 260px;
+    background: white;
+    height: 10px;
+  }
+
+  .example1 {
+    margin:auto;
+    max-width:500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    margin-left: 370px;
+  }
+  
+  form.example1 button {
+    float: left;
+    height: 32px;
+    padding: 10px;
+    background: white;
+    color: rgb(165, 165, 165);
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+
+    margin: 15px 15px 15px 0;
+  }
+
+  .splash-search h2 {
+    color: #000;
+    font-size: 18px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    margin-left: 370px;
+  }
+  
+
+  
+  form.example1::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
