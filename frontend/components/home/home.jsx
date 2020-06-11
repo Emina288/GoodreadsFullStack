@@ -19,7 +19,7 @@ class HomeWithoutLoginProps extends React.Component {
                     <HomeNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
                 </header>
 
-                    <HomeCont />
+                    <HomeCont searchBooks={this.props.searchBooks} history={this.props.history}/>
             </div>
         )
     }

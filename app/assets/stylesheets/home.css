@@ -189,8 +189,60 @@
         display: table;
       }
 
-      .color {
-        background-color: rgba(244,241,234,0.5)
+      .color img {
+        margin-left: 230px;
+        margin-top: 10px;
+      
         
       }
 
+      .color {
+        height: 2000px;
+        width: 2000px;
+        background-color:  #9e9e9c14;
+      }
+
+      form.example2 input[type=text] {
+        padding: 10px;
+        border-right: 0.1px solid white;
+        border-left: #DCD6CC 1px solid;
+        border-top: #DCD6CC 1px solid;
+        border-bottom: #DCD6CC 1px solid;
+        float: left;
+        border-radius: 3px 0px 0px 3px;
+        width: 300px;
+        background: white;
+        height: 12px;
+      }
+    
+      .example2 {
+        max-width:320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 239px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid #D8D8D8;
+      }
+      
+      form.example2 button {
+        float: left;
+        height: 34px;
+        padding: 10px;
+        background: white;
+        color: rgb(165, 165, 165);
+        border-right: #DCD6CC 1px solid;
+        border-top: #DCD6CC 1px solid;
+        border-bottom: #DCD6CC 1px solid;
+        border-left: none;
+        cursor: pointer;
+        border-radius: 0 3px 3px 0;
+    
+        margin: 15px 15px 15px 0;
+      }
+    
+      form.example1::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
