@@ -23,16 +23,16 @@ class BookShow extends Component {
     return (
       <section className="book-show">
         <ShowNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
-        <figure>
-          <img src={eval(`window.${book.book_url}`)} alt={book.title} />
-        </figure>
-        <ul>
-          <li>
-            <h2>{book.title}</h2>
-          </li>
-          <li>About this book: {book.description}</li>
-          <li>Author: {book.writer} </li>
-        </ul>
+        <div className={"show-img"}>
+          <div>
+          <img src={eval(`window.${book.book_url}`)} alt={book.title} width="150" height="256"/>
+          </div>
+        <div className={"show-title"}>
+          <h2>{book.title}</h2>
+          <h3>by {book.writer}</h3>
+          <p>{book.description}</p>
+          </div>
+          </div>
         
       </section>
     );

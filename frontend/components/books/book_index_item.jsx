@@ -26,7 +26,7 @@ class BookIndexItem extends React.Component {
           </div>
           <div className={"item-title"}>
           <h2>{book.title}</h2>
-          <h3>By {book.writer}</h3>
+          <h3>by {book.writer}</h3>
           </div>
         </div>
       </div>

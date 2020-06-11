@@ -1,0 +1,39 @@
+.show-title {
+    color: #333333;
+    font-family: "Merriweather", "Georgia", serif;
+    line-height: 1.3;
+}
+
+.show-title h2 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.show-title h3 {
+    font-size: 16px;
+    margin: 4px 0px 4px 0px;
+    
+}
+
+.show-img img{
+    cursor: pointer;
+    margin-right: 15px;
+   
+}
+
+.show-img {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0 65px 0px;
+    width: 650px;
+    margin: 15px 0 0 370px;
+}
+
+.show-title p {
+    line-height: 21px;
+    font-size: 14px;
+    color: #181818;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
