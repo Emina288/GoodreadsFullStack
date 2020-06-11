@@ -21,13 +21,12 @@ class BookIndexItem extends React.Component {
     return (
       <div className={"book-item"}> 
         <div className={"item-img"}> 
+        <div>
+          <img  src={eval(`window.${book.book_url}`)} alt={book.title} onClick={this.handleClick} width="49" height="75"/>
+          </div>
           <div className={"item-title"}>
           <h2>{book.title}</h2>
           <h3>By {book.writer}</h3>
-          <a href={`/#/books/${book.id}`}>Click here to read more...</a>
-          </div>
-          <div>
-          <img  src={eval(`window.${book.book_url}`)} alt={book.title} onClick={this.handleClick} width="269"/>
           </div>
         </div>
       </div>

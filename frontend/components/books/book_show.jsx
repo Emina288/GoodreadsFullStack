@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import ShowNav from "../search/nav_search";
 
 
 class BookShow extends Component {
@@ -19,19 +20,9 @@ class BookShow extends Component {
 
   render() {
     const { book } = this.props;
-
-    if (!book) return (
-      <h1>No books here</h1>
-    );
-
     return (
       <section className="book-show">
-        <div className={"home-title"}>
-                    <a href="/#" >
-                        <img src={window.title} width="197" height="43"  />
-                    </a>
-                </div>
-
+        <ShowNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
         <figure>
           <img src={eval(`window.${book.book_url}`)} alt={book.title} />
         </figure>
