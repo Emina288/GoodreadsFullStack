@@ -11,7 +11,7 @@ class Api::BooksController < ApplicationController
 
           }
           
-          if @books.length === 0 then render JSON.generate("No Books were found for keyword #{params[:q]}") end
+          if @books.length === 0 then render json: ["No results."], status: 401 end
                     
         else
           @books = Book.all

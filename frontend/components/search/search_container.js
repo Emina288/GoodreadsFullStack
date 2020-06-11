@@ -8,7 +8,7 @@ import Search from "./search";
 const mapStateToProps = (state) => ({
     user: state.entities.users[state.session.id],
     session: state.session,
-    errors: state.errors.session,
+    errors: state.errors.search,
   });
   
   const mapDispatchToProps = dispatch => ({
