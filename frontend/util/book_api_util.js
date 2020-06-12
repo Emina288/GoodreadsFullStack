@@ -16,12 +16,12 @@ export const fetchBook = bookId => {
     )
 };
 
-export const searchBooks = (keyword) => {
+export const searchBooks = (q) => {
     return (
         $.ajax ({
-            url: `/api/books?q=${keyword}`,
+            url: `/api/books?q=${q}`,
             method: "GET",
-            data: { keyword }
+            data: { q }
         })
     )
 };
