@@ -20,5 +20,11 @@ Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. 
 
 ## Splash page and search
 * Users can login or signup. Users can search up books even though they are not logged in.
+![](https://media.giphy.com/media/hs1TYa2cuSeMgjq0Yu/giphy.gif)
+
+## Future Implementations
+* Implementing the ability to create bookshelves.
+* Implementing the ability to add books to the bookshelfe and mark books as Read, Reading, Want to read.
+* Implementing the ability to leave comment or a review on a book.
 
 
