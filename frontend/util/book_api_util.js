@@ -20,7 +20,7 @@ export const searchBooks = (q) => {
     return (
         $.ajax ({
             url: `/api/books?q=${q}`,
-            method: "GET",
+            method: "GET"
            
         })
     )

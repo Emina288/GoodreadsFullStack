@@ -38667,3 +38667,190 @@ Processing by Api::BooksController#index as JSON
 Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2020-06-12 02:28:06 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ramiabdelghafar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 1773ms (Views: 1764.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:28:08 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (22.9ms)
+Completed 200 OK in 42ms (Views: 22.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:08 -0400
+Started GET "/api/books?q=" for ::1 at 2020-06-12 02:29:08 -0400
+Processing by Api::BooksController#index as JSON
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>""}
+  [1m[36mBook Load (3.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  Rendering api/books/index.json.jbuilder
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (15.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (43.0ms)
+Completed 200 OK in 66ms (Views: 42.3ms | ActiveRecord: 15.1ms)
+
+
+  Rendered api/books/index.json.jbuilder (16.2ms)
+Completed 200 OK in 60ms (Views: 43.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:10 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (13.8ms)
+Completed 200 OK in 38ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/books/36" for ::1 at 2020-06-12 02:29:13 -0400
+Processing by Api::BooksController#show as JSON
+  Parameters: {"id"=>"36"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:23
+  Rendering api/books/show.json.jbuilder
+  Rendered api/books/show.json.jbuilder (1.0ms)
+Completed 200 OK in 22ms (Views: 12.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:14 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (7.3ms)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/books/34" for ::1 at 2020-06-12 02:29:17 -0400
+Processing by Api::BooksController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mBook Load (6.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:23
+  Rendering api/books/show.json.jbuilder
+  Rendered api/books/show.json.jbuilder (0.8ms)
+Completed 200 OK in 22ms (Views: 10.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:19 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (6.6ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-06-12 02:29:25 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "name"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "HvKRyA482HPIzB9WaTKDSw"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (5.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HvKRyA482HPIzB9WaTKDSw"], ["updated_at", "2020-06-12 06:29:25.420885"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 245ms (Views: 8.5ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:28 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (8.3ms)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:34 -0400
+Started GET "/api/books?q=" for ::1 at 2020-06-12 02:29:34 -0400
+Processing by Api::BooksController#index as JSON
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>""}
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (8.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  [1m[36mBook Load (7.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendering api/books/index.json.jbuilder
+  Rendered api/books/index.json.jbuilder (11.1ms)
+Completed 200 OK in 46ms (Views: 30.3ms | ActiveRecord: 8.4ms)
+
+
+  Rendered api/books/index.json.jbuilder (24.4ms)
+Completed 200 OK in 55ms (Views: 42.7ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/books?q=jhkjk" for ::1 at 2020-06-12 02:29:38 -0400
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>"jhkjk"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.9ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+Completed 401 Unauthorized in 44ms (Views: 0.2ms | ActiveRecord: 10.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-06-12 02:29:41 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HvKRyA482HPIzB9WaTKDSw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "5CIeDqmcahPmpBH6sTMmxw"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "5CIeDqmcahPmpBH6sTMmxw"], ["updated_at", "2020-06-12 06:29:41.548901"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 02:29:45 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (7.8ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
