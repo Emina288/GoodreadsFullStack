@@ -8,9 +8,14 @@ class BookShow extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchBook(this.props.match.params.bookId);
-  }
+  // componentDidMount() {
+  //   this.props.fetchBook(this.props.match.params.bookId);
+  // }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.history.push(`/search?q=${this.state.searchValue}`)
+}
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.bookId !== this.props.match.params.bookId) {

@@ -16,8 +16,9 @@ class HomeCont extends React.Component {
         this.setState({searchValue: ""})
     }
 
-    handleSubmit() {
-        this.props.history.push("/search");
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.history.push(`/search?q=${this.state.searchValue}`)
     }
 
     render() {

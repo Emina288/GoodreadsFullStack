@@ -56,9 +56,9 @@ class SearchNav extends React.Component {
                 </div>
 
                 <div className={"home-books"}>
-                    <a href="https://github.com/Emina288" className={"home-books-a"}>Home</a>
-                    <a href="https://github.com/Emina288" className={"home-books-a"}>My Books</a>
-                    <a  href="/books" className={"home-books-a"}>Browse</a>
+                    <a href="/#"  className={"home-books-a"}>Home</a>
+                    <a href="#/books" className={"home-books-a"}>My Books</a>
+                    <a  href="#/search" className={"home-books-a"}>Browse</a>
                 </div>
 
                 <form className={"example"}  onSubmit={(e) => {
@@ -88,7 +88,7 @@ class SearchNav extends React.Component {
                         <li className={"nm"}>{user.name}</li>
                     
                         <li className={"nn"}><a href="https://github.com/Emina288" className={"nn"}>Github</a></li>
-                        <li className={"nn"}>< a href="mailto:eminaramovic@hotmail.com" className={"nn"}>Emina </a></li>
+                        <li className={"nn"}>< a href="mailto:eminaramovic@hotmail.com" className={"nn"}>Email me! </a></li>
                         <li className={"nn"}><a href="#" onClick={this.handleClick} className={"nn"}>Sign out! </a></li>
                         </ul>
                     </div>

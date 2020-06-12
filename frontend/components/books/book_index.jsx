@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import BookIndexItem from './book_index_item';
 
+
 class BookIndex extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +25,6 @@ class BookIndex extends Component {
 
       return (
           <div className={"books-index"}>
-             {/* <div>
-                <img className={"wlcm"} src={window.welcome} width="600" height="180" />
-              </div> */}
               <div>
               {bookList}
               </div>

@@ -249,3 +249,7 @@
         clear: both;
         display: table;
       }
+
+      .dropdown ul{
+        list-style: none;
+      }

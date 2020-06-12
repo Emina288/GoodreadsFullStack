@@ -3,6 +3,7 @@ import BookIndexContainer from "../books/book_index_container";
 import LoginFormContainer from "../session/login_form_container";
 import Footer from "../footer";
 import SearchNav from "./nav_search";
+import queryString from 'query-string'
 
 class Search extends React.Component {
     constructor(props) {
@@ -17,6 +18,14 @@ class Search extends React.Component {
     search(keyword) {
         this.props.searchBooks(keyword);
         this.setState({searchValue: ""})
+    }
+
+    componentDidMount() {
+        console.log("Search commponent", queryString.parse(this.props.location.search));
+        const val = queryString.parse(this.props.location.search);
+        if (val) {
+            this.props.searchBooks(val.q)
+        } 
     }
 
     mainPart() {
@@ -48,8 +57,17 @@ class Search extends React.Component {
                     </div>
                     <div>
                     {errors.length !== 0 ?
-                     <div>
-                        {errors[0]}
+                     <div className={"search-errors"}>
+                         <div>
+                           <span>No results.</span>
+                        </div>
+                        <div>
+                        <p>Looking for a book?</p>
+                            <ul>
+                                <li>Search by both title and author, and double-check the spelling.</li>
+                                <li>Try searching by ISBN.</li>
+                            </ul>
+                        </div>
                     </div> :  
                     <BookIndexContainer />
                      }

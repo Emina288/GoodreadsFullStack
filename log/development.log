@@ -38279,3 +38279,247 @@ Migrating to RenameColumnBooks (20200610152120)
   ↳ db/seeds.rb:50
   [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
   [1m[36mAuthor Load (2.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (2.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAuthor Destroy (4.0ms)[0m  [1m[31mDELETE FROM "authors"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 25]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 26]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 27]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 28]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 29]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (1.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 30]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 31]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 32]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 33]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mark1e@hotmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YPVyB8T0bIBHfsXv3Wc7-A"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mark1"], ["email", "mark1e@hotmail.com"], ["password_digest", "$2a$12$UopjjIdFCvP04n.3.jME6.LXM8rTPcYG5scTNp8XHByz5mGKDNA0a"], ["session_token", "YPVyB8T0bIBHfsXv3Wc7-A"], ["created_at", "2020-06-12 01:25:37.333675"], ["updated_at", "2020-06-12 01:25:37.333675"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mark2@a.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fy7C5N_k1b_kPQqbBVvreQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mark2"], ["email", "mark2@a.com"], ["password_digest", "$2a$12$fS3IjIREaMHm25wwOavO.OSCA5Zzn5S8yTN4dJEiEMvbekvZ2346."], ["session_token", "fy7C5N_k1b_kPQqbBVvreQ"], ["created_at", "2020-06-12 01:25:37.545638"], ["updated_at", "2020-06-12 01:25:37.545638"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mark3@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "EOEgUQGzUwBq5MRqeV5NPw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mark3"], ["email", "mark3@gmail.com"], ["password_digest", "$2a$12$WPUJ5rozWRV2XvRJ/IpxS.qR/bgHkD/FBUzdQE5Um0n3NKSLO8o76"], ["session_token", "EOEgUQGzUwBq5MRqeV5NPw"], ["created_at", "2020-06-12 01:25:37.754249"], ["updated_at", "2020-06-12 01:25:37.754249"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mark4@aol.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z7Jd5lmMZF0s6Y0CxqASWg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mark4"], ["email", "mark4@aol.com"], ["password_digest", "$2a$12$wXfj/K57arWrOP.MR/bVIudqiWIVfPq4bHV1qhxSl9TxYVpBG6YEW"], ["session_token", "Z7Jd5lmMZF0s6Y0CxqASWg"], ["created_at", "2020-06-12 01:25:37.963794"], ["updated_at", "2020-06-12 01:25:37.963794"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "42rb22cQmZ2MUsSCfOV9CA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Demo"], ["email", "demo@demo.com"], ["password_digest", "$2a$12$mzSt1PdvexSaVK52RvaGw.CQJt45XXlQ7/paJxa4hgG6dBM2pDoji"], ["session_token", "42rb22cQmZ2MUsSCfOV9CA"], ["created_at", "2020-06-12 01:25:38.175541"], ["updated_at", "2020-06-12 01:25:38.175541"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mAuthor Create (3.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Dan Brown"], ["bio", "Dan Gerhard Brown was born on June 22, 1964, in Exeter, New Hampshire.He has a younger sister, Valerie (born 1968) and brother, Gregory (born 1974). Brown attended Exeter's public schools until the ninth grade.He grew up on the campus of Phillips Exeter Academy, where his father, Richard G. Brown, was a teacher of mathematics and wrote textbooks from 1968 until his retirement in 1997.His mother, Constance, trained as a church organist and student of sacred music."]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Tim Johnston"], ["bio", "Tim Johnston is the author of the novels Descent,The Current, the story collection Irish Girl, and the Young Adult novel Never So Green. A New York Times, USA Today, and Indie national bestseller, Descent has been published internationally and optioned for film. Also optioned for film, The Current won the Midland Authors 2020 Adult Fiction Award."]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Joanne Rowling"], ["bio", "Joanne Rowling, better known by her pen name J. K. Rowling, is a British author, screenwriter, producer, and philanthropist. She is best known for writing the Harry Potter fantasy series, which has won multiple awards and sold more than 500 million copies, becoming the best-selling book series in history"]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Stephen King"], ["bio", "Stephen Edwin King (born September 21, 1947) is an American author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels. His books have sold more than 350 million copies,and many have been adapted into films, television series, miniseries, and comic books. "]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Esi Edugyan"], ["bio", "Esi Edugyan (born 1978) is a Canadian novelist. She has twice won the Giller Prize, for her novels Half-Blood Blues and Washington Black."]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "Han Kang"], ["bio", "Han Kang (Korean: 한강; born November 27, 1970) is a South Korean writer.She won the Man Booker International Prize for fiction in 2016 for The Vegetarian, a novel which deals with a woman’s decision to stop eating meat and its devastating consequences"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "bio") VALUES ($1, $2) RETURNING "id"[0m  [["name", "S. Usher Evans"], ["bio", "S. Usher Evans is an author, blogger, and witty banter aficionado. Born in Pensacola, Florida, she left the sleepy town behind for the fast-paced world of Washington, D.C.. "]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890113"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Da Vinci Code"], ["isbn", "1234567890113"], ["author_id", 39], ["description", "While in Paris on business, Harvard symbologist Robert Langdon receives an urgent late-night phone call: the elderly curator of the Louvre has been murdered inside the museum. Near the body, police have found a baffling cipher. Solving the enigmatic riddle, Langdon is stunned to discover it leads to a trail of clues hidden in the works of da Vinci…clues visible for all to see…and yet ingeniously disguised by the painter.Langdon joins forces with a gifted French cryptologist, Sophie Neveu, and learns the late curator was involved in the Priory of Sion—an actual secret society whose members included Sir Isaac Newton, Botticelli, Victor Hugo, and da Vinci, among others. The Louvre curator has sacrificed his life to protect the Priory’s most sacred trust: the location of a vastly important religious relic, hidden for centuries.\n\n        In a breathless race through Paris, London, and beyond, Langdon and Neveu match wits with a faceless powerbroker who appears to work for Opus Dei—a clandestine, Vatican-sanctioned Catholic sect believed to have long plotted to seize the Priory’s secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle in time, the Priory’s secret—and a stunning historical truth—will be lost forever.\n        \n        In an exhilarating blend of relentless adventure, scholarly intrigue, and cutting wit, symbologist Robert Langdon (first introduced in Dan Brown’s bestselling Angels & Demons) is the most original character to appear in years. The Da Vinci Code heralds the arrival of a new breed of lightning-paced, intelligent thriller…surprising at every twist, absorbing at every turn, and in the end, utterly unpredictable…right up to its astonishing conclusion."], ["gender", "action"], ["book_url", "code"], ["writer", "Dan Brown"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890114"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Lost Symbol"], ["isbn", "1234567890114"], ["author_id", 39], ["description", "\n    The Lost Symbol is a masterstroke of storytelling–a deadly race through a real-world labyrinth of codes, secrets, and unseen truths… all under the watchful eye of Brown’s most terrifying villain to date. Set within the hidden chambers, tunnels, and temples of Washington, D.C., The Lost Symbol accelerates through a startling landscape toward an unthinkable finale.The novel begins when Robert Langdon is summoned to a Smithsonian fundraiser in Washington DC by his mentor, Peter Solomon, who he is told will be speaking at the event. Robert is told by Peter to bring a small sealed box that he entrusted to Robert years before. Robert arrives at the fundraiser but Peter is not in attendance – after calling Peter’s assistant, Robert discovers that the call was a hoax to lure him to the museum by Peter’s kidnapper, Mal’akh. Moments later, Robert hears a scream, and discovers Peter’s severed hand in the Capitol Rotunda. The hand has a Freemason’s ring on one finger, and is tattooed with mysterious symbols on the fingers and the palm."], ["gender", "action"], ["book_url", "symbol"], ["writer", "Dan Brown"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890115"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Angels and Demons"], ["isbn", "1234567890115"], ["author_id", 39], ["description", "When world-renowned Harvard symbologist Robert Langdon is summoned to a Swiss research facility to analyze a mysterious symbol — seared into the chest of a murdered physicist — he discovers evidence of the unimaginable: the resurgence of an ancient secret brotherhood known as the Illuminati… the most powerful underground organization ever to walk the earth.The Illuminati has surfaced from the shadows to carry out the final phase of its legendary vendetta against its most hated enemy… the Catholic Church.\n\n    Langdon’s worst fears are confirmed on the eve of the Vatican’s holy conclave, when a messenger of the Illuminati announces he has hidden an unstoppable time bomb at the very heart of Vatican City. With the countdown under way, Langdon jets to Rome to join forces with Vittoria Vetra, a beautiful and mysterious Italian scientist, to assist the Vatican in a desperate bid for survival.\n    \n    Embarking on a frantic hunt through sealed crypts, dangerous catacombs, deserted cathedrals, and even to the heart of the most secretive vault on earth, Langdon and Vetra follow a 400-year old trail of ancient symbols that snakes across Rome toward the long-forgotten Illuminati lair… a secret location that contains the only hope for Vatican salvation.\n    \n    An explosive international thriller, Angels & Demons careens from enlightening epiphanies to dark truths as the battle between science and religion turns to war…"], ["gender", "action"], ["book_url", "angels"], ["writer", "Dan Brown"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890116"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Current"], ["isbn", "1234567890116"], ["author_id", 40], ["description", "Grief, suspicion, the innocent and the guilty—all stir to life in this cold northern town where a young woman can come home, but still not be safe. Brilliantly plotted and unrelentingly propulsive, The Current is a beautifully realized story about the fragility of life, the power of the past, and the need, always, to fight back.\n    What happened was no accident, and news of the crime awakens the community’s memories of another young woman who lost her life in the same river ten years earlier, and whose killer may still live among them.\n    \n    Determined to find answers, the surviving young woman soon realizes that she’s connected to the earlier unsolved case by more than just a river, and the deeper she plunges into her own investigation, the closer she comes to dangerous truths, and to the violence that simmers just below the surface of her hometown.\n    \n    Grief, suspicion, the innocent and the guilty—all stir to life in this cold northern town where a young woman can come home, but still not be safe. Brilliantly plotted and unrelentingly propulsive, The Current is a beautifully realized story about the fragility of life, the power of the past, and the need, always, to fight back."], ["gender", "fiction"], ["book_url", "curr"], ["writer", "Tim Johnston"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890117"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Harry Potter and the Cursed Child "], ["isbn", "1234567890117"], ["author_id", 41], ["description", "Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. The play received its world premiere in London’s West End on 30th July 2016The story begins nineteen years after the events of the 2007 novel Harry Potter and the Deathly Hallows and follows Harry Potter, now Head of the Department of Magical Law Enforcement at the Ministry of Magic, and his younger son, Albus Severus Potter, who is about to attend Hogwarts School of Witchcraft and Wizardry. The play is marketed as the eighth official story in the Harry Potter series.\n\n    The play received enthusiastic critical reception. At the 2017 Laurence Olivier Awards, the London production received a record-breaking eleven nominations and won another record-breaking nine awards, including Best New Play. At the 2018 Tony Awards, the Broadway production won six awards, including Best Play. The play also set the record for highest all-time weekly ticket sales of any play, grossing over $2.5 million at the Lyric Theater for the week ending 30 December 2018."], ["gender", "action"], ["book_url", "harry"], ["writer", "Joanne Rowling"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890118"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Outsider"], ["isbn", "1234567890118"], ["author_id", 42], ["description", "In Flint City, Oklahoma, police detective Ralph Anderson arrests the popular English teacher and Little League coach, Terry Maitland, in front of a crowd of baseball spectators. Maitland is charged with the rape and mutilation of Frankie Peterson, an eleven-year-old boy. Maitland hires his friend and lawyer, Howie Gold, to assist him. However, Detective Anderson has eyewitness accounts and forensic evidence which clearly pinpoints Maitland as the main, and only, suspect. In the meantime, eager reporters harass Maitland's wife, Marcy and their two daughters, Sarah and Grace. The district attorney, Bill Samuels, urges Anderson to break Maitland's alibi in order to make this an open-and-shut case. Anderson discovers that multiple eyewitness accounts confirm Maitland was out of town, at a writer's conference in a neighboring town, when the murder was committed. Security footage from the conference also provides confirmation of Maitland's alibi. Anderson actually finds a book at the conference center gift shop that Maitland (or his doppelgänger) picked up and the fingerprints left on the book are confirmed to be Maitland's. Samuels encourages Anderson to destroy this new evidence, but Anderson doesn't. Despite evidence that shows that Maitland was in two places at once, Anderson still believes that Maitland killed the young boy.\n\n    Maitland, who has been awaiting trial in jail is brought to the courthouse, where he is shot to death. Overcome with grief, the older brother of Maitland's victim, Ollie Peterson, shot Maitland. Ollie is subsequently shot and killed by Detective Anderson. Anderson is then placed on administrative leave, and the district attorney decides not to seek re-election.\n    \n    With the help of the private investigator, Holly Gibney, Marcy Maitland and Howie Gold follow a trail of clues to Marysville, Texas. Detective Anderson, following the group, also heads to Texas. Jack Hoskins, Anderson's rival in local law enforcement, is coerced by the Outsider (i.e. the real killer) into killing Detective Anderson. The Outsider promises Hoskins that if he kills Anderson, he will be cured of his cancer."], ["gender", "action"], ["book_url", "out"], ["writer", "Stephen King"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890119"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Washington Black"], ["isbn", "1234567890119"], ["author_id", 43], ["description", "Washington Black is the third novel by Canadian author Esi Edugyan. The novel was published in 2018 by HarperCollins in Canada and by Knopf Publishers internationally. A bildungsroman, the story follows the early life of George Washington Wash Black, chronicling his escape from slavery and his subsequent adventures.Eleven-year-old George Washington Black—or Wash—a field slave on a Barbados sugar plantation, is initially terrified when he is chosen as the manservant of his master’s brother. To his surprise, however, the eccentric Christopher Wilde turns out to be a naturalist, explorer, inventor, and abolitionist. Soon Wash is initiated into a world where a flying machine can carry a man across the sky, where even a boy born in chains may embrace a life of dignity and meaning, and where two people, separated by an impossible divide, can begin to see each other as human."], ["gender", "action"], ["book_url", "was"], ["writer", "Esi Edugyan"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890120"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Vegeterian "], ["isbn", "1234567890120"], ["author_id", 44], ["description", "The Vegetarian (Korean: 채식주의자; RR: Chaesikjuuija) is a South Korean three-part novel written by Han Kang and first published in 2007. Based on Kang's 1997 short story The Fruit of My Woman, The Vegetarian is set in modern-day Seoul and tells the story of Yeong-hye, a part-time graphic artist and home-maker, whose decision to stop eating meat after a bloody, nightmarish dream about human cruelty leads to devastating consequences in her personal and familial life."], ["gender", "action"], ["book_url", "vege"], ["writer", "Han Kang"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mBook Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."isbn" = $1 LIMIT $2[0m  [["isbn", "1234567890121"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "isbn", "author_id", "description", "gender", "book_url", "writer") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The city of Veils"], ["isbn", "1234567890121"], ["author_id", 45], ["description", "From bestselling author S. Usher Evans comes the first book in a brand new young adult fantasy series filled with masked mischief and mystery. Fans of Throne of Glass and The Kiss of Deception will fall in love with this brilliant series about a runaway-princess-turned-vigilante who must resume her royal duties when her father and brother are murdered. "], ["gender", "action"], ["book_url", "veils"], ["writer", "S. Usher Evans"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50

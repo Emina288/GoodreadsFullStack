@@ -64,5 +64,25 @@ form.example3 button {
     margin-left: 5px;
 }
 
+.search-errors span{
+    position: absolute;
+    bottom: 646px;
+    font-family:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #382110;
+    font-size: 14px;
+}
+
+.search-errors p {
+    margin-top: 30px;
+    font-family:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+    font-size: 14px;
+}
+
+.search-errors ul {
+    margin-left: 30px;
+}
+
+
 
 

@@ -22,8 +22,9 @@ class HomeNav extends React.Component {
         this.props.logout();
     }
 
-    handleSubmit() {
-        this.props.history.push("/search");
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.history.push(`/search?q=${this.state.searchValue}`)
     }
 
     handleBtn(e) {
@@ -55,9 +56,9 @@ class HomeNav extends React.Component {
                 </div>
 
                 <div className={"home-books"}>
-                    <a href="https://github.com/Emina288" className={"home-books-a"}>Home</a>
-                    <a href="https://github.com/Emina288" className={"home-books-a"}>My Books</a>
-                    <a  href="/books" className={"home-books-a"}>Browse</a>
+                    <a href="/#" className={"home-books-a"}>Home</a>
+                    <a href="#/books" className={"home-books-a"}>My Books</a>
+                    <a  href="#/search" className={"home-books-a"}>Browse</a>
                 </div>
 
                 <form className={"example"}   onSubmit={this.handleSubmit}>

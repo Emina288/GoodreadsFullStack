@@ -4,12 +4,26 @@ import React from "react";
 class MainContent extends React.Component {
     constructor(props){
         super(props);
-    
+      this.state = { loading: false }
         this.handleClick = this.handleClick.bind(this);
       }
 
     componentDidMount() {
-        this.props.fetchBooks();
+
+        console.log("Loading just started")
+
+        this.setState(
+          { loading: true },
+          () => {
+            this.props.fetchBooks()
+            .then(() => {
+              console.log("Loading is done");
+              this.setState({ loading: false });
+            });
+          }
+        )
+
+        
     }
 
     handleClick () {
@@ -18,21 +32,29 @@ class MainContent extends React.Component {
       }
 
     render() {
-        if (this.props.books.length === 0) {
+        if (this.state.loading) {
             return (
                 <span>Getting all books....</span>
             )
         }
 
-        const book1 = this.props.books[0];
-        const book2 = this.props.books[1];
-        const book3 = this.props.books[2];
-        const book7 = this.props.books[6];
+        let showContent = false, book1,book2,book3,book4,book5,book6,book7,book8
 
-        const book4 = this.props.books[3];
-        const book5 = this.props.books[4];
-        const book6 = this.props.books[5];
-        const book8 = this.props.books[7];
+        if (this.props.books.length >= 8) {
+
+          showContent = true;
+
+           book1 = this.props.books[0];
+           book2 = this.props.books[1];
+           book3 = this.props.books[2];
+           book7 = this.props.books[6];
+  
+           book4 = this.props.books[3];
+           book5 = this.props.books[4];
+           book6 = this.props.books[5];
+           book8 = this.props.books[7];
+          
+        }
         
         return (
             <div className={"splash-content"}>
@@ -48,6 +70,8 @@ class MainContent extends React.Component {
                     </div>
                 </div>
 
+
+              {showContent &&
               <div className={"content-box"}>
                 <h2>What will you discover?</h2>
                 <div className={"emina"}>
@@ -101,7 +125,15 @@ class MainContent extends React.Component {
                 </div>
                 </div>
             </div>
+            }
+
+            {!showContent && 
+            
+              <p>Oops! Not enough books</p>
+            }
+
             </div>
+              
         )
         {/* // return ( */}
         //     <div>
