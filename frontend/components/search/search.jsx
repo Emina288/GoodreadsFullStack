@@ -3,7 +3,7 @@ import BookIndexContainer from "../books/book_index_container";
 import LoginFormContainer from "../session/login_form_container";
 import Footer from "../footer";
 import SearchNav from "./nav_search";
-import queryString from 'query-string'
+// import queryString from 'query-string'
 
 class Search extends React.Component {
     constructor(props) {
@@ -28,9 +28,9 @@ class Search extends React.Component {
     }
 
     componentDidMount() {
-        const val = queryString.parse(this.props.location.search);
+        const val = this.props.location.search.split("=")[1]
         if (val) {
-            this.props.searchBooks(val.q)
+            this.props.searchBooks(val)
         } 
     }
 
