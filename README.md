@@ -23,7 +23,9 @@ Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. 
 
 ![](https://media.giphy.com/media/hs1TYa2cuSeMgjq0Yu/giphy.gif)
 
-Searches from the books don't include all fields, so the backend only queries depending on which params are passed through. 
+Searches from the books don't include all fields, so the backend only queries depending on which params are passed through.
+
+
 
 ## User authentication 
 
