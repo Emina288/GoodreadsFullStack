@@ -38523,3 +38523,147 @@ Migrating to RenameColumnBooks (20200610152120)
   ↳ db/seeds.rb:50
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:50
+Started GET "/" for ::1 at 2020-06-12 00:47:41 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ramiabdelghafar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 1972ms (Views: 1969.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 00:47:44 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (20.2ms)
+Completed 200 OK in 41ms (Views: 20.4ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 00:47:50 -0400
+Processing by Api::BooksController#index as JSON
+Started GET "/api/books?q=an&keyword=an" for ::1 at 2020-06-12 00:47:50 -0400
+  Rendering api/books/index.json.jbuilder
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>"an", "keyword"=>"an"}
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (14.2ms)
+Completed 200 OK in 29ms (Views: 22.3ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  Rendering api/books/index.json.jbuilder
+  Rendered api/books/index.json.jbuilder (4.5ms)
+Completed 200 OK in 63ms (Views: 11.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/api/books?q=brown&keyword=brown" for ::1 at 2020-06-12 00:48:00 -0400
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>"brown", "keyword"=>"brown"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  Rendering api/books/index.json.jbuilder
+  Rendered api/books/index.json.jbuilder (2.3ms)
+Completed 200 OK in 24ms (Views: 8.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 00:48:04 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (14.5ms)
+Completed 200 OK in 34ms (Views: 26.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 00:48:06 -0400
+Processing by Api::BooksController#index as JSON
+Started GET "/api/books?q=&keyword=" for ::1 at 2020-06-12 00:48:06 -0400
+  Rendering api/books/index.json.jbuilder
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>"", "keyword"=>""}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.7ms)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mBook Load (10.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  Rendering api/books/index.json.jbuilder
+  Rendered api/books/index.json.jbuilder (6.9ms)
+Completed 200 OK in 29ms (Views: 13.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/books?q=brown&keyword=brown" for ::1 at 2020-06-12 00:48:10 -0400
+Processing by Api::BooksController#index as JSON
+  Parameters: {"q"=>"brown", "keyword"=>"brown"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/api/books_controller.rb:7
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/api/books_controller.rb:8
+  Rendering api/books/index.json.jbuilder
+  Rendered api/books/index.json.jbuilder (2.5ms)
+Completed 200 OK in 25ms (Views: 9.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/books" for ::1 at 2020-06-12 00:48:15 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (16.1ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.6ms)
+
+

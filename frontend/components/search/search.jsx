@@ -12,6 +12,13 @@ class Search extends React.Component {
             searchValue: "",
         }
         this.search = this.search.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.search(this.state.searchValue)
 
     }
 
@@ -21,7 +28,6 @@ class Search extends React.Component {
     }
 
     componentDidMount() {
-        console.log("Search commponent", queryString.parse(this.props.location.search));
         const val = queryString.parse(this.props.location.search);
         if (val) {
             this.props.searchBooks(val.q)
@@ -37,7 +43,7 @@ class Search extends React.Component {
                     </div>
                     <div className={"border"}>
                     <div className={"form-search"}>
-                    <form className={"example3"}  onSubmit={(e) => { e.preventDefault(); this.search(this.state.searchValue)}} >
+                    <form className={"example3"}  onSubmit={this.handleSubmit} >
                     <input 
                     type="text" 
                     placeholder="Search by Book Title, Author, or ISBN" 

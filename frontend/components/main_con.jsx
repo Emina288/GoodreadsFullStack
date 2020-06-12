@@ -10,14 +10,11 @@ class MainContent extends React.Component {
 
     componentDidMount() {
 
-        console.log("Loading just started")
-
         this.setState(
           { loading: true },
           () => {
             this.props.fetchBooks()
             .then(() => {
-              console.log("Loading is done");
               this.setState({ loading: false });
             });
           }

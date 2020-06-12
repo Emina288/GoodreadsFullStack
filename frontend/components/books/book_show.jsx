@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import ShowNav from "../search/nav_search";
+import HomeNav from "../search/nav_search";
 
 
 class BookShow extends Component {
@@ -8,14 +8,11 @@ class BookShow extends Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchBook(this.props.match.params.bookId);
-  // }
+  componentDidMount() {
+    this.props.fetchBook(this.props.match.params.bookId);
+  }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.history.push(`/search?q=${this.state.searchValue}`)
-}
+
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.bookId !== this.props.match.params.bookId) {
@@ -25,9 +22,15 @@ class BookShow extends Component {
 
   render() {
     const { book } = this.props;
+    if (!book) {
+      return (
+        <div>Loading...</div>
+      )
+    } 
+
     return (
       <section className="book-show">
-        <ShowNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
+        <HomeNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
         <div className={"show-img"}>
           <div>
           <img src={eval(`window.${book.book_url}`)} alt={book.title} width="150" height="256"/>

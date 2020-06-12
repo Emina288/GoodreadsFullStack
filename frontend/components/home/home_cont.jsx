@@ -8,7 +8,6 @@ class HomeCont extends React.Component {
             searchValue: "",
         }
         this.search = this.search.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     search(keyword) {
@@ -16,17 +15,16 @@ class HomeCont extends React.Component {
         this.setState({searchValue: ""})
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.history.push(`/search?q=${this.state.searchValue}`)
-    }
 
     render() {
         return(
 
             <div className="color" >
                 <img src={window.home} width="200" height="95"/>
-                <form className={"example2"}   onSubmit={this.handleSubmit}>
+                <form className={"example2"}  onSubmit={(e) => {
+                            e.preventDefault()
+                            this.search(this.state.searchValue)}
+                        }>
                     <input 
                     type="text" 
                     placeholder="Search books" 
