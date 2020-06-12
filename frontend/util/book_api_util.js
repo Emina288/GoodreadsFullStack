@@ -21,7 +21,7 @@ export const searchBooks = (q) => {
         $.ajax ({
             url: `/api/books?q=${q}`,
             method: "GET",
-            data: { q }
+           
         })
     )
 };
