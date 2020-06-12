@@ -15,6 +15,7 @@ class Api::BooksController < ApplicationController
                     
         else
           @books = Book.all
+        end
       
     end
 
