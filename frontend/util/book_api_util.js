@@ -11,7 +11,8 @@ export const fetchBook = bookId => {
     return (
         $.ajax ({
             url: `/api/books/${bookId}`,
-            method: 'GET'
+            method: 'GET',
+            
         })
     )
 };
@@ -20,7 +21,8 @@ export const searchBooks = (q) => {
     return (
         $.ajax ({
             url: `/api/books?q=${q}`,
-            method: "GET"
+            method: "GET",
+            data: { q }
            
         })
     )

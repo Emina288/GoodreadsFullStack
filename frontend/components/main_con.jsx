@@ -4,23 +4,12 @@ import React from "react";
 class MainContent extends React.Component {
     constructor(props){
         super(props);
-      this.state = { loading: false }
         this.handleClick = this.handleClick.bind(this);
       }
 
     componentDidMount() {
 
-        this.setState(
-          { loading: true },
-          () => {
-            this.props.fetchBooks()
-            .then(() => {
-              this.setState({ loading: false });
-            });
-          }
-        )
-
-        
+       this.props.fetchBooks();
     }
 
     handleClick () {
@@ -29,29 +18,39 @@ class MainContent extends React.Component {
       }
 
     render() {
-        if (this.state.loading) {
+        if (this.props.books.length < 8) {
             return (
                 <span>Getting all books....</span>
             )
         }
 
-        let showContent = false, book1,book2,book3,book4,book5,book6,book7,book8
+        const book1 = this.props.books[0];
+        const book2 = this.props.books[1];
+        const book3 = this.props.books[2];
+        const book7 = this.props.books[6];
 
-        if (this.props.books.length >= 8) {
+        const book4 = this.props.books[3];
+        const book5 = this.props.books[4];
+        const book6 = this.props.books[5];
+        const book8 = this.props.books[7];
 
-          showContent = true;
+        // let showContent = false, book1,book2,book3,book4,book5,book6,book7,book8
 
-           book1 = this.props.books[0];
-           book2 = this.props.books[1];
-           book3 = this.props.books[2];
-           book7 = this.props.books[6];
+        // if (this.props.books.length >= 8) {
+
+          // showContent = true;
+
+          //  book1 = this.props.books[0];
+          //  book2 = this.props.books[1];
+          //  book3 = this.props.books[2];
+          //  book7 = this.props.books[6];
   
-           book4 = this.props.books[3];
-           book5 = this.props.books[4];
-           book6 = this.props.books[5];
-           book8 = this.props.books[7];
+          //  book4 = this.props.books[3];
+          //  book5 = this.props.books[4];
+          //  book6 = this.props.books[5];
+          //  book8 = this.props.books[7];
           
-        }
+        // }
         
         return (
             <div className={"splash-content"}>
@@ -67,8 +66,6 @@ class MainContent extends React.Component {
                     </div>
                 </div>
 
-
-              {showContent &&
               <div className={"content-box"}>
                 <h2>What will you discover?</h2>
                 <div className={"emina"}>
@@ -122,13 +119,6 @@ class MainContent extends React.Component {
                 </div>
                 </div>
             </div>
-            }
-
-            {!showContent && 
-            
-              <p>Oops! Not enough books</p>
-            }
-
             </div>
               
         )
