@@ -1,24 +1,24 @@
-# README
+# Goodreadsfullstack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. Users can view a list of books from our data base, search up books, create bookshelves and add books to them.Each book can be commented and reviewed.
 
-Things you may want to cover:
 
-* Ruby version
+ [Live demo](https://good-reads-full-stack.herokuapp.com/#/)
 
-* System dependencies
+## Backend
+* PostgreSQL
+* Ruby on Rails
 
-* Configuration
+## Frontend
+* React
+* Redux
 
-* Database creation
+## Features
+* Full user authentication (sign-up, login, logout) with security
+* Ability for a demo user to login to check out the site
+* Search functionality, ability to search books up based on the books title, author or isbn
 
-* Database initialization
+## Splash page and search
+* Users can login or signup. Users can search up books even though they are not logged in.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
