@@ -5,13 +5,16 @@ Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. 
 
  [Live demo](https://good-reads-full-stack.herokuapp.com/#/)
 
-## Backend
-* PostgreSQL
-* Ruby on Rails
-
-## Frontend
-* React
-* Redux
+## Technologies 
+* Frontend:
+    React
+    Redux
+    HTML 5
+    CSS 3
+* Backend:
+    Ruby on Rails
+    PostgreSQL
+* Heroku (website hosting)
 
 ## Features
 * Full user authentication (sign-up, login, logout) with security

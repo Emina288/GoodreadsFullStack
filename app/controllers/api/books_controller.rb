@@ -17,6 +17,7 @@ class Api::BooksController < ApplicationController
           @books = Book.all
       
     end
+  end
 
     
       def show

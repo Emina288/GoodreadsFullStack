@@ -1,6 +1,6 @@
 .signup-only-form {
     display: inline-block;
-    height: 440px;
+    height: 465px;
     width: 600px;
     background-color: white;
     padding: 28px 10px 34px 10px;
@@ -42,11 +42,30 @@
     line-height: 18px;
 }
 
+.field-label {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 13px 0 5px 0;
+}
+
+.no-errors {
+    display: none;
+}
+
+.field-div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 25%
+}
+
 .signup-only-boxes {
   width: 300px;
   height: 40px;
   padding: 12px 20px;
-  margin: 8px 80px;
   bottom: 700px;
   border: 1px solid #ccc;
   border-radius: 4px;

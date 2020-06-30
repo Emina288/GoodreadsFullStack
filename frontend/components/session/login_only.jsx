@@ -32,7 +32,7 @@ class LoginOnly extends React.Component {
 
       renderErrors() {
         return(
-          <ul>
+          <ul className={"errors-handle"}>
             {this.props.errors.map((error, i) => (
               <li key={`error-${i}`}>
                 {error}
@@ -81,19 +81,22 @@ class LoginOnly extends React.Component {
               <div className={klass}>
                 {this.renderErrors()}
               </div>
+              <div className={"field-div"}>
+                <label className={"field-label"} for="name">Email address</label>
                 <input type="text"
                   value={this.state.email}
                   onChange={this.handleInput('email')} 
                   placeholder="you@yours.com" 
-                  className={"login-only-boxes"}
-                />
-      
+                  className={"login-only-boxes"}/>
+              </div>
+
+              <div className={"field-div"}>
+                <label className={"field-label"} for="name">Password</label>
                 <input type="password"
                   value={this.state.password}
                   onChange={this.handleInput('password')} 
-                  className={"login-only-boxes"}
-                  />
-      
+                  className={"login-only-boxes"}/>
+              </div>      
                 <button onClick={this.handleSubmit} className={"login-only-btn"}>Sign In!</button>
                 <br/>
                 <br/>
