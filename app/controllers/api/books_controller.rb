@@ -18,6 +18,7 @@ class Api::BooksController < ApplicationController
         end
       
     end
+  end
 
     
       def show

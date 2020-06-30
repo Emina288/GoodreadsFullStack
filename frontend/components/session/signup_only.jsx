@@ -34,17 +34,15 @@ class SignupOnly extends React.Component {
 
       renderErrors() {
         return(
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                <p>{error}</p>
-              </li>
-            ))}
+          <ul className={"errors-handle"}>
+            <li>{this.props.errors[0]}</li>
           </ul>
         );
       }
     
       render() {
+        let a = this.props.errors[0];
+        console.log(a)
         if (this.props.user) {
             return (
                 <div>
@@ -78,26 +76,39 @@ class SignupOnly extends React.Component {
             <div className={klass}>
                 {this.renderErrors()}
               </div>
+                <div className={"field-div"}>
+              <label className={"field-label"} for="name">Name</label>
               <input
+                id="name"
                 type="text"
                 value={this.state.name}
                 onChange={this.handleInput('name')}
                 className="signup-input-boxes" 
                 placeholder="Name"
                 className={"signup-only-boxes"}/>
+              </div>
+                <div className={"field-div"}> 
+              <label className={"field-label"} for="email">Email address</label>
               <input
+                id="email"
                 type="text"
                 value={this.state.email}
                 onChange={this.handleInput('email')}
                 className="signup-input-boxes" 
                 className={"signup-only-boxes"}/>
+              </div>
+
+              <div className={"field-div"}>
+                <label className={"field-label"} for="pass">Password</label>
               <input
+                id="pass"
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')} 
                 className="signup-input-boxes" 
-                className={"signup-only-boxes"}
-                 />
+                className={"signup-only-boxes"}/>
+              </div>
+
               <button onClick={this.handleSubmit} className={"signup-only-btn"}>Sign up</button>
               <br/>
                 <br/>
