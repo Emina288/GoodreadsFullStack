@@ -80,9 +80,11 @@ class HomeNav extends React.Component {
                         <ul>
                         <li className={"nm"}>{user.name}</li>
                     
-                        <li className={"nn"}><a href="https://github.com/Emina288" className={"nn"}>Github</a></li>
-                        <li className={"nn"}>< a href="mailto:eminaramovic@hotmail.com" className={"nn"}>Emina </a></li>
-                        <li className={"nn"}><a href="#" onClick={this.handleClick} className={"nn"}>Sign out! </a></li>
+                            <li className={"nn"}><a href="https://github.com/Emina288" className={"nn"}>GitHub</a></li>
+                            <li className={"nn"}><a href="https://www.linkedin.com/in/emina-ramovic-858835187/" className={"nn"}>LinkedIn</a></li>
+                            <li className={"nn"}><a href="https://angel.co/u/emina-ramovic" className={"nn"}>AngelList</a></li>
+                            <li className={"nn"}>< a href="mailto:eminaramovic@hotmail.com" className={"nn"}>Email me! </a></li>
+                            <li className={"nn"}><a href="#" onClick={this.handleClick} className={"nn"}>Sign out! </a></li>
                         </ul>
                     </div>
                 </div>

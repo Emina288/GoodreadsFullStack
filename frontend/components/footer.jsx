@@ -8,13 +8,13 @@ class Footer extends React.Component {
                     <div className={"footer"}>
                         <div className={"column1"}>
                             <h3>About</h3>
-                            <a href="https://www.linkedin.com/in/emina-ramovic-858835187/">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/emina-ramovic-858835187/">LinkedIn</a>
                             <br/>
-                            <a href="https://github.com/Emina288">Github</a>
+                            <a href="https://github.com/Emina288">GitHub</a>
                             <br/>
                             < a href="mailto:eminaramovic@hotmail.com">Email me </a>
                             <br/>
-                            <a href="https://instagram.com">Instagram</a>
+                        <a href="https://angel.co/u/emina-ramovic">AngelList</a>
                         </div>
 
                         <div className={"column2"}>
