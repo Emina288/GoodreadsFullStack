@@ -75,10 +75,10 @@ class MainContent extends React.Component {
                   Because Emina liked... 
                  </h3>
                  <br/>
-                <img  src={eval(`window.${book1.book_url}`)} alt={book1.title} onClick={() => this.props.history.push(`/books/${book1.id}`)} height="122" width="82"/>
-                <img  src={eval(`window.${book2.book_url}`)} alt={book2.title} onClick={() => this.props.history.push(`/books/${book2.id}`)} height="122" width="82"/>
-                <img  src={eval(`window.${book7.book_url}`)} alt={book7.title} onClick={() => this.props.history.push(`/books/${book7.id}`)} height="122" width="82"/>
-                <img src={window.arr} className={"arr1"} />
+                    <img className={"arr3"} src={eval(`window.${book1.book_url}`)} alt={book1.title} onClick={() => this.props.history.push(`/books/${book1.id}`)} height="122" width="82"/>
+                    <img className={"arr3"} src={eval(`window.${book2.book_url}`)} alt={book2.title} onClick={() => this.props.history.push(`/books/${book2.id}`)} height="122" width="82"/>
+                    <img className={"arr3"} src={eval(`window.${book7.book_url}`)} alt={book7.title} onClick={() => this.props.history.push(`/books/${book7.id}`)} height="122" width="82"/>
+                    <img  src={window.arr} className={"arr1"} />
                 </div>
                 <div>
                 <h3>
@@ -89,7 +89,7 @@ class MainContent extends React.Component {
                 <p className={"da"}>Psychology,
                 <br/> Science,
                 <br/> Nature</p>
-                <img  src={eval(`window.${book3.book_url}`)} alt={book3.title} onClick={() => this.props.history.push(`/books/${book3.id}`)} height="122" width="82"/>
+                    <img className={"arr3"} src={eval(`window.${book3.book_url}`)} alt={book3.title} onClick={() => this.props.history.push(`/books/${book3.id}`)} height="122" width="82"/>
                 </div>
                 </div>
                 </div>
@@ -101,10 +101,10 @@ class MainContent extends React.Component {
                   Because Gloria liked... 
                  </h3>
                  <br/>
-                <img  src={eval(`window.${book4.book_url}`)} alt={book4.title} onClick={() => this.props.history.push(`/books/${book4.id}`)} height="122" width="82"/>
-                <img  src={eval(`window.${book5.book_url}`)} alt={book5.title} onClick={() => this.props.history.push(`/books/${book5.id}`)} height="122" width="82"/>
-                <img  src={eval(`window.${book8.book_url}`)} alt={book8.title} onClick={() => this.props.history.push(`/books/${book8.id}`)} height="122" width="82"/>
-                <img src={window.arr} className={"arr2"} />
+                    <img className={"arr3"} src={eval(`window.${book4.book_url}`)} alt={book4.title} onClick={() => this.props.history.push(`/books/${book4.id}`)} height="122" width="82"/>
+                    <img className={"arr3"} src={eval(`window.${book5.book_url}`)} alt={book5.title} onClick={() => this.props.history.push(`/books/${book5.id}`)} height="122" width="82"/>
+                    <img className={"arr3"} src={eval(`window.${book8.book_url}`)} alt={book8.title} onClick={() => this.props.history.push(`/books/${book8.id}`)} height="122" width="82"/>
+                    <img className={"arr1"} src={window.arr} className={"arr2"} />
                 </div>
                 <div>
                 <h3>
@@ -114,7 +114,7 @@ class MainContent extends React.Component {
                 <p className={"da"}>Decision-making,
                 <br/> Sociology, 
                 <br/> Marketing </p>
-                <img  src={eval(`window.${book6.book_url}`)} alt={book6.title} onClick={() => this.props.history.push(`/books/${book6.id}`)} height="122" width="82"/>
+                    <img className={"arr3"} src={eval(`window.${book6.book_url}`)} alt={book6.title} onClick={() => this.props.history.push(`/books/${book6.id}`)} height="122" width="82"/>
                 </div>
                 </div>
                 </div>

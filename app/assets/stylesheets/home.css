@@ -1,7 +1,7 @@
 .home-nav {
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 40px;
   overflow: visible;
@@ -22,16 +22,16 @@
 .home-books {
     width: 50%;
     display: flex;
- 
     align-items: center;
     font-size: 30px;
 }
 
 .home-books-a {
     text-decoration: none;
+    white-space: pre;
     padding: 0 15px;
     height: 100%;
-    display: block;
+    display: inline-block;
     color: #382110;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 16px;
@@ -201,7 +201,7 @@
 
       .color {
         height: 2000px;
-        width: 2000px;
+        width: 100%;
         background-color:  #9e9e9c14;
       }
 
