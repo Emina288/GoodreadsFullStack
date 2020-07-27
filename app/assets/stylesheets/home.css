@@ -50,18 +50,17 @@
 
 .dropdown-btn {
     font-weight: normal;
-  
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 14px;
     display: inline-block;
     line-height: 1;
-    /* padding: 8px 10.5px 8px 10.5px; */
     height: 33px;
     text-align: center;
     margin-right: 3px;
     border-radius: 50px;
-    /* background-color: #FFFFFF;*/
-    border: 1px solid #D8D8D8; 
+    border: transparent;
+    background-color: transparent;
+    padding: 8px 10.5px 8px 10.5px;
   }
   
   .dropdown-btn:hover, .dropbtn:focus {
@@ -165,7 +164,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 15px;
+        margin: 15px; 
       }
       
       form.example button {

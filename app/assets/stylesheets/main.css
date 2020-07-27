@@ -91,18 +91,6 @@
   margin-right: 40px;
 }
 
-.arr1 {
-  position: absolute;
-  left: 850px;
-  bottom: 220px;
-}
-
-.arr2 {
-  position: absolute;
-  left: 850px;
-  bottom: 20px;
-
-}
 
 .content-box h3 {
   font-size: 12px;
@@ -117,4 +105,7 @@
  
 }
 
+.arrow {
+  margin:50px;
+}
 

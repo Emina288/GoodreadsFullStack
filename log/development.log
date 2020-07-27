@@ -44601,3 +44601,656 @@ Processing by Api::BooksController#index as JSON
 Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2020-07-25 16:24:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 311ms (Views: 309.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:24:18 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (11.5ms)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:24:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 311ms (Views: 310.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:24:57 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (8.1ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:25:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:25:15 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (14.6ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:26:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 310ms (Views: 309.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:26:29 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (11.0ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:27:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 371ms (Views: 370.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:27:19 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (11.9ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:27:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 67ms (Views: 66.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:27:34 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (4.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (16.0ms)
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:28:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 301ms (Views: 299.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:28:05 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (13.1ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-07-25 16:29:55 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "name"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["updated_at", "2020-07-25 20:29:55.549247"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 214ms (Views: 8.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:29:57 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.7ms)
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:30:08 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.2ms)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:31:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 90ms (Views: 89.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:31:14 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (9.7ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:31:25 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.7ms)
+Completed 200 OK in 29ms (Views: 23.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:31:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:31:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:31:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 71ms (Views: 70.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:32:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 64ms (Views: 63.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:32:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 68ms (Views: 67.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:32:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 73ms (Views: 72.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:33:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 65ms (Views: 64.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:35:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 93ms (Views: 92.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:35:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 89ms (Views: 88.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:35:26 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (13.1ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-07-25 16:35:29 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tyhhgRfqZXiRa-39eQ_lyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "G_kufP7Fccuv1CVkf0egaw"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "G_kufP7Fccuv1CVkf0egaw"], ["updated_at", "2020-07-25 20:35:29.321377"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:35:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:35:31 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.7ms)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:36:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 75ms (Views: 74.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:36:17 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (8.0ms)
+Completed 200 OK in 19ms (Views: 13.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:51:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 171ms (Views: 168.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:51:51 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (16.2ms)
+Completed 200 OK in 31ms (Views: 25.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-07-25 16:51:52 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "name"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VH_OozNvCe0o2K4VgIS8Nw"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VH_OozNvCe0o2K4VgIS8Nw"], ["updated_at", "2020-07-25 20:51:53.173797"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.6ms)
+Completed 200 OK in 235ms (Views: 9.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:53:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH_OozNvCe0o2K4VgIS8Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 141ms (Views: 140.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:53:37 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH_OozNvCe0o2K4VgIS8Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 68ms (Views: 67.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:53:58 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.3ms)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:54:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH_OozNvCe0o2K4VgIS8Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 78ms (Views: 77.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:54:30 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (10.1ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:54:47 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (13.9ms)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:54:51 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (20.0ms)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:54:52 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (11.7ms)
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:54:57 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (11.4ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:54:58 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (11.3ms)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-07-25 16:55:04 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VH_OozNvCe0o2K4VgIS8Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "y5-rsU7bVpIphQbew-uEQQ"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "y5-rsU7bVpIphQbew-uEQQ"], ["updated_at", "2020-07-25 20:55:04.567153"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-25 16:55:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 74ms (Views: 73.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-25 16:55:12 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (12.4ms)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-07-26 17:01:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 176ms (Views: 155.0ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-26 17:01:16 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (38.3ms)
+Completed 200 OK in 59ms (Views: 33.8ms | ActiveRecord: 13.5ms)
+
+
+  [1m[36mBookshelf Load (4.5ms)[0m  [1m[34mSELECT "bookshelves".* FROM "bookshelves"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 LIMIT $2[0m  [["title", "Reading"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 LIMIT $2[0m  [["title", "Reading"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  [1m[36mBookshelf Create (12.8ms)[0m  [1m[32mINSERT INTO "bookshelves" ("title", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 53]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBookshelf Load (1.0ms)[0m  [1m[34mSELECT "bookshelves".* FROM "bookshelves"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 LIMIT $2[0m  [["title", "Reading"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 LIMIT $2[0m  [["title", "Reading"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 LIMIT $2[0m  [["title", "Currently reading"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[36mBookshelf Create (0.3ms)[0m  [1m[32mINSERT INTO "bookshelves" ("title", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["title", "Currently reading"], ["user_id", 57]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 AND "bookshelves"."user_id" = $2 LIMIT $3[0m  [["title", "Reading"], ["user_id", 54], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[36mBookshelf Create (0.6ms)[0m  [1m[32mINSERT INTO "bookshelves" ("title", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 54]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBookshelf Load (1.7ms)[0m  [1m[34mSELECT "bookshelves".* FROM "bookshelves"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 AND "bookshelves"."user_id" = $2 LIMIT $3[0m  [["title", "Reading"], ["user_id", 54], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookshelf Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "bookshelves" WHERE "bookshelves"."title" = $1 AND "bookshelves"."user_id" = $2 LIMIT $3[0m  [["title", "Reading"], ["user_id", 57], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[36mBookshelf Create (0.5ms)[0m  [1m[32mINSERT INTO "bookshelves" ("title", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["title", "Reading"], ["user_id", 57]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBookshelf Load (0.8ms)[0m  [1m[34mSELECT "bookshelves".* FROM "bookshelves"[0m
+Started GET "/" for ::1 at 2020-07-27 12:31:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 192ms (Views: 154.6ms | ActiveRecord: 36.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-07-27 12:33:37 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "name"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "1WmHV9q4nbao4W78q_w3TQ"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "1WmHV9q4nbao4W78q_w3TQ"], ["updated_at", "2020-07-27 16:33:37.887797"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (2.9ms)
+Completed 200 OK in 255ms (Views: 11.0ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-27 12:33:41 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (27.9ms)
+Completed 200 OK in 50ms (Views: 28.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-27 12:33:43 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (14.4ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-07-27 12:33:45 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1WmHV9q4nbao4W78q_w3TQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@demo.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "s7cewMoR2GoytujeQveoBw"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "s7cewMoR2GoytujeQveoBw"], ["updated_at", "2020-07-27 16:33:45.544619"], ["id", 57]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-07-27 12:33:47 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 101ms (Views: 100.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/books" for ::1 at 2020-07-27 12:33:47 -0400
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/index.json.jbuilder (16.7ms)
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 1.3ms)
+
+
