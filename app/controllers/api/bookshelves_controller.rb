@@ -9,7 +9,7 @@ class Api::BookshelvesController < ApplicationController
 
     def create
         @bookshelf = Bookshelf.new(bookshelf_params);
-        if @bookshelf.save && (@bookshelf.title != "All" && @bookshelf.title != "Read" && @bookshelf.title != "Currently")
+        if @bookshelf.save
             render :show
         else 
             render json: @bookshelf.errors.full_messages, status: 422
