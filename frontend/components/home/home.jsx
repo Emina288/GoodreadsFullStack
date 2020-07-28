@@ -6,6 +6,7 @@ import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 import { login, logout, signup } from "../../actions/session_actions";
 import { searchBooks } from "../../actions/book_actions";
+import { fetchBookshelves } from "../../actions/bookshelf_action";
 
 class HomeWithoutLoginProps extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class HomeWithoutLoginProps extends React.Component {
                     <HomeNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
                 </header>
 
-                    <HomeCont logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
+                    <HomeCont logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history} bookshelves={this.props.bookshelves} fetchBookshelves={this.props.fetchBookshelves}/>
             </div>
         )
     }
@@ -28,14 +29,16 @@ class HomeWithoutLoginProps extends React.Component {
 
 const mapStateToProps = (state) => ({
   user: state.entities.users[state.session.id],
-  session: state.session
+  session: state.session,
+  bookshelves: Object.values(state.bookshelves)
 });
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   login: user => dispatch(login(user)),
   signup: user => dispatch(signup(user)),
-  searchBooks: keyword => dispatch(searchBooks(keyword))
+  searchBooks: keyword => dispatch(searchBooks(keyword)),
+  fetchBookshelves: () => dispatch(fetchBookshelves())
 });
 
 const HomeWithLoginProps = withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeWithoutLoginProps));

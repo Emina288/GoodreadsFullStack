@@ -57,7 +57,7 @@ class HomeNav extends React.Component {
 
                 <div className={"home-books"}>
                     <a href="/#" className={"home-books-a"}>Home</a>
-                    <a href="#/books" className={"home-books-a"}>My Books</a>
+                    <a href="#/bookshelves" className={"home-books-a"}>My Books</a>
                     <a  href="#/search" className={"home-books-a"}>Browse</a>
                 </div>
 

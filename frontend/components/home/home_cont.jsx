@@ -11,6 +11,10 @@ class HomeCont extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchBookshelves();
+    }
+
     search(keyword) {
         this.props.searchBooks(keyword);
         this.setState({searchValue: ""})
@@ -23,6 +27,22 @@ class HomeCont extends React.Component {
 
 
     render() {
+        if (this.props.bookshelves.length === 0) {
+            return (
+                <span>Getting all bookshelves....</span>
+            )
+        }
+
+        const bookshelfList = this.props.bookshelves.map(bookshelf => {
+            if (bookshelf.user_id === this.props.user.id) {
+                return (
+                    <li key={bookshelf.id}>
+                    <a className="shelf-item" href="#/bookshelves">{bookshelf.title}</a>
+                    </li>
+                )
+            }
+        });
+
         return(
 
             <div className="color" >
@@ -38,7 +58,8 @@ class HomeCont extends React.Component {
                     />
                     <button type="submit" ><i className={"fa fa-search"}> </i></button>
                 </form>
-                <BookshelfIndexContainer />
+                <h3>Bookshelves</h3>
+                <div>{bookshelfList}</div>
            </div>
         )
     }

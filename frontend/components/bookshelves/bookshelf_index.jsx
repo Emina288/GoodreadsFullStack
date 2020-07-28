@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import BookshelfIndexItem from './bookshelf_index_item';
+import HomeNav from '../home/home_nav';
 
 
 class BookshelfIndex extends Component {
@@ -24,7 +25,7 @@ class BookshelfIndex extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.addBookshelf({user_id:this.props.current.id, title: this.state.title})
+        this.props.addBookshelf({user_id:this.props.user.id, title: this.state.title})
         setTimeout(function () { window.location.reload(); }, 500);
 
     }
@@ -46,13 +47,17 @@ class BookshelfIndex extends Component {
         }
 
         const bookshelfList = this.props.bookshelves.map(bookshelf => {
-            if(bookshelf.user_id === this.props.current.id) {
+            if(bookshelf.user_id === this.props.user.id) {
             return <BookshelfIndexItem key={bookshelf.id} bookshelf={bookshelf} history={this.props.history} />
             }
         });
 
         return (
             <div>
+                <header>
+                    <HomeNav logout={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
+                </header>
+
                 <div>
                     <a className="shelf-item" href="/#">All</a>
                     {bookshelfList}
