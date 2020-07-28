@@ -1,5 +1,5 @@
 import React from "react";
-import BookIndexContainer from "../books/book_index_container";
+import BookshelfIndexContainer from "../bookshelves/bookshelf_index_container";
 
 class HomeCont extends React.Component {
     constructor(props) {
@@ -38,6 +38,7 @@ class HomeCont extends React.Component {
                     />
                     <button type="submit" ><i className={"fa fa-search"}> </i></button>
                 </form>
+                <BookshelfIndexContainer />
            </div>
         )
     }

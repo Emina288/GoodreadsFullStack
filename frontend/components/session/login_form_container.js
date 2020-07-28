@@ -13,6 +13,7 @@ import {
 const mapStateToProps = (state, ownProps) => {
     return {
         errors: state.errors.session,
+        current:state.session
     }
 }
 

@@ -10,7 +10,7 @@ class Api::BookshelvesController < ApplicationController
     def create
         @bookshelf = Bookshelf.new(bookshelf_params);
         if @bookshelf.save
-            render :show
+            render :index
         else 
             render json: @bookshelf.errors.full_messages, status: 422
         end
@@ -18,7 +18,7 @@ class Api::BookshelvesController < ApplicationController
 
     def destroy 
         @bookshelf = Bookshelf.find(params[:id])
-           if (@bookshelf.title != "All" && @bookshelf.title != "Read" && @bookshelf.title != "Want to Read" && @bookshelf.title != "Currently Reading")
+           if (@bookshelf && @bookshelf.title != "All" && @bookshelf.title != "Read" && @bookshelf.title != "Want to Read" && @bookshelf.title != "Currently Reading")
             
             @bookshelf.destroy 
             render :index

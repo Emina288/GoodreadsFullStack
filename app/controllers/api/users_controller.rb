@@ -3,6 +3,13 @@ class Api::UsersController < ApplicationController
             @user = User.new(user_params)
         
             if @user.save
+              bookshelf1 = {user_id: @user.id, title: "Read"};
+              Bookshelf.create(bookshelf1)
+              bookshelf2 = {user_id: @user.id, title: "Want to Read"};
+              Bookshelf.create(bookshelf2)
+              bookshelf3 = {user_id: @user.id, title: "Currently Reading"};
+              Bookshelf.create(bookshelf3)
+
               log_in!(@user)
               render "api/users/show"
             else

@@ -10,16 +10,16 @@ class SignupOnly extends React.Component {
         this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
 
       }
-    
+
       handleInput(type) {
         return (e) => {
           this.setState({ [type]: e.target.value });
         }
       }
-    
       handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state)
+
       }
 
       handleSubmitDemo(e) {
