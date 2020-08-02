@@ -16,6 +16,7 @@ import BookShowContainer from "./books/book_show_container";
 import AuthorShowContainer from "./authors/author_show_container";
 import SearchContainer from "./search/search_container";
 import BookshelfIndexContainer from "./bookshelves/bookshelf_index_container";
+import BookshelfShowContainer from "./bookshelves/bookshelf_show_container";
 
 const App = () => (
   <div>
@@ -28,6 +29,7 @@ const App = () => (
     <AuthRoute exact path="/login" component={LoginOnlyContainer} />
     <ProtectedRoute exact path="/home" component={HomeContainer}/>
     <ProtectedRoute exact path="/bookshelves" component={BookshelfIndexContainer} />
+    <ProtectedRoute exac path="/bookshelves/:bookshelfId" component={BookshelfShowContainer} />
   </div>
 );
 

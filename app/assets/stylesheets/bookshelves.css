@@ -10,3 +10,16 @@
     text-decoration: none;
     color: #00635d;
 }
+
+.shelf-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.book-shelf {
+    display: none;
+}
+
+.shelf-book {
+    display: block;
+    float: right;
+}

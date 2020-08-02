@@ -11,4 +11,8 @@ class Bookshelf < ApplicationRecord
     has_many :books,
     through: :bookings,
     source: :book
+
+    def books_on_shelf 
+        books.all
+    end
 end

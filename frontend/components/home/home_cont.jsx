@@ -12,7 +12,7 @@ class HomeCont extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchBookshelves();
+        this.props.fetchBookshelves()
     }
 
     search(keyword) {
@@ -27,13 +27,7 @@ class HomeCont extends React.Component {
 
 
     render() {
-        if (this.props.bookshelves.length === 0) {
-            return (
-                <span>Getting all bookshelves....</span>
-            )
-        }
-
-        const bookshelfList = this.props.bookshelves.map(bookshelf => {
+        const bookshelfList = this.props.user.bookshelves.map(bookshelf => {
             if (bookshelf.user_id === this.props.user.id) {
                 return (
                     <li key={bookshelf.id}>

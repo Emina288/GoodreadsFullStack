@@ -1,6 +1,5 @@
 import React from "react";
 import BookIndexContainer from "../books/book_index_container";
-import LoginFormContainer from "../session/login_form_container";
 import Footer from "../footer";
 import SearchNav from "./nav_search";
 // import queryString from 'query-string'

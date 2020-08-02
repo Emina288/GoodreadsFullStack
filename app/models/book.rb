@@ -20,4 +20,12 @@ class Book < ApplicationRecord
     has_many :books_and_user
 
     has_many :users, through: :books_and_user
+
+    has_many :bookings,
+    foreign_key: :book_id,
+    class_name: :Booking
+
+    has_many :bookshelves,
+    through: :bookings,
+    source: :bookshelf
 end

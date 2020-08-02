@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 
 import BookshelfIndexItem from './bookshelf_index_item';
 import HomeNav from '../home/home_nav';
+import Footer from '../footer';
 
 
 class BookshelfIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {title: "", klass1: "class1", klass2: "class2"}
+        this.state = {title: "", klass1: "class1", klass2: "class2", bookshelves: this.props.user.bookshelves}
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.toggle = this.toggle.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.fetchBookshelves();
     }
 
     handleInput() {
@@ -23,11 +20,15 @@ class BookshelfIndex extends Component {
         }
     };
 
+    componentDidMount() {
+        this.props.fetchBookshelves();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.addBookshelf({user_id:this.props.user.id, title: this.state.title})
-        setTimeout(function () { window.location.reload(); }, 500);
-
+        const newList = [...this.state.bookshelves, { user_id: this.props.user.id, title: this.state.title }]
+        this.setState({title: "", bookshelves: newList})
     }
 
     toggle(e) {
@@ -40,17 +41,22 @@ class BookshelfIndex extends Component {
     }
 
     render() {
-        if (this.props.bookshelves.length === 0) {
-            return (
-                <span>Getting all bookshelves....</span>
-            )
-        }
-
-        const bookshelfList = this.props.bookshelves.map(bookshelf => {
-            if(bookshelf.user_id === this.props.user.id) {
-            return <BookshelfIndexItem key={bookshelf.id} bookshelf={bookshelf} history={this.props.history} />
+        const bookshelfList = this.state.bookshelves.map(bookshelf => {
+            if (!this.props.bookshelves) {
+                return "Loading..."
+            } else {
+            const books = this.props.bookshelves[bookshelf.id];
+            if (books) {
+                   return (
+                     <BookshelfIndexItem
+                       key={bookshelf.id}
+                       bookshelf={bookshelf}
+                       history={this.props.history}
+                       books={books.books_on_shelf}
+                     />
+                   );
             }
-        });
+        }});
 
         return (
             <div>
@@ -73,6 +79,7 @@ class BookshelfIndex extends Component {
                      />
                     <button onClick={this.handleSubmit}>add</button>
                 </form>
+                <Footer />
             </div>
         )
     }

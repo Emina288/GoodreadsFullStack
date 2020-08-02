@@ -42,7 +42,6 @@ class SignupOnly extends React.Component {
     
       render() {
         let a = this.props.errors[0];
-        console.log(a)
         if (this.props.user) {
             return (
                 <div>

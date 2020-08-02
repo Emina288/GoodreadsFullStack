@@ -45,8 +45,6 @@ class HomeNav extends React.Component {
 
     render() {
         const user = this.props.user;
-    
-
         return(
             <div className={"home-nav"}> 
                 <div className={"home-title"}>

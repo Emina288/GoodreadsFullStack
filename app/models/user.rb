@@ -22,6 +22,10 @@ class User < ApplicationRecord
 
     has_many :books_and_user
 
+    has_many :bookshelves,
+    foreign_key: :user_id,
+    class_name: :Bookshelf
+
     has_many :books, through: :books_and_user
 
     def password=(password)

@@ -30,15 +30,15 @@ class HomeWithoutLoginProps extends React.Component {
 const mapStateToProps = (state) => ({
   user: state.entities.users[state.session.id],
   session: state.session,
-  bookshelves: Object.values(state.bookshelves)
+  bookshelves: state.bookshelves
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
-  login: user => dispatch(login(user)),
-  signup: user => dispatch(signup(user)),
-  searchBooks: keyword => dispatch(searchBooks(keyword)),
-  fetchBookshelves: () => dispatch(fetchBookshelves())
+  login: (user) => dispatch(login(user)),
+  signup: (user) => dispatch(signup(user)),
+  searchBooks: (keyword) => dispatch(searchBooks(keyword)),
+  fetchBookshelves: () => dispatch(fetchBookshelves()),
 });
 
 const HomeWithLoginProps = withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeWithoutLoginProps));

@@ -1,6 +1,6 @@
 class Api::BookshelvesController < ApplicationController
     def index
-        @bookshelves = Bookshelf.all;
+        @bookshelves = Bookshelf.where(user_id: current_user.id);
     end
 
     def show
@@ -10,7 +10,7 @@ class Api::BookshelvesController < ApplicationController
     def create
         @bookshelf = Bookshelf.new(bookshelf_params);
         if @bookshelf.save
-            render :index
+            render '/api/bookshelves/show'
         else 
             render json: @bookshelf.errors.full_messages, status: 422
         end

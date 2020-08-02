@@ -26,3 +26,11 @@ export const deleteBookshelf = (bookshelfId) => {
       method: "DELETE",
     });
 };
+
+export const createBooking = (booking) => {
+  return $.ajax({
+    url: "api/bookings",
+    method: "POST",
+    data: { booking },
+  });
+};

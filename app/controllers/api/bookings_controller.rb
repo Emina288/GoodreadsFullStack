@@ -1,18 +1,15 @@
 class Api::BookingsController < ApplicationController
+  def index 
+    @booking = Booking.all
+  end
 
     def create
-        
-      end
       @booking = Booking.new(booking_params)
         if @booking.save
-          render '/api/bookshelves/show'
+          render :create
         else
           render json: @booking.errors.full_messages, status: 422
         end
-        
-    end
-
-    def destroy 
         
     end
 
