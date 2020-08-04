@@ -14,10 +14,10 @@ class BookIndexItem extends React.Component {
 
   render() {
     const { book } = this.props;
+    console.log(book)
     return (
       <div className={"book-item"}>
         <div className={"item-img"}>
-          <div>
             <img
               src={eval(`window.${book.book_url}`)}
               alt={book.title}
@@ -26,10 +26,11 @@ class BookIndexItem extends React.Component {
               height="75"
             />
           </div>
-          <div className={"item-title"}>
+          <div>
             <h2>{book.title}</h2>
-            <h3>by {book.writer}</h3>
           </div>
+          <div>
+            <h3>{book.writer}</h3>
         </div>
       </div>
     );

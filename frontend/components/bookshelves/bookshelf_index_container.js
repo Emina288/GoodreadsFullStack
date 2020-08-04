@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import BookshelfIndex from "./bookshelf_index";
 import { addBookshelf, fetchBookshelves } from "../../actions/bookshelf_action";
 import { logout } from "../../actions/session_actions";
-import { searchBooks } from "../../actions/book_actions";
+import { searchBooks, fetchBooks } from "../../actions/book_actions";
 
 const mapStateToProps = (state) => ({
   user: state.entities.users[state.session.id],
@@ -15,7 +15,8 @@ const mapDispatchToProps = (dispatch) => ({
   addBookshelf: (bookshelf) => dispatch(addBookshelf(bookshelf)),
   logout: () => dispatch(logout()),
   searchBooks: (keyword) => dispatch(searchBooks(keyword)),
-  fetchBookshelves: () => dispatch(fetchBookshelves())
+  fetchBookshelves: () => dispatch(fetchBookshelves()),
+  fetchBooks: () => dispatch(fetchBooks())
 });
 
 export default withRouter(

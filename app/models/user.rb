@@ -21,12 +21,14 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token!
 
     has_many :books_and_user
+    
+    has_many :reviews, 
+    foreign_key: user_id,
+    class_name: :Review
 
     has_many :bookshelves,
     foreign_key: :user_id,
     class_name: :Bookshelf
-
-    has_many :books, through: :books_and_user
 
     def password=(password)
         @password = password

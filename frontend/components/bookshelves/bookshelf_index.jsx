@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import BookshelfIndexItem from './bookshelf_index_item';
+import BookIndexItem from "../books/book_index_item";
 import HomeNav from '../home/home_nav';
 import Footer from '../footer';
 
@@ -22,6 +23,7 @@ class BookshelfIndex extends Component {
 
     componentDidMount() {
         this.props.fetchBookshelves();
+        this.props.fetchBooks();
     }
 
     handleSubmit(e) {
@@ -41,12 +43,14 @@ class BookshelfIndex extends Component {
     }
 
     render() {
+        const bookList = {};
         const bookshelfList = this.state.bookshelves.map(bookshelf => {
             if (!this.props.bookshelves) {
                 return "Loading..."
             } else {
             const books = this.props.bookshelves[bookshelf.id];
             if (books) {
+                  books.books_on_shelf.map((book) => (bookList[book.id] = book));
                    return (
                      <BookshelfIndexItem
                        key={bookshelf.id}
@@ -58,30 +62,52 @@ class BookshelfIndex extends Component {
             }
         }});
 
-        return (
-            <div>
-                <header>
-                    <HomeNav logout={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
-                </header>
+        console.log(bookList)
 
+        return (
+          <div>
+            <header>
+              <HomeNav
+                logout={this.props.logout}
+                user={this.props.user}
+                searchBooks={this.props.searchBooks}
+                history={this.props.history}
+              />
+            </header>
+            <div>
+              <div>
                 <div>
-                    <a className="shelf-item" href="/#">All</a>
-                    {bookshelfList}
+                  <h2>My Books</h2>
+                  <a className="shelf-item" href="/#">
+                    All({Object.values(bookList).length})
+                  </a>
+                  {bookshelfList}
                 </div>
-                <button onClick={this.toggle} className={this.state.klass1}>Add shelf</button>
+                <button onClick={this.toggle} className={this.state.klass1}>
+                  Add shelf
+                </button>
                 <form action="" className={this.state.klass2}>
-                    <label for="shelf">Add a Shelf:</label>
-                    <input
-                     id="shelf" 
-                     type="text" 
-                     value={this.state.title}
-                     onChange={this.handleInput()} 
-                     />
-                    <button onClick={this.handleSubmit}>add</button>
+                  <label for="shelf">Add a Shelf:</label>
+                  <input
+                    id="shelf"
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.handleInput()}
+                  />
+                  <button onClick={this.handleSubmit}>add</button>
                 </form>
-                <Footer />
+              </div>
+              <div>
+                <ul className="shelf-book">
+                  {Object.values(bookList).map((book) => {
+                    return <BookIndexItem book={book} history={this.props.history} />;
+                  })}
+                </ul>
+              </div>
             </div>
-        )
+            <Footer />
+          </div>
+        );
     }
 }
 

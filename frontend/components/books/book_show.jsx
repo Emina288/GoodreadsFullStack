@@ -25,19 +25,22 @@ class BookShow extends Component {
     this.props.fetchBook(this.props.match.params.bookId);
     this.props.fetchBookshelves();
     const booking = this.props.book.bookshelves;
+    console.log(booking[0].title,"hii")
     if (booking.length !== 0) {
       this.setState({ btnClass: "want2" });
+      this.setState({ btnName: "Read" });
       booking.forEach((shelfing) => {
         if (shelfing.title === "Want to Read") {
           this.setState({ btnName: "Want to Read" });
         } else if (shelfing.title === "Currently Reading") {
           this.setState({ btnName: "Currently Reading" });
-        } else {
+        } else if (shelfing.title === "Read") {
           this.setState({ btnName: "Read" });
         }
       });
     }
   }
+
 
   handleBtn(e) {
     e.preventDefault();
@@ -85,6 +88,26 @@ class BookShow extends Component {
     this.setState({ btnName: "Read", btnClass: "want2" });
     const shelves = Object.values(this.state.bookshelves);
     const arr = [];
+    const arr1 = [];
+    shelves.map((shelf) => {
+      if (shelf.user_id === this.props.user.id && shelf.title === title) {
+        arr.push(shelf);
+      }
+      if (shelf.user_id === this.props.user.id && shelf.title === "Read") {
+        arr1.push(shelf);
+      }
+    });
+    const booking = { book_id: this.props.book.id, bookshelf_id: arr[0].id };
+    const booking1 = { book_id: this.props.book.id, bookshelf_id: arr1[0].id };
+    this.props.addBooking(booking);
+    this.props.addBooking(booking1);
+  }
+
+  handleClick(title) {
+    this.setState({ btnName: title, btnClass: "want2" });
+    const shelves = Object.values(this.state.bookshelves);
+    const arr = [];
+    const arr2 = [];
     shelves.map((shelf) => {
       if (shelf.user_id === this.props.user.id && shelf.title === title) {
         arr.push(shelf);
@@ -92,6 +115,7 @@ class BookShow extends Component {
     });
     const booking = { book_id: this.props.book.id, bookshelf_id: arr[0].id };
     this.props.addBooking(booking);
+    this.setState({btnName: title})
   }
 
   render() {
@@ -154,26 +178,26 @@ class BookShow extends Component {
                 <div className={this.state.klass}>
                   <ul>
                     <div>
-                      <li className={"nn2"}>
-                        <a href="https://github.com/Emina288" className={"nn2"}>
-                          Read
-                        </a>
+                      <li
+                        className={"nn2"}
+                        onClick={this.handleClick.bind(this, "Read")}
+                      >
+                        Read
                       </li>
-                      <li className={"nn2"}>
-                        <a
-                          href="https://www.linkedin.com/in/emina-ramovic-858835187/"
-                          className={"nn2"}
-                        >
-                          Currently Reading
-                        </a>
+                      <li
+                        className={"nn2"}
+                        onClick={this.handleClick.bind(
+                          this,
+                          "Currently Reading"
+                        )}
+                      >
+                        Currently Reading
                       </li>
-                      <li className={"nn2"}>
-                        <a
-                          href="https://angel.co/u/emina-ramovic"
-                          className={"nn2"}
-                        >
-                          Want to Read
-                        </a>
+                      <li
+                        className={"nn2"}
+                        onClick={this.handleClick.bind(this, "Want to Read")}
+                      >
+                        Want to Read
                       </li>
                     </div>
                     <div>
