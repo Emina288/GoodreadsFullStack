@@ -44,11 +44,15 @@ class BookshelfIndex extends Component {
 
     render() {
         const bookList = {};
+         if (!this.state.bookshelves) {
+           return "Loading...";
+         } 
         const bookshelfList = this.state.bookshelves.map(bookshelf => {
             if (!this.props.bookshelves) {
                 return "Loading..."
             } else {
             const books = this.props.bookshelves[bookshelf.id];
+            console.log(books, "hey")
             if (books) {
                   books.books_on_shelf.map((book) => (bookList[book.id] = book));
                    return (
@@ -61,8 +65,6 @@ class BookshelfIndex extends Component {
                    );
             }
         }});
-
-        console.log(bookList)
 
         return (
           <div>

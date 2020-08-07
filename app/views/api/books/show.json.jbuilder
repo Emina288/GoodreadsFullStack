@@ -1,5 +1,5 @@
 json.book do
-  json.extract! @book, :id, :title, :isbn, :author_id, :description, :gender, :writer, :bookshelves, :reviews
+  json.extract! @book, :id, :title, :isbn, :author_id, :description, :gender, :writer, :bookshelves, :reviews, :reviewsUser
   begin
     json.book_url asset_path("/#{@book.book_url}")
   rescue

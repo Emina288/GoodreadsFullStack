@@ -29,7 +29,14 @@ class Book < ApplicationRecord
     through: :bookings,
     source: :bookshelf
 
-    has_many :reviews, 
-    foreign_key: book_id,
-    class_name: :Review
+    has_many :reviews
+
+    def reviewsUser
+        arr = {}
+        reviews.all.each do |review|
+            arr[review.id] = review.user 
+        end
+
+        return arr
+    end
 end

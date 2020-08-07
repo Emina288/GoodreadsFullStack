@@ -1,0 +1,78 @@
+.book-reviews {
+    display: block;
+}
+
+.rating {
+  overflow: hidden;
+  vertical-align: bottom;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+}
+
+.rating > input {
+  opacity: 0;
+  margin-right: -100%;
+}
+
+.rating > label {
+  position: relative;
+  display: block;
+  float: right;
+  background: url('grey.png');
+  background-size: 30px 30px;
+
+}
+
+.rating > label:before {
+  display: block;
+  opacity: 0;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: url('yellow.png');
+  background-size: 30px 30px;
+  transition: opacity 0.2s linear;
+   cursor: pointer;
+}
+
+.rating > label:hover:before,  .rating > label:hover ~ label:before,  .rating:not(:hover) > :checked ~ label:before { opacity: 3; }
+
+
+.review-edit-book-review-line1{
+    display: flex;
+    margin-top: 10px;
+}
+
+.review-edit-book-review-line1-myreview {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.review-submit{
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    cursor: pointer;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+
+.review-edit-rating {
+  display: inline-block;
+}
+.review-edit-rating * {
+  float: right;
+}
+/* input[type=radio] {
+  display: none; */
+label{
+    color: #D6D6D6;
+}
+input[type=radio]:checked ~ label {
+  color: #F5A524;
+}

@@ -9,7 +9,7 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
 
         if @review.save
-            render :show
+            render :index
         end
     end
 

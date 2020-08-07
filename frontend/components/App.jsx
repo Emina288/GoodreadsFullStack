@@ -17,6 +17,7 @@ import AuthorShowContainer from "./authors/author_show_container";
 import SearchContainer from "./search/search_container";
 import BookshelfIndexContainer from "./bookshelves/bookshelf_index_container";
 import BookshelfShowContainer from "./bookshelves/bookshelf_show_container";
+import RatingForm from "./reviews/rating_form";
 
 const App = () => (
   <div>
@@ -30,6 +31,8 @@ const App = () => (
     <ProtectedRoute exact path="/home" component={HomeContainer}/>
     <ProtectedRoute exact path="/bookshelves" component={BookshelfIndexContainer} />
     <ProtectedRoute exac path="/bookshelves/:bookshelfId" component={BookshelfShowContainer} />
+    <ProtectedRoute exact path="/rating" component={RatingForm} />
+    
   </div>
 );
 

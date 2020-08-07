@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import HomeNav from "../search/nav_search";
+import ReviewIndex from "../reviews/review_index";
+import ReviewForm from "../reviews/review_form";
 
 class BookShow extends Component {
   constructor(props) {
@@ -22,10 +24,8 @@ class BookShow extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBook(this.props.match.params.bookId);
-    this.props.fetchBookshelves();
+    this.props.fetchBooks().then(() => {
     const booking = this.props.book.bookshelves;
-    console.log(booking[0].title,"hii")
     if (booking.length !== 0) {
       this.setState({ btnClass: "want2" });
       this.setState({ btnName: "Read" });
@@ -39,6 +39,7 @@ class BookShow extends Component {
         }
       });
     }
+  });
   }
 
 
@@ -119,13 +120,15 @@ class BookShow extends Component {
   }
 
   render() {
-    const { book } = this.state;
-    if (!book) {
-      return <div>Loading...</div>;
-    }
+    if (this.props.books.length === 0 || !this.props.book) {
+      return (
+        <div>Loading...</div>
+      )
+    } else {
+    const { book, user } = this.props;
+    console.log(book, user)
 
     const title = ["Read", "Currently Reading", "Want to Read"];
-
     const bookshelfList = this.state.bookshelves.map((bookshelf) => {
       if (
         bookshelf.user_id === this.props.user.id &&
@@ -140,7 +143,7 @@ class BookShow extends Component {
             {bookshelf.title}
           </li>
         );
-      }
+      } 
     });
 
     return (
@@ -230,8 +233,19 @@ class BookShow extends Component {
             <p>{book.description}</p>
           </div>
         </div>
+        <div className="book-reviews">
+          <h2>COMMUNITY REVIEWS</h2>
+          <ReviewForm
+            book={book}
+            user={this.props.user}
+            createReview={this.props.createReview}
+            history={this.props.history}
+          />
+          <ReviewIndex book={book} deleteReview={this.props.deleteReview} />
+        </div>
       </section>
     );
+                        }
   }
 }
 
