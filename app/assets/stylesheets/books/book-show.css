@@ -57,6 +57,7 @@
   font-size: 14px;
   color: #333333;
   padding: 0 8px;
+  cursor: pointer;
 }
 
 .show2 {
@@ -99,7 +100,7 @@
 .shelf-list {
     list-style: none;
     text-decoration: none;
-
+    cursor: pointer;
 }
 
 .want2 {
@@ -116,8 +117,10 @@
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-left: 5%;
     border: 1px solid #dddddd;
+}
 
-
+.item-img {
+    cursor: pointer;
 }
 
 

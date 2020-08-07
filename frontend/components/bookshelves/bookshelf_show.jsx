@@ -13,7 +13,8 @@ class BookshelfShow extends Component {
       title: "",
       klass1: "class1",
       klass2: "class2",
-      bookshelves: this.props.user.bookshelves,
+      bookshelves: [],
+      bookshelf: this.props.bookshelf
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +28,9 @@ class BookshelfShow extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBookshelves();
+    this.props.fetchBookshelves().then(() => {
+      this.setState({bookshelves: Object.values(this.props.bookshelves)})
+    });
   }
 
   handleSubmit(e) {
@@ -38,7 +41,7 @@ class BookshelfShow extends Component {
     });
     const newList = [
       ...this.state.bookshelves,
-      { user_id: this.props.user.id, title: this.state.title },
+      { user_id: this.props.user.id, title: this.state.title, books_on_shelf: []},
     ];
     this.setState({ title: "", bookshelves: newList });
   }
@@ -54,24 +57,25 @@ class BookshelfShow extends Component {
 
   render() {
     const bookList = {};
-    const bookshelfList = this.state.bookshelves.map((bookshelf) => {
-      if (!this.props.bookshelves) {
-        return "Loading...";
-      } else {
-        const books = this.props.bookshelves[bookshelf.id];
-        if (books) {
-          books.books_on_shelf.map((book) => (bookList[book.id] = book));
+    if (this.state.bookshelves.length === 0) {
+      return (
+        <div>Loading...</div>
+      )
+    } else {
+    const {bookshelves} = this.state
+    const bookshelfList = bookshelves.map((bookshelf) => {
+        const books = bookshelf.books_on_shelf;
+          books.map((book) => (bookList[book.id] = book));
           return (
             <BookshelfIndexItem
               key={bookshelf.id}
               bookshelf={bookshelf}
               history={this.props.history}
-              books={books.books_on_shelf}
+              books={books}
             />
           );
         }
-      }
-    });
+    );
     const booksShelf = this.props.bookshelf.books_on_shelf;
     return (
       <div>
@@ -86,7 +90,7 @@ class BookshelfShow extends Component {
         <div>
           <div>
             <div>
-              <h2>My Books: {this.props.bookshelf.title}</h2>
+              <h2>My Books: {this.props.bookshelf.title} ({this.props.bookshelf.books_on_shelf.length})</h2>
               <a className="shelf-item" href="#/bookshelves">
                 All({Object.values(bookList).length})
               </a>
@@ -109,14 +113,17 @@ class BookshelfShow extends Component {
           <div>
             <ul className="shelf-book">
               {booksShelf.map((book) => {
-                return <BookIndexItem book={book} />;
+                return (
+                  <BookIndexItem book={book} history={this.props.history} />
+                );
               })}
             </ul>
           </div>
         </div>
         <Footer />
       </div>
-    );
+      );
+    }
   }
 }
 

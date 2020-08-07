@@ -27,15 +27,26 @@ class HomeCont extends React.Component {
 
 
     render() {
-        const bookshelfList = this.props.user.bookshelves.map(bookshelf => {
-            if (bookshelf.user_id === this.props.user.id) {
+        const bookshelves = Object.values(this.props.bookshelves) 
+        if (!bookshelves) {
+            return (
+                <div>Loading...</div>
+            )
+        }
+        const bookshelfList = bookshelves.map(bookshelf => {
                 return (
-                    <li key={bookshelf.id}>
-                    <a className="shelf-item" href="#/bookshelves">{bookshelf.title}</a>
-                    </li>
-                )
-            }
+                  <li key={bookshelf.id}>
+                    <a
+                      className="shelf-item"
+                      href={`#/bookshelves/${bookshelf.id}`}
+                    >
+                      {bookshelf.books_on_shelf.length} {bookshelf.title}
+                    </a>
+                  </li>
+                );
         });
+
+        console.log(this.props.bookshelves)
 
         return(
 
@@ -53,7 +64,7 @@ class HomeCont extends React.Component {
                     <button type="submit" ><i className={"fa fa-search"}> </i></button>
                 </form>
                 <h3>Bookshelves</h3>
-                <div>{bookshelfList}</div>
+                <div className={"home-shelf"}>{bookshelfList}</div>
            </div>
         )
     }

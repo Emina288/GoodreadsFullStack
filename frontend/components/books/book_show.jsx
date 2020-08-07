@@ -126,8 +126,6 @@ class BookShow extends Component {
       )
     } else {
     const { book, user } = this.props;
-    console.log(book, user)
-
     const title = ["Read", "Currently Reading", "Want to Read"];
     const bookshelfList = this.state.bookshelves.map((bookshelf) => {
       if (
