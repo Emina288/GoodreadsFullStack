@@ -8,6 +8,7 @@ import {
   addBookshelf,
   addBooking,
 } from "../../actions/bookshelf_action";
+import { createNewReview } from "../../actions/review_action";
 
 const mapStateToProps = (state, ownProps) => {
   const bookshelfId = ownProps.match.params.bookshelfId;
@@ -25,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchBookshelves: () => dispatch(fetchBookshelves()),
     addBookshelf: (bookshelf) => dispatch(addBookshelf(bookshelf)),
     addBooking: (booking) => dispatch(addBooking(booking)),
+    createReview: (review) => dispatch(createNewReview(review)),
   };
 };
 export default withRouter(

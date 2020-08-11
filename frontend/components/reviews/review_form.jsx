@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class ReviewForm extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.userNoReview = this.userNoReview.bind(this);
+    this.userHasReview = this.userHasReview.bind(this);
   }
 
   handleClick(e) {
@@ -19,9 +20,33 @@ class ReviewForm extends Component {
     });
   }
 
-  render() {
-    const {user, book} = this.props
-    console.log(this.props)
+  userHasReview(user, book, users) {
+    return (
+      <div>
+        <div onClick={() => {
+          this.props.history.push({
+            pathname: `/rating/${users.id}`,
+            state: {
+              book: this.props.book,
+              user: this.props.user,
+              changeReview: this.props.changeReview,
+              users: users
+            },
+          });
+        } }>Edit</div>
+        <h2>Review of </h2>
+        <div>{book.title}</div>
+        <h2>Rating </h2>
+        <div>{users.rating}</div>
+        <h2>Shelves </h2>
+        {book.bookshelves.map(shelf => {return (<li>{shelf.title}</li>)})}
+        <h2>Review </h2>
+        <div>{users.body}</div> 
+      </div>
+    );
+  }
+
+  userNoReview(user, book) {
     return (
       <div>
         <h2>
@@ -52,6 +77,27 @@ class ReviewForm extends Component {
         <button onClick={this.handleClick}>Write a Review</button>
       </div>
     );
+  }
+
+  render() {
+    const {user, book} = this.props
+    let i = 0;
+    let users;
+    user.reviews.map((review) => {
+      if (review.book_id === book.id) {
+        i++;
+        users = review
+      }
+    });
+    
+    console.log(users, "rating")
+    if (i === 0) {
+      return (
+        this.userNoReview(user, book, )
+        )
+      } else {
+      return this.userHasReview(user, book, users);
+    }
   }
 }
 

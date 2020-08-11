@@ -1,0 +1,116 @@
+.book-items {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.book-items div {
+    margin: 10px;
+}
+
+.books-title,.books-writer {
+    width: 100px;
+    vertical-align: top;
+    padding: 12px 5px 5px 0;
+    font-size: 14px;
+    text-align: left;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    color: #00635d;
+}
+
+.books-writer, .header-author {
+    width: 60px;
+
+}
+
+.book-info {
+    display: flex;
+}
+
+.books-rating, .header-rating {
+    width: 75px;
+    padding: 12px 5px 5px 0;
+
+}
+.list-shelf {
+    list-style: none;
+    text-align: left;
+
+}
+
+.list-shelf li {
+    width: 100px;
+    vertical-align: top;
+    padding: 0 5px 5px 0;
+    font-size: 14px;
+    text-align: left;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    color: #00635d;
+    cursor: pointer;
+}
+
+.rating-form:hover {
+    text-decoration: underline;
+}
+
+.rating-books, .rating-form {
+    width: 230px;
+    font-size: 14px;
+    text-align: left;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+   
+}
+
+.rating-form {
+    color: #00635d;
+    cursor: pointer;
+
+}
+.list-shelf li:not(:first-child):after {
+    content: ", ";
+}
+
+.header {
+    display: flex;
+    position: relative;
+    left: 11px;
+    font-weight: bold;
+    color: #382110;
+    font-size: 12px;
+    border-bottom: 2px solid #EBE8D5;
+    vertical-align: top;
+    text-align: left;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px
+}
+
+.header-cover {
+    width: 50px;
+    padding: 12px 16px 5px 0;
+}
+
+.header-title {
+    width: 100px;
+    padding: 12px 25px 5px 0;
+
+}
+
+.header-author, .header-rating {
+    padding: 12px 5px 5px 0;
+
+}
+
+.header-rating {
+    padding: 12px 55px 5px 0;
+}
+
+.header-shelf, .header-review {
+    width: 100px;
+    padding: 12px 27px 5px 0;
+
+}
+
+
+

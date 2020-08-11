@@ -36,17 +36,16 @@ class HomeCont extends React.Component {
         const bookshelfList = bookshelves.map(bookshelf => {
                 return (
                   <li key={bookshelf.id}>
+                    <span className="number">{bookshelf.books_on_shelf.length} </span>
                     <a
                       className="shelf-item"
                       href={`#/bookshelves/${bookshelf.id}`}
                     >
-                      {bookshelf.books_on_shelf.length} {bookshelf.title}
+                      {bookshelf.title}
                     </a>
                   </li>
                 );
         });
-
-        console.log(this.props.bookshelves)
 
         return(
 

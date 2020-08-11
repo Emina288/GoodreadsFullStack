@@ -18,7 +18,7 @@ class BookshelfIndexItem extends React.Component {
       <div className={"shelf"}>
         <div>
           <li className="shelf-item" onClick={this.handleClick}>
-            {bookshelf.title}({number})
+            {bookshelf.title} ({number})
           </li>
         </div>
       </div>

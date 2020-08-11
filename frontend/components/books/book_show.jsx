@@ -126,8 +126,10 @@ class BookShow extends Component {
       )
     } else {
     const { book, user } = this.props;
+    console.log(book, user)
+
     const title = ["Read", "Currently Reading", "Want to Read"];
-    const bookshelfList = this.state.bookshelves.map((bookshelf) => {
+    const bookshelfList = user.bookshelves.map((bookshelf) => {
       if (
         bookshelf.user_id === this.props.user.id &&
         !title.includes(bookshelf.title)
@@ -237,6 +239,7 @@ class BookShow extends Component {
             book={book}
             user={this.props.user}
             createReview={this.props.createReview}
+            changeReview={this.props.changeReview}
             history={this.props.history}
           />
           <ReviewIndex book={book} deleteReview={this.props.deleteReview} />

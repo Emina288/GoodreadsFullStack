@@ -6,7 +6,7 @@ import { fetchBook, fetchBooks } from '../../actions/book_actions';
 import { login, logout } from "../../actions/session_actions";
 import { searchBooks } from "../../actions/book_actions";
 import { fetchBookshelves, addBookshelf, addBooking } from "../../actions/bookshelf_action";
-import { createNewReview, deleteReview } from "../../actions/review_action";
+import { createNewReview, deleteReview, changeReview } from "../../actions/review_action";
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -32,7 +32,8 @@ const mapDispatchToProps = dispatch => {
       addBookshelf: (bookshelf) => dispatch(addBookshelf(bookshelf)),
       addBooking: (booking) => dispatch(addBooking(booking)),
       createReview: (review) => dispatch(createNewReview(review)),
-      deleteReview: (id) => dispatch(deleteReview(id))
+      deleteReview: (id) => dispatch(deleteReview(id)),
+      changeReview: (id, review) => dispatch(changeReview(id, review))
     };
 };
 export default withRouter(

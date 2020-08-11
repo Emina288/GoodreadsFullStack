@@ -13,3 +13,11 @@ export const removeReview = (reviewId) => {
     data: { reviewId },
   });
 };
+
+export const editReview = (reviewId,review) => {
+  return $.ajax({
+    method: "patch",
+    url: `api/reviews/${reviewId}`,
+    data: { review },
+  });
+};

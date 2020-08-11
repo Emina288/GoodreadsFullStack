@@ -187,7 +187,6 @@
       }
 
       .color img {
-        margin-left: 230px;
         margin-top: 10px;
       
         
@@ -195,7 +194,8 @@
 
       .color {
         height: 2000px;
-        width: 100%;
+        width: 72%;
+        padding: 0 14%;
         background-color:  #9e9e9c14;
       }
 
@@ -217,9 +217,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 239px;
         padding-bottom: 48px;
         border-bottom: 1px solid #D8D8D8;
+        margin-bottom: 16px;
       }
       
       form.example2 button {
@@ -250,3 +250,18 @@
       .home-shelf {
         list-style: none;
       }
+
+.color h3 {
+    color: #333333;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.15;
+    margin: 12px 0;
+    text-transform: uppercase;
+}
+
+.number {
+  color: #00635D;
+  margin-right: 5px;
+}
