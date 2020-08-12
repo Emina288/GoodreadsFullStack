@@ -1,78 +1,158 @@
 .book-reviews {
-    display: block;
+    padding: 5px 0 65px 0px;
+    width: 650px;
+    margin: 15px 0 0 370px;
 }
 
-.rating {
-  overflow: hidden;
-  vertical-align: bottom;
-  display: inline-block;
-  width: auto;
-  height: 30px;
-}
-
-.rating > input {
-  opacity: 0;
-  margin-right: -100%;
-}
-
-.rating > label {
-  position: relative;
-  display: block;
-  float: right;
-  background: url('grey.png');
-  background-size: 30px 30px;
+.active-edit {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #D8D8D8;
 
 }
 
-.rating > label:before {
-  display: block;
-  opacity: 0;
-  content: '';
-  width: 30px;
-  height: 30px;
-  background: url('yellow.png');
-  background-size: 30px 30px;
-  transition: opacity 0.2s linear;
-   cursor: pointer;
+.active-edit h1 {
+  color: #382110;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 24px;
 }
 
-.rating > label:hover:before,  .rating > label:hover ~ label:before,  .rating:not(:hover) > :checked ~ label:before { opacity: 3; }
-
-
-.review-edit-book-review-line1{
-    display: flex;
-    margin-top: 10px;
+.active-edit div {
+  font-size: 100%;
+  text-transform: none;
+  font-weight: normal;
+  color: #767676;
 }
 
-.review-edit-book-review-line1-myreview {
+.active-edit div:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.review-title, .review-rating, .review-shelf, .review-body {
+  display: flex;
+
+}
+
+.review-title h2, .review-rating h2, .review-shelf h2, .review-body h2 {
+  font-size: 14px;
+  padding: 4px 0;
+  vertical-align: top;
+  width: 125px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  color: #181818;
+  margin-top: 20px;
+}
+
+.review-title div, .review-body div, .review-rating div {
+  font-family: "Merriweather", "Georgia", serif;
+  line-height: 21px;
+  color: #181818;
+  margin-top: 20px;
+
+}
+
+.review-shelf li {
+  list-style: none;
+  color: #00635d;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  padding: 0px 0px 1px 0px;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+}
+
+.review-shelf li::after {
+  content: ", ";
+}
+
+.review-shelf li:last-child::after {
+  content: "";
+}
+
+.community-reviews {
+  border: 1 px solid red;
+  margin-top: 100px;
+}
+
+.community-title {
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 8px;
+  margin-top: 150px;
+}
+
+.community-title h2, .community-no-review h2 {
+  color: #382110;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+.image-rated, .image-rated2 {
+  display: flex;
+  line-height: 18px;
+}
+
+.image-rated h2 span, .rate{
+    color: #00635d;
+    font-weight: bold;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 14px;
-    margin-right: 5px;
-    margin-bottom: 10px;
 }
 
-.review-submit{
-    border-radius: 3px;
-    border: 1px solid #D6D0C4;
-    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-    cursor: pointer;
-    background-color: #F4F1EA;
-    line-height: 1;
-    padding: 8px 12px;
-    margin-top: 10px;
+.image-rated h2, .image-rated2 h2{
+  margin-left: 1%;
 }
 
-.review-edit-rating {
+.item-body {
+  position: relative;
+  left: 60px;
+  top: -37px;
+  font-family: "Merriweather", "Georgia", serif;
+  line-height: 21px;
+  font-size: 14px;
+  color: #181818;
+}
+
+.community-no-review {
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 8px;
+}
+
+.rate-it {
+  color: #181818;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.stars {
+  position: relative;
+  left: 57px;
+  top: -30px;
+}
+
+.stars button {
+  margin-left: 12px;
+  border-radius: 3px;
+  border: 1px solid #D6D0C4;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
   display: inline-block;
+  text-decoration: none;
+  color: #333333;
+  background-color: #F4F1EA;
+  line-height: 1;
+  padding: 8px 12px;
 }
-.review-edit-rating * {
-  float: right;
+
+.image-rated2 {
+  margin-top: 20px;
 }
-/* input[type=radio] {
-  display: none; */
-label{
-    color: #D6D6D6;
-}
-input[type=radio]:checked ~ label {
-  color: #F5A524;
-}
+

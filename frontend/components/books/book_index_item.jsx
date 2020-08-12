@@ -14,23 +14,24 @@ class BookIndexItem extends React.Component {
 
   render() {
     const { book } = this.props;
-    console.log(this.props)
     return (
       <div className={"book-item"}>
-        <div className={"item-img"}>
-            <img
-              src={eval(`window.${book.book_url}`)}
-              alt={book.title}
-              onClick={this.handleClick}
-              width="50"
-              height="77"
-            />
-          </div>
-          <div className="book-title">
+        <div className={"item-img2"}>
+          <img
+            src={eval(`window.${book.book_url}`)}
+            alt={book.title}
+            onClick={this.handleClick}
+            width="50"
+            height="77"
+          />
+        <div className="book-title">
+          <div>
             <h2>{book.title}</h2>
           </div>
           <div className="book-writer">
-            <h3>{book.writer}</h3>
+            <h3>by {book.writer}</h3>
+          </div>
+        </div>
         </div>
       </div>
     );

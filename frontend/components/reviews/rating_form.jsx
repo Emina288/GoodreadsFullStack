@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import HomeNav from "../home/home_nav";
+import Footer from "../footer";
 
 class RatingForm extends Component {
   constructor(props) {
@@ -28,86 +30,102 @@ class RatingForm extends Component {
   }
 
   render() {
-    const { book, user, createReview } = this.props.history.location.state;
-    console.log(this.props, "me");
+    const { book, logout, user, history, searchBooks } = this.props.history.location.state;
     return (
       <div>
-        <h1>{book.title} > Review > Edit</h1>
-        <div className={"item-img"}>
-          <img
-            src={eval(`window.${book.book_url}`)}
-            alt={book.title}
-            onClick={this.handleClick}
-            width="49"
-            height="75"
+        <header>
+          <HomeNav
+            logout={logout}
+            user={user}
+            searchBooks={searchBooks}
+            history={history}
           />
-        </div>
-        <div>
-          <h2>{book.title}</h2>
-        </div>
-        <div>
-          <h3>by {book.writer}</h3>
-        </div>
-        <div className="review-edit-book-review-line1">
-          <div className="review-edit-book-review-line1-myreview">
-            My rating:
+        </header>
+        <div className="rating-new">
+          <div className="new-rating">
+            <h1>
+              <span>{book.title}</span> > Review
+            </h1>
+            <div className={"item-img"}>
+              <img
+                src={eval(`window.${book.book_url}`)}
+                alt={book.title}
+                onClick={this.handleClick}
+                width="49"
+                height="75"
+              />
+              <div>
+                <div className="rating-title">
+                  <h2>{book.title}</h2>
+                </div>
+                <div className="rating-writer">
+                  <h3>by {book.writer}</h3>
+                </div>
+              </div>
+            </div>
+            <div className="my-rating">
+              <div className="my-stars">My rating:</div>
+              <div className="review-edit-rating">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="5"
+                  className="review-edit-star"
+                  onChange={() => this.handleRadioButton(5)}
+                />
+                <label for="5">★</label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="4"
+                  className="review-edit-star"
+                  onChange={() => this.handleRadioButton(4)}
+                />
+                <label for="4">★</label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="3"
+                  className="review-edit-star"
+                  onChange={() => this.handleRadioButton(3)}
+                />
+                <label for="3">★</label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="2"
+                  className="review-edit-star"
+                  onChange={() => this.handleRadioButton(2)}
+                />
+                <label for="2">★</label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="1"
+                  className="review-edit-star"
+                  onChange={() => this.handleRadioButton(1)}
+                />
+                <label for="1">★</label>
+              </div>
+            </div>
+            <div className="text">
+              <h2>What did you think?</h2>
+              <form>
+                <textarea
+                  maxLength="15000"
+                  placeholder="Enter your review (optional)"
+                  rows="12"
+                  value={this.state.body}
+                  onChange={(event) => {
+                    this.setState({ body: event.target.value });
+                  }}
+                ></textarea>
+                <button onClick={this.handleSubmit}>Post</button>
+              </form>
+            </div>
           </div>
-          <div className="review-edit-rating">
-            <input
-              type="radio"
-              name="rating"
-              id="5"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(5)}
-            />
-            <label for="5">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="4"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(4)}
-            />
-            <label for="4">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="3"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(3)}
-            />
-            <label for="3">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="2"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(2)}
-            />
-            <label for="2">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="1"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(1)}
-            />
-            <label for="1">★</label>
-          </div>
         </div>
-        <h2>What do you think?</h2>
-        <form>
-          <textarea
-            maxLength="15000"
-            placeholder="Enter your review (optional)"
-            rows="12"
-            value={this.state.body}
-            onChange={(event) => {
-              this.setState({ body: event.target.value });
-            }}
-          ></textarea>
-          <button onClick={this.handleSubmit}>Post</button>
-        </form>
+        <Footer />
       </div>
     );
   }

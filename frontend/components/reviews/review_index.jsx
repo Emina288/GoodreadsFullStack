@@ -8,17 +8,23 @@ class ReviewIndex extends Component {
 
   render() {
     const book = this.props.book;
-    const { reviews, reviewsUser } = this.props.book
+    const { reviews, reviewsUser } = book
 
     const reviewsList = reviews.map(review => {
       return <ReviewIndexItem key={review.id} author={reviewsUser[review.id]} review={review}/>
     });
 
-    return (
-      <div>
+    if (reviewsList.length === 0) {
+      return (
+        <div className="no-reviews">Be the first on to leave a review!</div>
+      )
+    } else  {
+      return (
+      <div className="community-reviews">
         <div>{reviewsList}</div>
       </div>
     );
+      }
   }
 }
 

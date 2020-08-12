@@ -9,9 +9,14 @@ class ReaviewIndexItem extends React.Component {
     const { author, review  } = this.props;
  
     return (
-      <div>
-        <h2>{author.name} rated it {review.rating}</h2>
-        <div>{review.body}</div>
+      <div className="review-item">
+        <div className="image-rated">
+          <img src={window.user} width="52" height="68" />
+          <h2>
+            <span>{author.name}</span> rated it {review.rating}
+          </h2>
+        </div>
+        <div className="item-body">{review.body}</div>
       </div>
     );
   }
