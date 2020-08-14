@@ -26,8 +26,7 @@
 .book-info {
     display: flex;
 }
-
-.books-rating, .header-rating {
+.header-rating {
     width: 75px;
     padding: 12px 5px 5px 0;
 
@@ -104,12 +103,18 @@
 
 .header-rating {
     padding: 12px 55px 5px 0;
+    position: relative;
+    left: 32px;
 }
 
 .header-shelf, .header-review {
     width: 100px;
     padding: 12px 27px 5px 0;
 
+}
+
+.books-rating {
+    width: 100px;
 }
 
 

@@ -34,6 +34,7 @@ class HomeCont extends React.Component {
             )
         }
         const bookshelfList = bookshelves.map(bookshelf => {
+            if (bookshelf.books_on_shelf) {
                 return (
                   <li key={bookshelf.id}>
                     <span className="number">{bookshelf.books_on_shelf.length} </span>
@@ -45,6 +46,21 @@ class HomeCont extends React.Component {
                     </a>
                   </li>
                 );
+            } else {
+                return (
+                  <li key={bookshelf.bookshelf.id}>
+                    <span className="number">
+                      {bookshelf.bookshelf.books_on_shelf.length}{" "}
+                    </span>
+                    <a
+                      className="shelf-item"
+                      href={`#/bookshelves/${bookshelf.bookshelf.id}`}
+                    >
+                      {bookshelf.bookshelf.title}
+                    </a>
+                  </li>
+                );
+            }
         });
 
         return(

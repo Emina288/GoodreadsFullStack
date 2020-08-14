@@ -1,15 +1,26 @@
 import React, { Component } from "react";
+import StarRatingComponent from "react-star-rating-component";
 
 class ReviewForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      rating: 0,
+    };
     this.handleClick = this.handleClick.bind(this);
     this.userNoReview = this.userNoReview.bind(this);
     this.userHasReview = this.userHasReview.bind(this);
   }
 
-  handleClick(e) {
-    e.preventDefault();
+  onStarHover(nextValue) {
+    this.setState({ rating: nextValue });
+  }
+
+  onStarHoverOut(nextValue) {
+    this.setState({ rating: 0 });
+  }
+
+  handleClick() {
     this.props.history.push({
       pathname: "/rating",
       state: {
@@ -18,6 +29,7 @@ class ReviewForm extends Component {
         createReview: this.props.createReview,
         logout: this.props.logout,
         searchBooks: this.props.searchBooks,
+        fetchBooks: this.props.fetchBooks,
       },
     });
   }
@@ -51,7 +63,14 @@ class ReviewForm extends Component {
         </div>
         <div className="review-rating">
           <h2>Rating </h2>
-          <div>{users.rating}</div>
+          <div>
+            <StarRatingComponent
+              name="rate1"
+              starCount={5}
+              value={users.rating}
+              emptyStarColor={"rgb(173, 166, 166, 0.46)"}
+            />
+          </div>
         </div>
         <div className="review-shelf">
           <h2>Shelves </h2>
@@ -73,6 +92,8 @@ class ReviewForm extends Component {
   }
 
   userNoReview(user, book) {
+    const { rating } = this.state;
+
     return (
       <div className="no-reviews">
         <div className="community-no-review">
@@ -86,28 +107,15 @@ class ReviewForm extends Component {
           </h2>
         </div>
         <div className="stars">
-          <span className="rating">
-            <input id="rating5" type="radio" name="rating" value="5" />
-            <label onClick={this.handleClick} for="rating5">
-              5
-            </label>
-            <input id="rating4" type="radio" name="rating" value="4" />
-            <label onClick={this.handleClick} for="rating4">
-              4
-            </label>
-            <input id="rating3" type="radio" name="rating" value="3" />
-            <label onClick={this.handleClick} for="rating3">
-              3
-            </label>
-            <input id="rating2" type="radio" name="rating" value="2" />
-            <label onClick={this.handleClick} for="rating2">
-              2
-            </label>
-            <input id="rating1" type="radio" name="rating" value="1" />
-            <label onClick={this.handleClick} for="rating1">
-              1
-            </label>
-          </span>
+          <StarRatingComponent
+            name="rate1"
+            starCount={5}
+            value={rating}
+            onStarHover={this.onStarHover.bind(this)}
+            onStarHoverOut={this.onStarHoverOut.bind(this)}
+            emptyStarColor={"rgb(173, 166, 166, 0.46)"}
+            onStarClick={this.handleClick}
+          />
           <button onClick={this.handleClick}>Write a Review</button>
         </div>
       </div>
@@ -115,21 +123,19 @@ class ReviewForm extends Component {
   }
 
   render() {
-    const {user, book} = this.props
+    const { user, book } = this.props;
     let i = 0;
     let users;
     user.reviews.map((review) => {
       if (review.book_id === book.id) {
         i++;
-        users = review
+        users = review;
       }
     });
 
     if (i === 0) {
-      return (
-        this.userNoReview(user, book, )
-        )
-      } else {
+      return this.userNoReview(user, book);
+    } else {
       return this.userHasReview(book, users);
     }
   }

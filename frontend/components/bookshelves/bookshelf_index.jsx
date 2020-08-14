@@ -22,14 +22,13 @@ class BookshelfIndex extends Component {
     };
 
     componentDidMount() {
-        this.props.fetchBookshelves().then(() => this.setState({bookshelves: Object.values(this.props.bookshelves)}));
-        this.props.fetchBooks();
+      this.props.fetchBookshelves();
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.addBookshelf({user_id:this.props.user.id, title: this.state.title})
-        const newList = [...this.state.bookshelves, { user_id: this.props.user.id, title: this.state.title, books_on_shelf:[] }]
+        const newList = [...Object.values(this.props.bookshelves), { user_id: this.props.user.id, title: this.state.title, books_on_shelf:[] }]
         this.setState({title: "", bookshelves: newList})
     }
 
@@ -44,16 +43,15 @@ class BookshelfIndex extends Component {
 
     render() {
         const bookList = {};
-        if (this.state.bookshelves.length === 0 ) {
+
+        if (Object.values(this.props.bookshelves).length === 0 ) {
           return (
             <div>Loading....</div>
           )
         }
-        const bookshelfList = this.state.bookshelves.map(bookshelf => {
-            const books = this.props.bookshelves[bookshelf.id];
-            if (books) {
-              if (books.books_on_shelf === undefined) {
-                books.bookshelf.books_on_shelf.map(
+        const bookshelfList = Object.values(this.props.bookshelves).map(bookshelf => {
+                if (bookshelf.books_on_shelf) {
+                bookshelf.books_on_shelf.map(
                   (book) => (bookList[book.id] = book)
                 );
                 return (
@@ -61,20 +59,24 @@ class BookshelfIndex extends Component {
                     key={bookshelf.id}
                     bookshelf={bookshelf}
                     history={this.props.history}
-                    books={books.bookshelf.books_on_shelf}
+                    books={bookshelf.books_on_shelf}
                   />
                 );
-              }
-                  books.books_on_shelf.map((book) => (bookList[book.id] = book));
-                   return (
-                     <BookshelfIndexItem
-                       key={bookshelf.id}
-                       bookshelf={bookshelf}
-                       history={this.props.history}
-                       books={books.books_on_shelf}
-                     />
-                   );
-            }
+                } else {
+                  console.log(bookshelf, "sta??")
+                  bookshelf.bookshelf.books_on_shelf.map(
+                    (book) => (bookList[book.id] = book)
+                  );
+                  return (
+                    <BookshelfIndexItem
+                      key={bookshelf.id}
+                      bookshelf={bookshelf.bookshelf}
+                      history={this.props.history}
+                      books={bookshelf.bookshelf.books_on_shelf}
+                    />
+                  );
+
+                }
         });
 
         return (

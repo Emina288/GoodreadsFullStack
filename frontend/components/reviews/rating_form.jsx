@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import HomeNav from "../home/home_nav";
 import Footer from "../footer";
+import StarRatingComponent from "react-star-rating-component";
 
 class RatingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-            rating: 4,
-            body: ""
-    }
-    this.handleSubmit = this.handleSubmit.bind(this)
+      rating: 0,
+      body: "",
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleRadioButton(number) {
-    this.setState({ rating: number });
+  onStarHover(nextValue) {
+    this.setState({ rating: nextValue });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const { user, book } = this.props.history.location.state
+  handleSubmit() {
+    const { user, book } = this.props.history.location.state;
     const review = {
       body: this.state.body,
       user_id: user.id,
@@ -26,11 +27,21 @@ class RatingForm extends Component {
       rating: this.state.rating,
     };
     this.props.history.location.state.createReview(review);
-    this.props.history.push(`/books/${book.id}`)
+    this.props.history.push(`/books/${book.id}`);
+  }
+
+  handleClick(nextValue) {
+    this.setState({ rating: nextValue });
   }
 
   render() {
-    const { book, logout, user, history, searchBooks } = this.props.history.location.state;
+    const {
+      book,
+      logout,
+      user,
+      history,
+      searchBooks,
+    } = this.props.history.location.state;
     return (
       <div>
         <header>
@@ -65,48 +76,14 @@ class RatingForm extends Component {
             </div>
             <div className="my-rating">
               <div className="my-stars">My rating:</div>
-              <div className="review-edit-rating">
-                <input
-                  type="radio"
-                  name="rating"
-                  id="5"
-                  className="review-edit-star"
-                  onChange={() => this.handleRadioButton(5)}
-                />
-                <label for="5">★</label>
-                <input
-                  type="radio"
-                  name="rating"
-                  id="4"
-                  className="review-edit-star"
-                  onChange={() => this.handleRadioButton(4)}
-                />
-                <label for="4">★</label>
-                <input
-                  type="radio"
-                  name="rating"
-                  id="3"
-                  className="review-edit-star"
-                  onChange={() => this.handleRadioButton(3)}
-                />
-                <label for="3">★</label>
-                <input
-                  type="radio"
-                  name="rating"
-                  id="2"
-                  className="review-edit-star"
-                  onChange={() => this.handleRadioButton(2)}
-                />
-                <label for="2">★</label>
-                <input
-                  type="radio"
-                  name="rating"
-                  id="1"
-                  className="review-edit-star"
-                  onChange={() => this.handleRadioButton(1)}
-                />
-                <label for="1">★</label>
-              </div>
+              <StarRatingComponent
+                name="rate1"
+                starCount={5}
+                value={this.state.rating}
+                onStarHover={this.onStarHover.bind(this)}
+                emptyStarColor={"rgb(173, 166, 166, 0.46)"}
+                onStarClick={this.handleClick}
+              />
             </div>
             <div className="text">
               <h2>What did you think?</h2>

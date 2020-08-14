@@ -29,9 +29,7 @@ class BookshelfShow extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBookshelves().then(() => {
-      this.setState({bookshelves: Object.values(this.props.bookshelves)})
-    });
+    this.props.fetchBookshelves();
   }
 
   handleSubmit(e) {
@@ -41,8 +39,12 @@ class BookshelfShow extends Component {
       title: this.state.title,
     });
     const newList = [
-      ...this.state.bookshelves,
-      { user_id: this.props.user.id, title: this.state.title, books_on_shelf: []},
+      ...Object.values(this.props.bookshelves),
+      {
+        user_id: this.props.user.id,
+        title: this.state.title,
+        books_on_shelf: [],
+      },
     ];
     this.setState({ title: "", bookshelves: newList });
   }
@@ -58,105 +60,119 @@ class BookshelfShow extends Component {
 
   render() {
     const bookList = {};
-    if (this.state.bookshelves.length === 0) {
-      return (
-        <div>Loading...</div>
-      )
+    if (Object.values(this.props.bookshelves).length === 0) {
+      return <div>Loading....</div>;
     } else {
-    const {bookshelves} = this.state
-    const bookshelfList = bookshelves.map((bookshelf) => {
-        const books = bookshelf.books_on_shelf;
-          books.map((book) => (bookList[book.id] = book));
-          return (
-            <BookshelfIndexItem
-              key={bookshelf.id}
-              bookshelf={bookshelf}
-              history={this.props.history}
-              books={books}
-            />
-          );
+      const bookshelfList = Object.values(this.props.bookshelves).map(
+        (bookshelf) => {
+          if (bookshelf.books_on_shelf) {
+            bookshelf.books_on_shelf.map((book) => (bookList[book.id] = book));
+            return (
+              <BookshelfIndexItem
+                key={bookshelf.id}
+                bookshelf={bookshelf}
+                history={this.props.history}
+                books={bookshelf.books_on_shelf}
+              />
+            );
+          } else {
+            console.log(bookshelf, "sta??");
+            bookshelf.bookshelf.books_on_shelf.map(
+              (book) => (bookList[book.id] = book)
+            );
+            return (
+              <BookshelfIndexItem
+                key={bookshelf.id}
+                bookshelf={bookshelf.bookshelf}
+                history={this.props.history}
+                books={bookshelf.bookshelf.books_on_shelf}
+              />
+            );
+          }
         }
-    );
-    const booksShelf = this.props.bookshelf.books_on_shelf;
-    return (
-      <div>
-        <header>
-          <HomeNav
-            logout={this.props.logout}
-            user={this.props.user}
-            searchBooks={this.props.searchBooks}
-            history={this.props.history}
-          />
-        </header>
-        <div className="shelves-index">
-          <div className="shelf-title">
-            <h2>
-              My Books:{" "}
-              <span className="shelf-name">
-                {this.props.bookshelf.title}  
-                <span className="shelf-number"> ({this.props.bookshelf.books_on_shelf.length})</span>
-              </span>
-            </h2>
-          </div>
-          <div className="all-shelf">
-            <div className="shelves-all">
-              <div className="shelves">
-                <h3>Bookshelves</h3>
-                <a className="shelf-item" href="#/bookshelves">
-                  All ({Object.values(bookList).length})
-                </a>
-                <span className="list">{bookshelfList}</span>
-              </div>
-              <div className={this.state.button}>
-                <button onClick={this.toggle} className={this.state.klass1}>
-                  Add shelf
-                </button>
-              </div>
-              <form action="" className={this.state.klass2}>
-                <label for="shelf">Add a Shelf:</label>
-                <input
-                  id="shelf"
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.handleInput()}
-                />
-                <button onClick={this.handleSubmit}>add</button>
-              </form>
+      );
+      return (
+        <div>
+          <header>
+            <HomeNav
+              logout={this.props.logout}
+              user={this.props.user}
+              searchBooks={this.props.searchBooks}
+              history={this.props.history}
+            />
+          </header>
+          <div className="shelves-index">
+            <div className="shelf-title">
+              <h2>
+                My Books:{" "}
+                <span className="shelf-name">
+                  {this.props.bookshelf.title}
+                  <span className="shelf-number">
+                    {" "}
+                    ({this.props.bookshelf.books_on_shelf.length})
+                  </span>
+                </span>
+              </h2>
             </div>
-            <div className="shelves-books">
-              <div className="header">
-                <div className="header-cover">cover</div>
-                <div className="header-title">title</div>
-                <div className="header-author">author</div>
-                <div className="header-rating">rating</div>
-                <div className="header-shelf">shelves</div>
-                <div className="header-review">review</div>
+            <div className="all-shelf">
+              <div className="shelves-all">
+                <div className="shelves">
+                  <h3>Bookshelves</h3>
+                  <a className="shelf-item" href="#/bookshelves">
+                    All ({Object.values(bookList).length})
+                  </a>
+                  <span className="list">{bookshelfList}</span>
+                </div>
+                <div className={this.state.button}>
+                  <button onClick={this.toggle} className={this.state.klass1}>
+                    Add shelf
+                  </button>
+                </div>
+                <form action="" className={this.state.klass2}>
+                  <label for="shelf">Add a Shelf:</label>
+                  <input
+                    id="shelf"
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.handleInput()}
+                  />
+                  <button onClick={this.handleSubmit}>add</button>
+                </form>
               </div>
-              <ul className="shelf-book">
-                {booksShelf.length === 0 ? (
-                  <div className="no-items">No matching items!</div>
-                ) : (
-                  <div>
-                    {booksShelf.map((book) => {
-                      return (
-                        <BookShelf
-                          book={book}
-                          history={this.props.history}
-                          user={this.props.user}
-                          createReview={this.props.createReview}
-                          shelves={this.props.bookshelves}
-                        />
-                      );
-                    })}
-                  </div>
-                )}
-              </ul>
+              <div className="shelves-books">
+                <div className="header">
+                  <div className="header-cover">cover</div>
+                  <div className="header-title">title</div>
+                  <div className="header-author">author</div>
+                  <div className="header-rating">rating</div>
+                  <div className="header-shelf">shelves</div>
+                  <div className="header-review">review</div>
+                </div>
+                <ul className="shelf-book">
+                  {Object.values(bookList).length === 0 ? (
+                    <div className="no-items">No matching items!</div>
+                  ) : (
+                    <div>
+                      {Object.values(bookList).map((book) => {
+                        return (
+                          <BookShelf
+                            book={book}
+                            history={this.props.history}
+                            user={this.props.user}
+                            createReview={this.props.createReview}
+                            shelves={this.props.bookshelves}
+                          />
+                        );
+                      })}
+                    </div>
+                  )}
+                </ul>
+              </div>
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    );
+      );
     }
   }
 }

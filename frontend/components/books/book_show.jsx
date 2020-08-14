@@ -26,10 +26,12 @@ class BookShow extends Component {
   componentDidMount() {
     this.props.fetchBooks().then(() => {
       const booking = this.props.book.bookshelves;
-      if (booking.length !== 0) {
+      const users = []
+      booking.map(match => {if (match.user_id === this.props.user.id) {users.push(match)}})
+      if (users.length !== 0 ) {
         this.setState({ btnClass: "want2" });
         this.setState({ btnName: "Read" });
-        booking.forEach((shelfing) => {
+        users.forEach((shelfing) => {
           if (shelfing.title === "Want to Read") {
             this.setState({ btnName: "Want to Read" });
           } else if (shelfing.title === "Currently Reading") {
@@ -107,7 +109,6 @@ class BookShow extends Component {
     this.setState({ btnName: title, btnClass: "want2" });
     const shelves = Object.values(this.state.bookshelves);
     const arr = [];
-    const arr2 = [];
     shelves.map((shelf) => {
       if (shelf.user_id === this.props.user.id && shelf.title === title) {
         arr.push(shelf);

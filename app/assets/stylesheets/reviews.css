@@ -48,7 +48,12 @@
   margin-top: 20px;
 }
 
-.review-title div, .review-body div, .review-rating div {
+.review-rating div {
+  position: relative;
+  top: 11px;
+}
+
+.review-title div, .review-body div{
   font-family: "Merriweather", "Georgia", serif;
   line-height: 21px;
   color: #181818;
@@ -135,10 +140,11 @@
   position: relative;
   left: 57px;
   top: -30px;
+  font-size: 30px;
 }
 
 .stars button {
-  margin-left: 12px;
+  margin-left: 16px;
   border-radius: 3px;
   border: 1px solid #D6D0C4;
   font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -150,6 +156,8 @@
   background-color: #F4F1EA;
   line-height: 1;
   padding: 8px 12px;
+  position: relative;
+  top: -11px;
 }
 
 .image-rated2 {

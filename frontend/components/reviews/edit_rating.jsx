@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import HomeNav from "../home/home_nav";
 import Footer from "../footer";
+import StarRatingComponent from "react-star-rating-component";
+
 
 class EditRatingForm extends Component {
   constructor(props) {
@@ -10,10 +12,15 @@ class EditRatingForm extends Component {
       body: this.props.history.location.state.users.body,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleRadioButton(number) {
-    this.setState({ rating: number });
+  handleClick(nextValue) {
+    this.setState({ rating: nextValue });
+  }
+
+  onStarHover(nextValue) {
+    this.setState({ rating: nextValue });
   }
 
   handleSubmit(e) {
@@ -25,7 +32,7 @@ class EditRatingForm extends Component {
       book_id: book.id,
       rating: this.state.rating,
     };
-    this.props.history.location.state.changeReview(users.id,review);
+    this.props.history.location.state.changeReview(users.id, review);
     this.props.history.push(`/books/${book.id}`);
   }
 
@@ -49,18 +56,18 @@ class EditRatingForm extends Component {
         </header>
         <div className="rating-new">
           <div className="new-rating">
-        <h1>
+            <h1>
               <span>{book.title}</span> > Review > Edit
             </h1>
-        <div className={"item-img"}>
-          <img
-            src={eval(`window.${book.book_url}`)}
-            alt={book.title}
-            onClick={this.handleClick}
-            width="49"
-            height="75"
-          />
-         <div>
+            <div className={"item-img"}>
+              <img
+                src={eval(`window.${book.book_url}`)}
+                alt={book.title}
+                onClick={this.handleClick}
+                width="49"
+                height="75"
+              />
+              <div>
                 <div className="rating-title">
                   <h2>{book.title}</h2>
                 </div>
@@ -69,65 +76,31 @@ class EditRatingForm extends Component {
                 </div>
               </div>
             </div>
-        <div className="my-rating">
+            <div className="my-rating">
               <div className="my-stars">My rating:</div>
-              <div className="review-edit-rating">
-            <input
-              type="radio"
-              name="rating"
-              id="5"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(5)}
-            />
-            <label for="5">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="4"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(4)}
-            />
-            <label for="4">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="3"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(3)}
-            />
-            <label for="3">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="2"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(2)}
-            />
-            <label for="2">★</label>
-            <input
-              type="radio"
-              name="rating"
-              id="1"
-              className="review-edit-star"
-              onChange={() => this.handleRadioButton(1)}
-            />
-            <label for="1">★</label>
-          </div>
-        </div>
-        <div className="text">
-        <h2>What did you think?</h2>
-        <form>
-          <textarea
-            maxLength="15000"
-            placeholder="Enter your review (optional)"
-            rows="12"
-            value={this.state.body}
-            onChange={(event) => {
-              this.setState({ body: event.target.value });
-            }}
-          ></textarea>
-          <button onClick={this.handleSubmit}>Save</button>
-        </form>
+              <StarRatingComponent
+                name="rate1"
+                starCount={5}
+                value={this.state.rating}
+                onStarHover={this.onStarHover.bind(this)}
+                emptyStarColor={"rgb(173, 166, 166, 0.46)"}
+                onStarClick={this.handleClick}
+              />
+            </div>
+            <div className="text">
+              <h2>What did you think?</h2>
+              <form>
+                <textarea
+                  maxLength="15000"
+                  placeholder="Enter your review (optional)"
+                  rows="12"
+                  value={this.state.body}
+                  onChange={(event) => {
+                    this.setState({ body: event.target.value });
+                  }}
+                ></textarea>
+                <button onClick={this.handleSubmit}>Save</button>
+              </form>
             </div>
           </div>
         </div>

@@ -28,6 +28,7 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Bookshelf
 
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)

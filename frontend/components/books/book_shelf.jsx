@@ -1,4 +1,6 @@
 import React from "react";
+import StarRatingComponent from "react-star-rating-component";
+
 
 class BookShelf extends React.Component {
   constructor(props) {
@@ -27,6 +29,7 @@ class BookShelf extends React.Component {
 
   render() {
     const { book, user, shelves } = this.props;
+
     let users;
     let bookShelf = []; 
     user.reviews.map((review) => {
@@ -36,15 +39,19 @@ class BookShelf extends React.Component {
     });
 
     Object.values(shelves).map((shelf) => {
-        if (shelf.books_on_shelf.includes(book)) {
+        if (shelf.books_on_shelf && shelf.books_on_shelf.includes(book)) {
             bookShelf.push(shelf)
+        } else if (shelf.bookshelf && shelf.bookshelf.books_on_shelf.includes(book)) {
+          bookShelf.push(shelf.bookshelf )
         }
     })
 
     const titles = bookShelf.map(shelf => {
+      if (shelf) {
         return (
             <li key={shelf.id}>{shelf.title}</li>
         )
+      }
 
     })
 
@@ -67,9 +74,14 @@ class BookShelf extends React.Component {
         </div>
         {users ? (
           <div className="book-info">
-            <div className="books-rating">
-              <h3>{users.rating}</h3>
-            </div>
+            <span className="books-rating">
+              <StarRatingComponent
+                name="rate1"
+                starCount={5}
+                value={users.rating}
+                emptyStarColor={"rgb(173, 166, 166, 0.46)"}
+              />
+            </span>
             <div className="books-shelves">
               <ul className="list-shelf">{titles}</ul>
             </div>
@@ -77,15 +89,22 @@ class BookShelf extends React.Component {
               {users.body !== "" ? (
                 <h3>{users.body}</h3>
               ) : (
-                <span className="rating-form" onClick={this.handleReview}>Write a review</span>
+                <span className="rating-form" onClick={this.handleReview}>
+                  Write a review
+                </span>
               )}
             </div>
           </div>
         ) : (
           <div className="book-info">
-            <div className="books-rating">
-              <h3>0</h3>
-            </div>
+              <span className="books-rating">
+                <StarRatingComponent
+                  name="rate1"
+                  starCount={5}
+                  value={0}
+                  emptyStarColor={"rgb(173, 166, 166, 0.46)"}
+                />
+              </span>
             <div className="books-shelves">
               <ul className="list-shelf">{titles}</ul>
             </div>
