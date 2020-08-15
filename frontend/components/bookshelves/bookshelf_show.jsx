@@ -15,7 +15,7 @@ class BookshelfShow extends Component {
       klass2: "class2",
       button: "button",
       bookshelves: [],
-      bookshelf: this.props.bookshelf
+      bookshelf: this.props.bookshelf,
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,19 +34,25 @@ class BookshelfShow extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addBookshelf({
-      user_id: this.props.user.id,
-      title: this.state.title,
-    });
-    const newList = [
-      ...Object.values(this.props.bookshelves),
-      {
+    this.props
+      .addBookshelf({
         user_id: this.props.user.id,
         title: this.state.title,
-        books_on_shelf: [],
-      },
-    ];
-    this.setState({ title: "", bookshelves: newList });
+      })
+      .then(
+        () => {
+          const newList = [
+            ...Object.values(this.props.bookshelves),
+            {
+              user_id: this.props.user.id,
+              title: this.state.title,
+              books_on_shelf: [],
+            },
+          ];
+          this.setState({ title: "", bookshelves: newList });
+        },
+        () => alert(this.props.errors[0])
+      );
   }
 
   toggle(e) {
@@ -76,7 +82,6 @@ class BookshelfShow extends Component {
               />
             );
           } else {
-            console.log(bookshelf, "sta??");
             bookshelf.bookshelf.books_on_shelf.map(
               (book) => (bookList[book.id] = book)
             );
@@ -91,6 +96,7 @@ class BookshelfShow extends Component {
           }
         }
       );
+
       return (
         <div>
           <header>
@@ -149,11 +155,11 @@ class BookshelfShow extends Component {
                   <div className="header-review">review</div>
                 </div>
                 <ul className="shelf-book">
-                  {Object.values(bookList).length === 0 ? (
+                  {this.props.bookshelf.books_on_shelf.length === 0 ? (
                     <div className="no-items">No matching items!</div>
                   ) : (
                     <div>
-                      {Object.values(bookList).map((book) => {
+                      {this.props.bookshelf.books_on_shelf.map((book) => {
                         return (
                           <BookShelf
                             book={book}

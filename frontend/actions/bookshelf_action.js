@@ -1,9 +1,11 @@
 import * as BookshelfApiUtil from "../util/bookshelf_api_util";
+import { receiveErrors } from "./session_actions";
 export const ADD_BOOKSHELVES = "ADD_BOOKSHELVES";
 export const ADD_BOOKSHELF = "ADD_BOOKSHELF";
 export const NEW_BOOKSHELF = "NEW_BOOKSHELF";
 export const DELETE_BOOKSHELF = "DELETE_BOOKSHELF";
 export const NEW_BOOKING = "ADD_BOOKING";
+export const RECEIVE_ERRORS_SHELF = "RECEIVE_ERRORS";
 
 export const receiveBookshelf = (bookshelf) => {
   return {
@@ -40,6 +42,14 @@ export const receiveNewBooking = (booking) => {
   };
 };
 
+export const receiveErrorsShelf = (errors) => {
+  return {
+    type: RECEIVE_ERRORS_SHELF,
+    errors,
+  };
+};
+
+
 
 
 export const fetchBookshelves = () => (dispatch) => {
@@ -56,7 +66,7 @@ export const fetchBookshelf = (bookshelfId) => (dispatch) => {
 
 export const addBookshelf = (shelf) => (dispatch) => {
   return BookshelfApiUtil.createBookshelf(shelf)
-    .then((bookshelf) => dispatch(receiveNewBookshelf(bookshelf)))
+    .then((bookshelf) => (dispatch(receiveNewBookshelf(bookshelf))), err => (dispatch(receiveErrorsShelf(err.responseJSON))))
 };
 
 export const destroyBookshelf = (bookshelfId) => (dispatch) => {

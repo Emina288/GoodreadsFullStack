@@ -12,7 +12,7 @@ class Api::BookshelvesController < ApplicationController
         if @bookshelf.save
             render '/api/bookshelves/show'
         else 
-            render json: @bookshelf.errors.full_messages, status: 422
+            render json: ["Shelf couldn't be created. Shelf name is either invalid or a duplicate."], status: 401
         end
     end
 

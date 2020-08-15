@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
       user: state.entities.users[state.session.id],
       session: state.session,
       errors: state.errors.search,
+      errorsShelf: state.errors.shelf,
       bookshelves: Object.values(state.bookshelves),
     };
 };

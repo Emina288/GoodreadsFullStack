@@ -14,7 +14,7 @@ class BookShow extends Component {
       klass1: "class1",
       klass2: "class2",
       book: this.props.book,
-      bookshelves: this.props.user.bookshelves,
+      bookshelves: [],
     };
     this.handleBtn = this.handleBtn.bind(this);
     this.btnNameHandler = this.btnNameHandler.bind(this);
@@ -42,6 +42,7 @@ class BookShow extends Component {
         });
       }
     });
+    this.props.fetchBookshelves().then(() => this.setState({bookshelves: this.props.bookshelves}))
   }
 
   handleBtn(e) {
@@ -61,15 +62,21 @@ class BookShow extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addBookshelf({
-      user_id: this.props.user.id,
-      title: this.state.title,
-    });
-    const newList = [
-      ...this.state.bookshelves,
-      { user_id: this.props.user.id, title: this.state.title },
-    ];
-    this.setState({ title: "", bookshelves: newList });
+    this.props
+      .addBookshelf({
+        user_id: this.props.user.id,
+        title: this.state.title,
+      })
+      .then(
+        () => {
+        const newList = [
+        ...this.state.bookshelves,
+        { user_id: this.props.user.id, title: this.state.title },
+        ];
+        this.setState({ title: "", bookshelves: newList });
+       },
+        () => alert(this.props.errorsShelf[0])
+      );
   }
 
   toggle(e) {
@@ -148,7 +155,6 @@ class BookShow extends Component {
           shelfBook.push(shelf)
         }
       })
-      console.log(shelfBook)
 
       return (
         <section className="book-show">
