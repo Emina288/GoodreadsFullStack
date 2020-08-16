@@ -27,7 +27,7 @@ class SignupOnly extends React.Component {
         e.preventDefault();
 
 
-       this.props.login({email: "demo@demo.com", name: "Demo", password: 12345678});
+       this.props.login({email: "demo1@demo.com", name: "Demo", password: 12345678});
 
       }
 

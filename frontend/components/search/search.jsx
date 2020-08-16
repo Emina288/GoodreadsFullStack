@@ -2,7 +2,6 @@ import React from "react";
 import BookIndexContainer from "../books/book_index_container";
 import Footer from "../footer";
 import SearchNav from "./nav_search";
-// import queryString from 'query-string'
 
 class Search extends React.Component {
     constructor(props) {

@@ -12,25 +12,18 @@ class ReviewForm extends Component {
     this.userHasReview = this.userHasReview.bind(this);
   }
 
+
   onStarHover(nextValue) {
     this.setState({ rating: nextValue });
   }
 
-  onStarHoverOut(nextValue) {
+  onStarHoverOut() {
     this.setState({ rating: 0 });
   }
 
   handleClick() {
     this.props.history.push({
-      pathname: "/rating",
-      state: {
-        book: this.props.book,
-        user: this.props.user,
-        createReview: this.props.createReview,
-        logout: this.props.logout,
-        searchBooks: this.props.searchBooks,
-        fetchBooks: this.props.fetchBooks,
-      },
+      pathname: `/rating/${this.props.book.id}`
     });
   }
 
@@ -42,15 +35,7 @@ class ReviewForm extends Component {
           <div
             onClick={() => {
               this.props.history.push({
-                pathname: `/rating/${users.id}`,
-                state: {
-                  book: this.props.book,
-                  user: this.props.user,
-                  changeReview: this.props.changeReview,
-                  users: users,
-                  logout: this.props.logout,
-                  searchBooks: this.props.searchBooks,
-                },
+                pathname: `/rating/${users.id}/${book.id}`,
               });
             }}
           >

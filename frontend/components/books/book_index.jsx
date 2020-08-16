@@ -13,7 +13,6 @@ class BookIndex extends Component {
   }
 
     render() {   
-      console.log(this.props)
       if (this.props.books.length === 0) {
           return (
               <span>Getting all books....</span>

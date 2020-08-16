@@ -18,7 +18,7 @@ class BookShelf extends React.Component {
 
   handleReview() {
     this.props.history.push({
-      pathname: "/rating",
+      pathname: `/rating/${this.props.book.id}`,
       state: {
         book: this.props.book,
         user: this.props.user,

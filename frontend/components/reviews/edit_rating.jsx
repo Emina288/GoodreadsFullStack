@@ -8,11 +8,22 @@ class EditRatingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: this.props.history.location.state.users.rating,
-      body: this.props.history.location.state.users.body,
+      rating: "",
+      body: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.props
+      .fetchBooks()
+      .then(() =>
+        this.setState({
+          rating: this.props.review.rating,
+          body: this.props.review.body,
+        })
+      );
   }
 
   handleClick(nextValue) {
@@ -25,25 +36,30 @@ class EditRatingForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { user, book, users } = this.props.history.location.state;
+    const { user, book } = this.props;
+    const users = this.props.review
     const review = {
       body: this.state.body,
       user_id: user.id,
       book_id: book.id,
       rating: this.state.rating,
     };
-    this.props.history.location.state.changeReview(users.id, review);
+    this.props.changeReview(users.id, review);
     this.props.history.push(`/books/${book.id}`);
   }
 
   render() {
+     if (!this.props.book) {
+      return <div>Loading...</div>;
+    } 
     const {
       book,
       logout,
       user,
       history,
       searchBooks,
-    } = this.props.history.location.state;
+    } = this.props;
+
     return (
       <div>
         <header>

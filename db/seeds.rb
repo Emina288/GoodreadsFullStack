@@ -147,6 +147,42 @@ books = Book.create!([{
     description:"From bestselling author S. Usher Evans comes the first book in a brand new young adult fantasy series filled with masked mischief and mystery. Fans of Throne of Glass and The Kiss of Deception will fall in love with this brilliant series about a runaway-princess-turned-vigilante who must resume her royal duties when her father and brother are murdered. ",
     gender: "action", 
     book_url:"veils"
-   }
+   },
+   {
+    title: "1984",
+    isbn: "1234567890122",
+    author_id: usher.id,
+    writer:"George Orwell",
+    description:"Set in 1984, Winston Smith must overcome a frightening enemy: an omniscient government with an agenda. This is the book that became a standard-bearer for dystopian fiction and introduced Big Brother into our everyday vocabulary. Perhaps the mightiest of George Orwell’s works. ",
+    gender: "action", 
+    book_url:"year"
+   },
+    {
+    title: "Adventures of Huckleberry Finn",
+    isbn: "1234567890123",
+    author_id: usher.id,
+    writer:"Mark Twain",
+    description:"A young boy and a slave in 19th-century Louisiana must find their way home — with only the Mississippi River for a guide. This slender book by Mark Twain’s is so well-regarded that it’s said by many to be The Great American Novel. ",
+    gender: "action", 
+    book_url:"mark"
+   },
+     {
+    title: "The Adventures of Sherlock Holmes",
+    isbn: "1234567890124",
+    author_id: usher.id,
+    writer:"Arthur Conan Doyle",
+    description:"In 1891, Sir Arthur Conan Doyle published “A Scandal in Bohemia,” the first short story to feature Sherlock Holmes. Sharp and engrossing, this collection shows how exactly Sherlock Holmes became a cultural phenomenon and the most recognizable detective of all time.",
+    gender: "action", 
+    book_url:"holmes"
+   },
+   {
+    title: "The Alchemist",
+    isbn: "1234567890125",
+    author_id: usher.id,
+    writer:"Paulo Coelho",
+    description:" has sold more than two million copies worldwide — and the magical story of Santiago’s journey to the pyramids of Egypt continues to enchant readers worldwide. A dreamy triumph.",
+    gender: "action", 
+    book_url:"paulo"
+   },
 
 ]);

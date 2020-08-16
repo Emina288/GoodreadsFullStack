@@ -34,24 +34,6 @@ class MainContent extends React.Component {
         const book6 = this.props.books[5];
         const book8 = this.props.books[7];
 
-        // let showContent = false, book1,book2,book3,book4,book5,book6,book7,book8
-
-        // if (this.props.books.length >= 8) {
-
-          // showContent = true;
-
-          //  book1 = this.props.books[0];
-          //  book2 = this.props.books[1];
-          //  book3 = this.props.books[2];
-          //  book7 = this.props.books[6];
-  
-          //  book4 = this.props.books[3];
-          //  book5 = this.props.books[4];
-          //  book6 = this.props.books[5];
-          //  book8 = this.props.books[7];
-          
-        // }
-        
         return (
             <div className={"splash-content"}>
                 <div className={"splash-head"}> 

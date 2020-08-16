@@ -188,15 +188,40 @@
 
       .color img {
         margin-top: 10px;
-      
-        
       }
 
       .color {
-        height: 2000px;
+        display: flex;
+        height: 4000px;
         width: 72%;
         padding: 0 14%;
         background-color:  #9e9e9c14;
+      }
+
+      .color1 {
+        width: 30%;
+      }
+
+      .color2 {
+        width: 50%;
+        padding-left: 5%;
+      }
+
+      .color3 {
+        width: 20%;
+        padding-left: 10%;
+      }
+
+      .color3 div {
+        margin-bottom: 30px;
+      }
+
+      .color4 {
+        margin-top: 15px;
+        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+        font-size: 14px;
+        color: #382110;
+
       }
 
       form.example2 input[type=text] {
@@ -264,4 +289,16 @@
 .number {
   color: #00635D;
   margin-right: 5px;
+}
+
+.book2 {
+  position: relative;
+  top: 9px;
+  margin-left: 8%;
+}
+
+.item2 {
+  margin-bottom: 25px;
+  height: 180px;
+  overflow: overlay;
 }

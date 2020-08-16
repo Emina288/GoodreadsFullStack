@@ -14,19 +14,23 @@ class RatingForm extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchBooks();
+  }
+
   onStarHover(nextValue) {
     this.setState({ rating: nextValue });
   }
 
   handleSubmit() {
-    const { user, book } = this.props.history.location.state;
+    const { user, book } = this.props;
     const review = {
       body: this.state.body,
       user_id: user.id,
       book_id: book.id,
       rating: this.state.rating,
     };
-    this.props.history.location.state.createReview(review);
+    this.props.createReview(review);
     this.props.history.push(`/books/${book.id}`);
   }
 
@@ -35,13 +39,16 @@ class RatingForm extends Component {
   }
 
   render() {
+    if (!this.props.book) {
+      return <div>Loading...</div>;
+    } 
     const {
       book,
       logout,
       user,
       history,
       searchBooks,
-    } = this.props.history.location.state;
+    } = this.props;
     return (
       <div>
         <header>
