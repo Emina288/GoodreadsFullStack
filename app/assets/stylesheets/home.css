@@ -11,6 +11,23 @@
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  z-index: 1;
+}
+
+.home-nav2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  overflow: visible;
+  background-color: #F4F1EA;
+  padding: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+  position: fixed;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .home-title {
@@ -192,9 +209,9 @@
 
       .color {
         display: flex;
-        height: 4000px;
+        height: 100%;
         width: 72%;
-        padding: 0 14%;
+        padding: 3.9% 14%;
         background-color:  #9e9e9c14;
       }
 

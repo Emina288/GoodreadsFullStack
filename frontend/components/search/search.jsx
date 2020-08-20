@@ -7,10 +7,13 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchValue: "",
-        }
+          searchValue: "",
+          errors: {},
+          key: "all"
+        };
         this.search = this.search.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.search = this.search.bind(this);
 
     }
 
@@ -21,67 +24,82 @@ class Search extends React.Component {
     }
 
     search(keyword) {
-        this.props.searchBooks(keyword);
+        const key = this.state.key
+        const word = key+"-"+keyword
+        this.props.searchBooks(word);
         this.setState({searchValue: ""})
     }
 
     componentDidMount() {
-        const val = this.props.location.search.split("=")[1]
+      const val = this.props.location.search.split("=")[1]
         if (val) {
             this.props.searchBooks(val)
         } 
     }
 
     mainPart() {
-        const { errors } = this.props
         return (
-            <div className={"main-search"}>
-                    <div>
-                    <h1>Search</h1>
-                    </div>
-                    <div className={"border"}>
-                    <div className={"form-search"}>
-                    <form className={"example3"}  onSubmit={this.handleSubmit} >
-                    <input 
-                    type="text" 
-                    placeholder="Search by Book Title, Author, or ISBN" 
-                    value={this.state.searchValue}
-                    onChange={event => { this.setState({ searchValue: event.target.value })}} />
-                    <button type="submit" >Search</button>
-                    </form>
-                    <input type="radio" id="all"  value="all" name="search"/>
-                    <label for="all">all</label>
-                    <input type="radio" id="title" value="title"  name="search"/> 
-                     <label for="title">title</label>
-                    <input type="radio" id="author" value="author"  name="search"/>
-                    <label for="author">author</label>
-                    <input type="radio" id="genre" value="genre"  name="search"/>
-                    <label for="genre">genre</label>
-                    </div>
-                    </div>
-                    <div>
-                    {errors.length !== 0 ?
-                     <div className={"search-errors"}>
-                         <div>
-                           <span>No results.</span>
-                        </div>
-                        <div>
-                        <p>Looking for a book?</p>
-                            <ul>
-                                <li>Search by both title and author, and double-check the spelling.</li>
-                                <li>Try searching by ISBN.</li>
-                            </ul>
-                        </div>
-                    </div> :  
-                    <BookIndexContainer />
-                     }
-                    </div>
+          <div className={"main-search"}>
+            <div>
+              <h1>Search</h1>
             </div>
-        )
+            <div className={"border"}>
+              <div className={"form-search"}>
+                <form className={"example3"} onSubmit={this.handleSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Search by Book Title, Author, or ISBN"
+                    value={this.state.searchValue}
+                    onChange={(event) => {
+                      this.setState({ searchValue: event.target.value });
+                    }}
+                  />
+                  <button type="submit">Search</button>
+                </form>
+                <input
+                  onClick={() => this.setState({ key: "all" })}
+                  type="radio"
+                  id="all"
+                  value="all"
+                  name="search"
+                />
+                <label for="all">all</label>
+                <input
+                  onClick={() => this.setState({ key: "title" })}
+                  type="radio"
+                  id="title"
+                  value="title"
+                  name="search"
+                />
+                <label for="title">title</label>
+                <input
+                  onClick={() => this.setState({ key: "author" })}
+                  type="radio"
+                  id="author"
+                  value="author"
+                  name="search"
+                />
+                <label for="author">author</label>
+                <input
+                  onClick={() => this.setState({ key: "isbn" })}
+                  type="radio"
+                  id="genre"
+                  value="genre"
+                  name="search"
+                />
+                <label for="genre">ISBN</label>
+              </div>
+            </div>
+            <div>
+              <BookIndexContainer />
+            </div>
+          </div>
+        );
     }
 
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <SearchNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>

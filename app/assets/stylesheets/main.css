@@ -1,12 +1,15 @@
 .splash-content {
-  flex-direction: row;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .splash-head {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: 68px;
 }
 
 .splash-head div{
@@ -49,7 +52,6 @@
   width: 800px;
   height: 435px;
   background-color: #f4f2e9;
-  margin-left: 369px;
   border-radius: 10px;
   padding-left: 16px;
   padding-top: 18px;

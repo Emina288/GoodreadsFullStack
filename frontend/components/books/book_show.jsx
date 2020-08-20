@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import HomeNav from "../search/nav_search";
+import HomeNav from "../home/home_nav";
 import ReviewIndex from "../reviews/review_index";
 import ReviewForm from "../reviews/review_form";
 
@@ -249,7 +249,7 @@ class BookShow extends Component {
               searchBooks={this.props.searchBooks}
               shelves={shelfBook}
             />
-            <ReviewIndex book={book} deleteReview={this.props.deleteReview} />
+            <ReviewIndex book={book}  />
           </div>
         </section>
       );

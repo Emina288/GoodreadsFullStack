@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
   const bookId = ownProps.match.params.bookId;
   const book = state.entities.books[bookId];
   let review;
-  state.entities.users[state.session.id].reviews.map((userReview) => {
+  const user = state.entities.users[state.session.id];
+  book.reviews.map((userReview) => {
       if (userReview.id == reviewId) {
           review = userReview
       }
@@ -22,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     review,
     book,
-    user: state.entities.users[state.session.id],
+    user,
   };
 };
 const mapDispatchToProps = (dispatch) => {

@@ -10,8 +10,8 @@ import { createNewReview } from "../../actions/review_action";
 const mapStateToProps = (state) => ({
   user: state.entities.users[state.session.id],
   bookshelves: state.bookshelves,
-  books: state.entities.books, 
-  errors: state.errors.shelf
+  books: state.entities.books,
+  errors: state.errors.shelf,
 });
 
 const mapDispatchToProps = (dispatch) => ({

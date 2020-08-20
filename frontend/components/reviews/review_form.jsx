@@ -109,10 +109,11 @@ class ReviewForm extends Component {
 
   render() {
     const { user, book } = this.props;
+    console.log(user, book, "from me")
     let i = 0;
     let users;
-    user.reviews.map((review) => {
-      if (review.book_id === book.id) {
+    book.reviews.map((review) => {
+      if (review.user_id === user.id) {
         i++;
         users = review;
       }

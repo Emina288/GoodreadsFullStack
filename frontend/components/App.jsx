@@ -26,7 +26,7 @@ const App = () => (
     <Route exact path="/books" component={BookIndexContainer} />
     <ProtectedRoute path="/books/:bookId" component={BookShowContainer} />
     <Route path="/authors/:authorId" component={AuthorShowContainer} />
-    <Route path="/search" exact component={SearchContainer} />
+    <Route path="/search" exact replace component={SearchContainer} />
     <AuthRoute exact path="/signup" component={SignupOnlyContainer} />
     <AuthRoute exact path="/login" component={LoginOnlyContainer} />
     <ProtectedRoute exact path="/home" component={HomeContainer} />
@@ -41,7 +41,11 @@ const App = () => (
       component={BookshelfShowContainer}
     />
     <ProtectedRoute exact path="/rating/:bookId" component={RatingContainer} />
-    <ProtectedRoute exac path="/rating/:ratingId/:bookId" component={EditContainer} />
+    <ProtectedRoute
+      exac
+      path="/rating/:ratingId/:bookId"
+      component={EditContainer}
+    />
   </div>
 );
 

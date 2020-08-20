@@ -9,15 +9,40 @@ class BookIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBooks();
+     const val = this.props.location.search.split("=")[1];
+     if (val) {
+       this.props.searchBooks(val);
+     } else {
+       this.props.fetchBooks()
+     }
   }
 
-    render() {   
+    render() {  
       if (this.props.books.length === 0) {
           return (
               <span>Getting all books....</span>
           )
       }
+
+         if (this.props.errors2.length !== 0) {
+           return (
+             <div className={"search-errors"}>
+               <div>
+                 <span>No results.</span>
+               </div>
+               <div>
+                 <p>Looking for a book?</p>
+                 <ul>
+                   <li>
+                     Search by both title and author, and double-check the
+                     spelling.
+                   </li>
+                   <li>Try searching by ISBN.</li>
+                 </ul>
+               </div>
+             </div>
+           );
+         }
       
       const bookList = this.props.books.map(book => {
           return <BookIndexItem key={book.id} book={book} history={this.props.history}/>

@@ -13,17 +13,13 @@ class SearchNav extends React.Component {
         }
         this.handleBtn = this.handleBtn.bind(this);
         this.search = this.search.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleClick(e) {
         e.preventDefault();
 
         this.props.logout();
-    }
-
-    handleSubmit() {
-        this.props.history.push("/search");
     }
 
     handleBtn(e) {
@@ -36,7 +32,8 @@ class SearchNav extends React.Component {
     }
 
     search(keyword) {
-        this.props.searchBooks(keyword);
+        const word = "all" + "-" + keyword;
+        this.props.searchBooks(word);
         this.setState({searchValue: ""})
     }
 

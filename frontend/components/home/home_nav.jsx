@@ -24,7 +24,8 @@ class HomeNav extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.history.push(`/search?q=${this.state.searchValue}`)
+        const word = "all" + "-" + this.state.searchValue;
+        this.props.history.push(`/search?q=${word}`);
     }
 
     handleBtn(e) {
@@ -37,7 +38,8 @@ class HomeNav extends React.Component {
     }
 
     search(keyword) {
-        this.props.searchBooks(keyword);
+        const word = "all" + "-" + keyword;
+        this.props.searchBooks(word);
         this.setState({searchValue: ""})
     }
 
@@ -46,7 +48,7 @@ class HomeNav extends React.Component {
     render() {
         const user = this.props.user;
         return(
-            <div className={"home-nav"}> 
+            <div className={"home-nav2"}> 
                 <div className={"home-title"}>
                     <a href="/#" >
                         <img src={window.title} width="197" height="43"  />

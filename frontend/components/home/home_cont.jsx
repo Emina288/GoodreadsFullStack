@@ -17,13 +17,15 @@ class HomeCont extends React.Component {
   }
 
   search(keyword) {
-    this.props.searchBooks(keyword);
+    const word = "all" + "-" + keyword
+    this.props.searchBooks(word);
     this.setState({ searchValue: "" });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/search?q=${this.state.searchValue}`);
+    const word = "all" + "-" + this.state.searchValue;
+    this.props.history.push(`/search?q=${word}`);
   }
 
   books() {

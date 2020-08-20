@@ -5,8 +5,22 @@ class Api::BooksController < ApplicationController
           
           @books = []
           Book.all.each { |book| 
-            if (book.title.downcase.include? params[:q].downcase) || (book.isbn.include? params[:q]) || (book.author.name.downcase.include? params[:q].downcase) then
-              @books << book 
+            if (params[:q].downcase.split("-")[0] == "all")
+              if (book.title.downcase.include? params[:q].downcase.split("-")[1]) || (book.isbn.include? params[:q].split("-")[1]) || (book.author.name.downcase.include? params[:q].downcase.split("-")[1]) then
+                @books << book 
+              end
+            elsif (params[:q].downcase.split("-")[0] == "title")
+               if (book.title.downcase.include? params[:q].downcase.split("-")[1]) then
+                @books << book 
+              end
+            elsif (params[:q].downcase.split("-")[0] == "author")
+               if (book.author.name.downcase.include? params[:q].downcase.split("-")[1]) then
+                @books << book 
+               end
+             elsif (params[:q].downcase.split("-")[0] == "isbn")
+               if (book.isbn.include? params[:q].downcase.split("-")[1]) then
+                @books << book 
+               end
             end
 
           }

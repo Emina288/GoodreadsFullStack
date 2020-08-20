@@ -69,6 +69,7 @@ class BookshelfIndex extends Component {
     if (Object.values(this.props.bookshelves).length === 0) {
       return <div>Loading....</div>;
     }
+
     const bookshelfList = Object.values(this.props.bookshelves).map(
       (bookshelf) => {
         if (bookshelf.books_on_shelf) {

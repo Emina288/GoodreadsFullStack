@@ -65,9 +65,9 @@
 
 .splash-search {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
+    position: relative;
+    right: 240px;
 
 }
 
@@ -85,13 +85,10 @@ form.example1 input[type=text] {
   }
 
   .example1 {
-    margin:auto;
     max-width:500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    margin-left: 370px;
   }
   
   form.example1 button {
@@ -115,7 +112,6 @@ form.example1 input[type=text] {
     font-size: 18px;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 18px;
-    margin-left: 370px;
   }
   
 
