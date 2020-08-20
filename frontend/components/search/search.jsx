@@ -99,7 +99,6 @@ class Search extends React.Component {
 
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <SearchNav logout ={this.props.logout} user={this.props.user} searchBooks={this.props.searchBooks} history={this.props.history}/>
