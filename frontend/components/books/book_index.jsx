@@ -23,18 +23,21 @@ class BookIndex extends Component {
 
     if (this.props.errors2.length !== 0) {
       return (
-        <div className={"search-errors"}>
+        <div>
           <div>
-            <span>No results.</span>
+            <span className="no-result">No results.</span>
           </div>
-          <div>
-            <p>Looking for a book?</p>
-            <ul>
-              <li>
-                Search by both title and author, and double-check the spelling.
-              </li>
-              <li>Try searching by ISBN.</li>
-            </ul>
+          <div className={"search-errors"}>
+            <div>
+              <p>Looking for a book?</p>
+              <ul>
+                <li>
+                  Search by both title and author, and double-check the
+                  spelling.
+                </li>
+                <li>Try searching by ISBN.</li>
+              </ul>
+            </div>
           </div>
         </div>
       );

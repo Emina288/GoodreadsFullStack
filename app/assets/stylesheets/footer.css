@@ -6,11 +6,13 @@
     padding-top: 25px;
     padding-bottom: 32px;
     width: 100%;
+    height: auto;
     margin-top: 50px;
     display: flex;
     justify-content: center;
     position: relative;
     bottom: -220px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 

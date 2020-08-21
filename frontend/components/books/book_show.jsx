@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HomeNav from "../home/home_nav";
 import ReviewIndex from "../reviews/review_index";
 import ReviewForm from "../reviews/review_form";
+import Footer from "../footer";
 
 class BookShow extends Component {
   constructor(props) {
@@ -257,6 +258,7 @@ class BookShow extends Component {
             />
             <ReviewIndex book={book} />
           </div>
+          <Footer />
         </section>
       );
     }

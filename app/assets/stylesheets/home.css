@@ -312,10 +312,10 @@
   position: relative;
   top: 9px;
   margin-left: 8%;
+  overflow: overlay;
 }
 
 .item2 {
   margin-bottom: 25px;
   height: 180px;
-  overflow: overlay;
 }
