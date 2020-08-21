@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     bookshelf,
     user: state.entities.users[state.session.id],
     bookshelves: state.bookshelves,
-    errors: state.errors.shelf
+    errors: state.errors.shelf,
   };
 };
 const mapDispatchToProps = (dispatch) => {

@@ -26,9 +26,13 @@ class BookShow extends Component {
   componentDidMount() {
     this.props.fetchBooks().then(() => {
       const booking = this.props.book.bookshelves;
-      const users = []
-      booking.map(match => {if (match.user_id === this.props.user.id) {users.push(match)}})
-      if (users.length !== 0 ) {
+      const users = [];
+      booking.map((match) => {
+        if (match.user_id === this.props.user.id) {
+          users.push(match);
+        }
+      });
+      if (users.length !== 0) {
         this.setState({ btnClass: "want2" });
         this.setState({ btnName: "Read" });
         users.forEach((shelfing) => {
@@ -42,7 +46,9 @@ class BookShow extends Component {
         });
       }
     });
-    this.props.fetchBookshelves().then(() => this.setState({bookshelves: this.props.bookshelves}))
+    this.props
+      .fetchBookshelves()
+      .then(() => this.setState({ bookshelves: this.props.bookshelves }));
   }
 
   handleBtn(e) {
@@ -68,13 +74,13 @@ class BookShow extends Component {
         title: this.state.title,
       })
       .then(
-        () => {
-        const newList = [
-        ...this.state.bookshelves,
-        { user_id: this.props.user.id, title: this.state.title },
-        ];
-        this.setState({ title: "", bookshelves: newList });
-       },
+        (shelf) => {
+          const newList = [
+            ...this.state.bookshelves,
+            shelf.bookshelf.bookshelf,
+          ];
+          this.setState({ title: "", bookshelves: newList });
+        },
         () => alert(this.props.errorsShelf[0])
       );
   }
@@ -149,12 +155,12 @@ class BookShow extends Component {
           );
         }
       });
-      const shelfBook = []
-      book.bookshelves.map(shelf => {
-        if(shelf.user_id === user.id) {
-          shelfBook.push(shelf)
+      const shelfBook = [];
+      book.bookshelves.map((shelf) => {
+        if (shelf.user_id === user.id) {
+          shelfBook.push(shelf);
         }
-      })
+      });
 
       return (
         <section className="book-show">
@@ -249,7 +255,7 @@ class BookShow extends Component {
               searchBooks={this.props.searchBooks}
               shelves={shelfBook}
             />
-            <ReviewIndex book={book}  />
+            <ReviewIndex book={book} />
           </div>
         </section>
       );

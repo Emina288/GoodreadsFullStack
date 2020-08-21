@@ -12,7 +12,6 @@ class ReviewForm extends Component {
     this.userHasReview = this.userHasReview.bind(this);
   }
 
-
   onStarHover(nextValue) {
     this.setState({ rating: nextValue });
   }
@@ -23,7 +22,7 @@ class ReviewForm extends Component {
 
   handleClick() {
     this.props.history.push({
-      pathname: `/rating/${this.props.book.id}`
+      pathname: `/rating/${this.props.book.id}`,
     });
   }
 
@@ -61,7 +60,7 @@ class ReviewForm extends Component {
           <h2>Shelves </h2>
           <ul>
             {this.props.shelves.map((shelf) => {
-              return <li> {shelf.title}</li>;
+              return <li key={shelf.id}> {shelf.title}</li>;
             })}
           </ul>
         </div>

@@ -24,14 +24,14 @@ class BookIndexItem extends React.Component {
             width="50"
             height="77"
           />
-        <div className="book-title">
-          <div>
-            <h2>{book.title}</h2>
+          <div className="book-title">
+            <div>
+              <h2>{book.title}</h2>
+            </div>
+            <div className="book-writer">
+              <h3>by {book.writer}</h3>
+            </div>
           </div>
-          <div className="book-writer">
-            <h3>by {book.writer}</h3>
-          </div>
-        </div>
         </div>
       </div>
     );

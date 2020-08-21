@@ -5,13 +5,12 @@ import authorsReducer from "./authors_reducer";
 import BookingsReducer from "./bookings_reducer";
 import ReviewsReduces from "./reviews_reducer";
 
-
 const entitiesReducer = combineReducers({
-    users: usersReducer,
-    books: booksReducer,
-    authors: authorsReducer,
-    bookings: BookingsReducer,
-    reviews: ReviewsReduces
-  });
-  
-  export default entitiesReducer;
+  users: usersReducer,
+  books: booksReducer,
+  authors: authorsReducer,
+  bookings: BookingsReducer,
+  reviews: ReviewsReduces,
+});
+
+export default entitiesReducer;

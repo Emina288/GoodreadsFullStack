@@ -12,13 +12,11 @@ const ReviewsReducer = (state = {}, action) => {
       newState = [...newState, action.review];
       return newState;
     case REMOVE_REVIEW:
-      newState = newState.filter(
-        (review) => action.reviewId !== review._id
-      );
+      newState = newState.filter((review) => action.reviewId !== review._id);
       return newState;
     case EDIT_REVIEW:
       newState[action.review.id] = action.review;
-      return newState
+      return newState;
     default:
       return state;
   }

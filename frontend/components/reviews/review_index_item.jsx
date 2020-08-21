@@ -7,8 +7,8 @@ class ReaviewIndexItem extends React.Component {
   }
 
   render() {
-    const { author, review  } = this.props;
- 
+    const { author, review } = this.props;
+
     return (
       <div className="review-item">
         <div className="image-rated">

@@ -5,9 +5,7 @@ import EditRatingForm from "./edit_rating";
 import { fetchBooks } from "../../actions/book_actions";
 import { logout } from "../../actions/session_actions";
 import { searchBooks } from "../../actions/book_actions";
-import {
-  changeReview,
-} from "../../actions/review_action";
+import { changeReview } from "../../actions/review_action";
 
 const mapStateToProps = (state, ownProps) => {
   const reviewId = ownProps.match.params.ratingId;
@@ -15,11 +13,19 @@ const mapStateToProps = (state, ownProps) => {
   const book = state.entities.books[bookId];
   let review;
   const user = state.entities.users[state.session.id];
-  book.reviews.map((userReview) => {
+  if (book) {
+    book.reviews.map((userReview) => {
       if (userReview.id == reviewId) {
-          review = userReview
+        review = userReview;
       }
-  });
+    });
+  } else {
+    user.reviews.map((userReview) => {
+      if (userReview.id == reviewId) {
+        review = userReview;
+      }
+    });
+  }
   return {
     review,
     book,

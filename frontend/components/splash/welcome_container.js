@@ -1,10 +1,9 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router';
-import Welcome from './welcome';
+import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import Welcome from "./welcome";
 import { login, logout } from "../../actions/session_actions";
-import { fetchBooks, searchBooks } from '../../actions/book_actions';
-
+import { fetchBooks, searchBooks } from "../../actions/book_actions";
 
 const mapStateToProps = (state) => ({
   user: state.entities.users[state.session.id],
@@ -12,16 +11,13 @@ const mapStateToProps = (state) => ({
   books: Object.values(state.entities.books),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
-  login: user => dispatch(login(user)),
-  fetchBooks: () => dispatch(fetchBooks()), 
-  searchBooks: keyword => dispatch(searchBooks(keyword))
+  login: (user) => dispatch(login(user)),
+  fetchBooks: () => dispatch(fetchBooks()),
+  searchBooks: (keyword) => dispatch(searchBooks(keyword)),
 });
 
-export default 
-  withRouter(
-      connect(mapStateToProps, mapDispatchToProps)(
-        Welcome
-      )
-  );
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Welcome)
+);

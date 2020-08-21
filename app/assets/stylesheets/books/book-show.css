@@ -70,13 +70,15 @@
 .show2 {
     background-color: #FFFFFF;
     position: absolute;
-    left: -104px;
+    left: -149px;
     top: 28px;
-    width: auto;
+    width: 172px;
     display: block;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
     border: 1px solid #d6d3d3ad;
     border-radius: 3px;
+    position: absolute;
+    z-index: 1;
 }
 
 .show2 ul {

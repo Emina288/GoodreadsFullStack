@@ -41,14 +41,8 @@ class RatingForm extends Component {
   render() {
     if (!this.props.book) {
       return <div>Loading...</div>;
-    } 
-    const {
-      book,
-      logout,
-      user,
-      history,
-      searchBooks,
-    } = this.props;
+    }
+    const { book, logout, user, history, searchBooks } = this.props;
     return (
       <div>
         <header>

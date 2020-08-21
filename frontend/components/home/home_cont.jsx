@@ -17,7 +17,7 @@ class HomeCont extends React.Component {
   }
 
   search(keyword) {
-    const word = "all" + "-" + keyword
+    const word = "all" + "-" + keyword;
     this.props.searchBooks(word);
     this.setState({ searchValue: "" });
   }
@@ -40,7 +40,7 @@ class HomeCont extends React.Component {
       <ul>
         {empty.map((one) => {
           return (
-            <div className={"item-img2 item2"}>
+            <div key={one.id} className={"item-img2 item2"}>
               <img
                 src={eval(`window.${one.book_url}`)}
                 alt={one.title}
@@ -57,9 +57,7 @@ class HomeCont extends React.Component {
                 <div className="book-writer">
                   <h3>by {one.writer}</h3>
                 </div>
-                <div className="color4">
-                  {one.description}
-                </div>
+                <div className="color4">{one.description}</div>
               </div>
             </div>
           );

@@ -5,13 +5,12 @@ import HomeNav from "../home/home_nav";
 import Footer from "../footer";
 import BookShelf from "../books/book_shelf";
 
-
 class BookshelfShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "",
-      klass1: "class1",
+      klass1: "class11",
       klass2: "class2",
       button: "button",
       bookshelves: [],
@@ -57,10 +56,10 @@ class BookshelfShow extends Component {
 
   toggle(e) {
     e.preventDefault();
-    if (this.state.klass1 === "class1" && this.state.klass2 === "class2") {
+    if (this.state.klass1 === "class11" && this.state.klass2 === "class2") {
       this.setState({ klass1: "class2", klass2: "class3", button: "none" });
     } else {
-      this.setState({ klass1: "class1", klass2: "class2" });
+      this.setState({ klass1: "class11", klass2: "class2" });
     }
   }
 
@@ -75,7 +74,7 @@ class BookshelfShow extends Component {
             bookshelf.books_on_shelf.map((book) => (bookList[book.id] = book));
             return (
               <BookshelfIndexItem
-                key={bookshelf.id}
+                key={bookshelf.id + 1}
                 bookshelf={bookshelf}
                 history={this.props.history}
                 books={bookshelf.books_on_shelf}
@@ -87,7 +86,7 @@ class BookshelfShow extends Component {
             );
             return (
               <BookshelfIndexItem
-                key={bookshelf.id}
+                key={bookshelf.id + 1}
                 bookshelf={bookshelf.bookshelf}
                 history={this.props.history}
                 books={bookshelf.bookshelf.books_on_shelf}
@@ -135,7 +134,7 @@ class BookshelfShow extends Component {
                   </button>
                 </div>
                 <form action="" className={this.state.klass2}>
-                  <label for="shelf">Add a Shelf:</label>
+                  <label>Add a Shelf:</label>
                   <input
                     id="shelf"
                     type="text"
@@ -162,6 +161,7 @@ class BookshelfShow extends Component {
                       {this.props.bookshelf.books_on_shelf.map((book) => {
                         return (
                           <BookShelf
+                            key={book.id}
                             book={book}
                             history={this.props.history}
                             user={this.props.user}

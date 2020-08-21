@@ -14,7 +14,7 @@ export const removeReview = (reviewId) => {
   });
 };
 
-export const editReview = (reviewId,review) => {
+export const editReview = (reviewId, review) => {
   return $.ajax({
     method: "patch",
     url: `api/reviews/${reviewId}`,

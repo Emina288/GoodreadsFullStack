@@ -3,12 +3,11 @@ import HomeNav from "../home/home_nav";
 import Footer from "../footer";
 import StarRatingComponent from "react-star-rating-component";
 
-
 class EditRatingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: "",
+      rating: 0,
       body: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,14 +15,12 @@ class EditRatingForm extends Component {
   }
 
   componentDidMount() {
-    this.props
-      .fetchBooks()
-      .then(() =>
-        this.setState({
-          rating: this.props.review.rating,
-          body: this.props.review.body,
-        })
-      );
+    this.props.fetchBooks().then(() =>
+      this.setState({
+        rating: this.props.review.rating,
+        body: this.props.review.body,
+      })
+    );
   }
 
   handleClick(nextValue) {
@@ -37,7 +34,7 @@ class EditRatingForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { user, book } = this.props;
-    const users = this.props.review
+    const users = this.props.review;
     const review = {
       body: this.state.body,
       user_id: user.id,
@@ -49,17 +46,10 @@ class EditRatingForm extends Component {
   }
 
   render() {
-     if (!this.props.book) {
+    if (!this.props.book) {
       return <div>Loading...</div>;
-    } 
-    const {
-      book,
-      logout,
-      user,
-      history,
-      searchBooks,
-    } = this.props;
-
+    }
+    const { book, logout, user, history, searchBooks } = this.props;
     return (
       <div>
         <header>

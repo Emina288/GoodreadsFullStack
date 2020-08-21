@@ -49,9 +49,6 @@ export const receiveErrorsShelf = (errors) => {
   };
 };
 
-
-
-
 export const fetchBookshelves = () => (dispatch) => {
   return BookshelfApiUtil.fetchBookshelves().then((bookshelves) =>
     dispatch(receiveBookshelves(bookshelves))
@@ -65,13 +62,16 @@ export const fetchBookshelf = (bookshelfId) => (dispatch) => {
 };
 
 export const addBookshelf = (shelf) => (dispatch) => {
-  return BookshelfApiUtil.createBookshelf(shelf)
-    .then((bookshelf) => (dispatch(receiveNewBookshelf(bookshelf))), err => (dispatch(receiveErrorsShelf(err.responseJSON))))
+  return BookshelfApiUtil.createBookshelf(shelf).then(
+    (bookshelf) => dispatch(receiveNewBookshelf(bookshelf)),
+    (err) => dispatch(receiveErrorsShelf(err.responseJSON))
+  );
 };
 
 export const destroyBookshelf = (bookshelfId) => (dispatch) => {
-  return BookshelfApiUtil.deleteBookshelf(bookshelfId)
-    .then((bookshelfId) => dispatch(removeBookshelf(bookshelfId)))
+  return BookshelfApiUtil.deleteBookshelf(bookshelfId).then((bookshelfId) =>
+    dispatch(removeBookshelf(bookshelfId))
+  );
 };
 
 export const addBooking = (booking) => (dispatch) => {
@@ -79,8 +79,3 @@ export const addBooking = (booking) => (dispatch) => {
     dispatch(receiveNewBooking(booking))
   );
 };
-
-
-
-
-

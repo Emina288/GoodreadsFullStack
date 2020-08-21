@@ -4,7 +4,7 @@
     cursor: pointer;
     display: flex;
     color: #333333;
-    padding: 0px 11px 3px 11px;
+    padding: 0px 11px 4px 11px;
     font-size: 11px;
 }
 
@@ -20,7 +20,7 @@
     resize: none;
 }
 
-.class1 {
+.class1 button {
     border-radius: 3px;
     border: 1px solid #D6D0C4;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -36,6 +36,20 @@
 
 .class2 {
     display: none;
+}
+
+.class11 {
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: #333333;
+    background-color: #F4F1EA;
+    line-height: 1;
+    font-size: 11px;
+    padding: 4px 12px;
 }
 
 .shelf-item:hover {

@@ -13,11 +13,15 @@ class BookshelfIndexItem extends React.Component {
 
   render() {
     const { bookshelf, books } = this.props;
-    const number = books.length; 
+    const number = books.length;
     return (
       <div className={"shelf"}>
         <div>
-          <li className="shelf-item" onClick={this.handleClick}>
+          <li
+            key={bookshelf.id}
+            className="shelf-item"
+            onClick={this.handleClick}
+          >
             {bookshelf.title} ({number})
           </li>
         </div>

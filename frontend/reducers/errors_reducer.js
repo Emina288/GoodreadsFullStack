@@ -7,7 +7,7 @@ import shelvesErrorsReducer from "./shelves_errors_reducer";
 const errorsReducer = combineReducers({
   session: sessionErrorsReducer,
   search: searchErrorsReducer,
-  shelf: shelvesErrorsReducer
+  shelf: shelvesErrorsReducer,
 });
 
 export default errorsReducer;
