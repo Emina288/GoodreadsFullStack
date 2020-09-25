@@ -1,11 +1,9 @@
 # Goodreadsfullstack
 
-Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. Users can view a list of books from our data base, search up books, create bookshelves and add books to them.Each book can be commented and reviewed.
+Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. Users can view a list of books from our data base, search up books, create bookshelves and add books to them.Each book can be commented and reviewed. [Live demo](https://good-reads-full-stack.herokuapp.com/#/)
 
 ![read](./app/assets/images/read.png)
 
-
- [Live demo](https://good-reads-full-stack.herokuapp.com/#/)
 
 ## Technologies 
 * Frontend:
