@@ -65,10 +65,11 @@ Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. 
 
 ![](https://media.giphy.com/media/7KJmX0LYkifv0TNTAO/giphy.gif)
 
+## Initial Implementation Timeline 
 
-## Future Implementations
-* Implementing the ability to create bookshelves.
-* Implementing the ability to add books to the bookshelfe and mark books as Read, Reading, Want to read.
-* Implementing the ability to leave comment or a review on a book.
+10 days 
+
+
+
 
 
