@@ -2,6 +2,8 @@
 
 Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. Users can view a list of books from our data base, search up books, create bookshelves and add books to them.Each book can be commented and reviewed.
 
+![read](./app/assets/images/read.png)
+
 
  [Live demo](https://good-reads-full-stack.herokuapp.com/#/)
 
@@ -20,13 +22,19 @@ Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. 
 * Full user authentication (sign-up, login, logout) with security
 * Ability for a demo user to login to check out the site
 * Search functionality, ability to search books up based on the books title, author or isbn
+* Ability for clients to create their bookshelves 
+* Ability to mark a book as read, want to read, currently reading or to add a book to one of the clients bookshelves
+* Ability for clients to review and/or rate a book as well as to read all other reviews on that book
+
 
 ## Splash page and search
 * Users can search up books even though they are not logged in.
 
 ![](https://media.giphy.com/media/hs1TYa2cuSeMgjq0Yu/giphy.gif)
 
-Searches from the books don't include all fields, so the backend only queries depending on which params are passed through.
+* Users can choose if they want to search based on the title, author, isbn or all.
+
+![search](./app/assets/images/search.png)
 
 
 
@@ -38,10 +46,25 @@ Searches from the books don't include all fields, so the backend only queries de
 
 ![](https://media.giphy.com/media/cJZPGOwpDmDrcQrYb7/giphy.gif)
 
-## Home page and search 
-* Login users can search book up as well.
+## Home page
+* Logged in users can search up books, look up all their bookshelves and their content as well as books and the books reviews and ratings.
 
-![](https://media.giphy.com/media/J6VZJrDyXqYwsCjzCI/giphy.gif)
+![](https://media.giphy.com/media/uxKrb6qNV0fjdJpi3l/giphy.gif)
+
+## Bookshelves 
+
+* Clients can create bookshelves and add books to different shelves 
+
+![](https://media.giphy.com/media/aOYvtMAGFK4CdPa71L/giphy.gif)
+
+## Books 
+
+* Clients are able to put a status on a books, read, want to read or currently reading. 
+* Clients can add a book to one of their bookshelves 
+* Clieants can review or rate a book and they can later edit it. 
+
+![](https://media.giphy.com/media/7KJmX0LYkifv0TNTAO/giphy.gif)
+
 
 ## Future Implementations
 * Implementing the ability to create bookshelves.
