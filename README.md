@@ -17,11 +17,12 @@ Goodreadsfullstack is a full-stack, single-page-application clone of Goodreads. 
 * Heroku (website hosting)
 
 ## Features
-* About button for users to learn more about the application, a button to email me, my GitHub and LinkedIn profile
-* Four clickable images that open up a modal with data visualization
-* Animated bar chart that shows us electrical generation using the selected type of a power plant in 10 different countries
-* Ability to click on bars and get an animated line chart for the specific country 
-* Ability to click on a more button and find out more information on a production process in a selected power plant
+* Full user authentication (sign-up, login, logout) with security
+* Ability for a demo user to login to check out the site
+* Search functionality, ability to search books up based on the books title, author or isbn
+* Ability for clients to create their bookshelves 
+* Ability to mark a book as read, want to read, currently reading or to add a book to one of the clients bookshelves
+* Ability for clients to review and/or rate a book as well as to read all other reviews on that book
 
 
 ## Splash page and search
