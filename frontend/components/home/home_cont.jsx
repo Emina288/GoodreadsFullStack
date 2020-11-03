@@ -31,8 +31,15 @@ class HomeCont extends React.Component {
   books() {
     const books = Object.values(this.props.books);
     const empty = [];
+    console.log(books, this.props.user)
     books.map((book) => {
-      if (book.bookshelves.length === 0) {
+      let sum = 0;
+      for (let i = 0; i < book.bookshelves.length; i++) {
+        if (book.bookshelves[i].user_id !== this.props.user.id) {
+          sum++;
+        }
+      }
+      if (sum === book.bookshelves.length) {
         empty.push(book);
       }
     });
