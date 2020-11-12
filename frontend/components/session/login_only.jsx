@@ -25,9 +25,9 @@ class LoginOnly extends React.Component {
     e.preventDefault();
 
     this.props.login({
-      email: "demo2@demo.com",
-      name: "Demo",
-      password: 12345678,
+      email: "tourist@demo.com",
+      name: "Tourist",
+      password: 123456789,
     });
   }
 
