@@ -11,7 +11,7 @@ class BookshelfIndex extends Component {
     this.state = {
       title: "",
       klass1: "class11",
-      klass2: "class2",
+      klass2: "class22",
       button: "button",
       bookshelves: [],
     };
@@ -47,7 +47,13 @@ class BookshelfIndex extends Component {
               books_on_shelf: [],
             },
           ];
-          this.setState({ title: "", bookshelves: newList });
+          this.setState({
+            title: "",
+            bookshelves: newList,
+            klass1: "class11",
+            klass2: "class22",
+            button: "button",
+          });
         },
         () => alert(this.props.errors[0])
       );
@@ -55,10 +61,10 @@ class BookshelfIndex extends Component {
 
   toggle(e) {
     e.preventDefault();
-    if (this.state.klass1 === "class11" && this.state.klass2 === "class2") {
-      this.setState({ klass1: "class2", klass2: "class3", button: "none" });
+    if (this.state.klass1 === "class11" && this.state.klass2 === "class22") {
+      this.setState({ klass1: "class22", klass2: "class3", button: "none" });
     } else {
-      this.setState({ klass1: "class11", klass2: "class2" });
+      this.setState({ klass1: "class11", klass2: "class22", button: "button" });
     }
   }
 
@@ -127,13 +133,15 @@ class BookshelfIndex extends Component {
               </div>
               <form action="" className={this.state.klass2}>
                 <label>Add a Shelf:</label>
-                <input
-                  id="shelf"
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.handleInput()}
-                />
-                <button onClick={this.handleSubmit}>add</button>
+                <div>
+                  <input
+                    id="shelf"
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.handleInput()}
+                  />
+                  <button onClick={this.handleSubmit}>add</button>
+                </div>
               </form>
             </div>
             <div className="shelves-books">

@@ -72,6 +72,7 @@ class BookShow extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state, "hello");
     this.props
       .addBookshelf({
         user_id: this.props.user.id,
@@ -83,11 +84,17 @@ class BookShow extends Component {
             ...this.state.bookshelves,
             shelf.bookshelf.bookshelf,
           ];
-          this.setState({ title: "", bookshelves: newList });
+          this.setState({
+            title: "",
+            bookshelves: newList,
+            klass1: "class1",
+            klass2: "class2",
+          });
         },
         () => alert(this.props.errorsShelf[0])
       );
   }
+  
 
   toggle(e) {
     e.preventDefault();
