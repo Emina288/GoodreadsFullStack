@@ -16,6 +16,8 @@ class BookShow extends Component {
       klass2: "class2",
       book: this.props.book,
       bookshelves: [],
+      result: {},
+      styleShelf: "nn2",
     };
     this.handleBtn = this.handleBtn.bind(this);
     this.btnNameHandler = this.btnNameHandler.bind(this);
@@ -23,6 +25,7 @@ class BookShow extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggle = this.toggle.bind(this);
   }
+
 
   componentDidMount() {
     this.props.fetchBooks().then(() => {
@@ -100,7 +103,8 @@ class BookShow extends Component {
     this.setState({ btnClass: "want2" });
   }
 
-  addBooking(title) {
+  addBooking(title, id) {
+    this.state.result[id] = title;
     this.setState({ btnName: "Read", btnClass: "want2" });
     const shelves = Object.values(this.state.bookshelves);
     const arr = [];
@@ -117,6 +121,7 @@ class BookShow extends Component {
     const booking1 = { book_id: this.props.book.id, bookshelf_id: arr1[0].id };
     this.props.addBooking(booking);
     this.props.addBooking(booking1);
+
   }
 
   handleClick(title) {
@@ -139,6 +144,13 @@ class BookShow extends Component {
     } else {
       const { book, user } = this.props;
 
+      for (let i = 0; i < book.bookshelves.length; i++) {
+        let shlf = book.bookshelves[i];
+        if (shlf.user_id === user.id) {
+          this.state.result[shlf.id] = shlf.title;
+        }
+      }
+
       const title = ["Read", "Currently Reading", "Want to Read"];
       const bookshelfList = this.state.bookshelves.map((bookshelf) => {
         if (
@@ -148,8 +160,16 @@ class BookShow extends Component {
           return (
             <li
               key={bookshelf.id}
-              className={"nn2"}
-              onClick={this.addBooking.bind(this, bookshelf.title)}
+              className={
+                this.state.result[bookshelf.id]
+                  ? "there"
+                  : "nn2"
+              }
+              onClick={this.addBooking.bind(
+                this,
+                bookshelf.title,
+                bookshelf.id
+              )}
             >
               {bookshelf.title}
             </li>
