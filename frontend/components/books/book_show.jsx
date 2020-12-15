@@ -72,7 +72,6 @@ class BookShow extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state, "hello");
     this.props
       .addBookshelf({
         user_id: this.props.user.id,
@@ -112,7 +111,9 @@ class BookShow extends Component {
 
   addBooking(title, id) {
     this.state.result[id] = title;
-    this.setState({ btnName: "Read", btnClass: "want2" });
+    if (this.state.btnClass === 'want') {
+      this.setState({ btnName: "Read", btnClass: "want2" })
+    }
     const shelves = Object.values(this.state.bookshelves);
     const arr = [];
     const arr1 = [];
@@ -125,10 +126,9 @@ class BookShow extends Component {
       }
     });
     const booking = { book_id: this.props.book.id, bookshelf_id: arr[0].id };
-    const booking1 = { book_id: this.props.book.id, bookshelf_id: arr1[0].id };
+    // const booking1 = { book_id: this.props.book.id, bookshelf_id: arr1[0].id };
     this.props.addBooking(booking);
-    this.props.addBooking(booking1);
-
+    // this.props.addBooking(booking1);
   }
 
   handleClick(title) {

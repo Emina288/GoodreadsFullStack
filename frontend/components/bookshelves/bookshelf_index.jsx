@@ -28,6 +28,7 @@ class BookshelfIndex extends Component {
 
   componentDidMount() {
     this.props.fetchBookshelves();
+    this.props.fetchBooks()
   }
 
   handleSubmit(e) {
@@ -70,10 +71,12 @@ class BookshelfIndex extends Component {
 
   render() {
     const bookList = {};
-
-    if (Object.values(this.props.bookshelves).length === 0) {
+   
+    if (Object.values(this.props.bookshelves).length === 0 && this.props.books) {
       return <div>Loading....</div>;
     }
+
+    console.log(this.props.user, "ovo")
 
     const bookshelfList = Object.values(this.props.bookshelves).map(
       (bookshelf) => {
@@ -102,6 +105,7 @@ class BookshelfIndex extends Component {
         }
       }
     );
+
 
     return (
       <div>
@@ -158,6 +162,7 @@ class BookshelfIndex extends Component {
                   <div className="no-items">No matching items!</div>
                 ) : (
                   <div>
+
                     {Object.values(bookList).map((book) => {
                       return (
                         <BookShelf

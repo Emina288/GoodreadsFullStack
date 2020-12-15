@@ -28,6 +28,34 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Bookshelf
 
+    has_many :books,
+    through: :bookshelves,
+    source: :books
+
+    def newOne
+        arr = {}
+        result = {};
+        books.all.each do |book|
+            arr[book.title] = book.bookshelves
+        end
+
+        arr.each do |key, value|
+            value.each do |shelf|
+                if bookshelves.include?(shelf)
+                    if (result[key])
+                        result[key].push(shelf)
+                    else
+                        result[key] = [shelf]
+                    end
+                end
+            end
+        end
+
+
+
+        return result
+    end
+
 
     def password=(password)
         @password = password
