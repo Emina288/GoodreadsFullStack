@@ -34,3 +34,10 @@ export const createBooking = (booking) => {
     data: { booking },
   });
 };
+
+export const deleteBooking = (bookId, shelfId) => {
+  return $.ajax({
+    url: `/api/bookings/${bookId}/${shelfId}`,
+    method: "DELETE",
+  });
+};

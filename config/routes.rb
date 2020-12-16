@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :authors, only: [:show, :index]
     resources :bookshelves, only: [:index, :show, :create, :destroy]
     resources :bookings, only: [:create, :index]
+    delete 'bookings/:book_id/:bookshelf_id', :to => 'bookings#delete'
     resources :reviews, only: [:create, :index, :destroy, :update]
   end
 

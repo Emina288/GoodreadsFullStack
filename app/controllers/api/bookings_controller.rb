@@ -1,6 +1,6 @@
 class Api::BookingsController < ApplicationController
   def index 
-    @booking = Booking.all
+    @bookings = Booking.all
   end
 
   def create
@@ -29,6 +29,14 @@ class Api::BookingsController < ApplicationController
       render :create
     end
   end
+
+  def delete 
+        @booking = Booking.find_by(book_id: params[:book_id], bookshelf_id: params[:bookshelf_id]) 
+        if (@booking)
+          @booking.destroy
+          render :create
+        end
+    end
 
     private 
     

@@ -9,6 +9,7 @@ import {
   fetchBookshelves,
   addBookshelf,
   addBooking,
+  destroyBooking,
 } from "../../actions/bookshelf_action";
 import {
   createNewReview,
@@ -42,6 +43,7 @@ const mapDispatchToProps = (dispatch) => {
     createReview: (review) => dispatch(createNewReview(review)),
     deleteReview: (id) => dispatch(deleteReview(id)),
     changeReview: (id, review) => dispatch(changeReview(id, review)),
+    destroyBooking: (bookId, shelfId) => dispatch(destroyBooking(bookId, shelfId)),
   };
 };
 export default withRouter(

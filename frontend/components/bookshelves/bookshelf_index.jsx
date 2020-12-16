@@ -76,8 +76,6 @@ class BookshelfIndex extends Component {
       return <div>Loading....</div>;
     }
 
-    console.log(this.props.user, "ovo")
-
     const bookshelfList = Object.values(this.props.bookshelves).map(
       (bookshelf) => {
         if (bookshelf.books_on_shelf) {

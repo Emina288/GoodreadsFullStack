@@ -67,7 +67,7 @@
     cursor: pointer;
 
 }
-.list-shelf li:not(:first-child):after {
+.list-shelf li:not(:last-child):after {
     content: ", ";
 }
 

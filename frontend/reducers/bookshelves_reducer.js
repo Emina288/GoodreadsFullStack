@@ -3,7 +3,6 @@ import {
   ADD_BOOKSHELF,
   NEW_BOOKSHELF,
   DELETE_BOOKSHELF,
-  ADD_BOOKING,
 } from "../actions/bookshelf_action";
 
 const BookshelvesReducer = (state = {}, action) => {

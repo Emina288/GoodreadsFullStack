@@ -8,6 +8,7 @@ class BookShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: this.state,
       klass: "dropdown-content2",
       btnName: "Want to Read",
       btnClass: "want",
@@ -18,6 +19,7 @@ class BookShow extends Component {
       bookshelves: [],
       result: {},
       styleShelf: "nn2",
+      emina: true,
     };
     this.handleBtn = this.handleBtn.bind(this);
     this.btnNameHandler = this.btnNameHandler.bind(this);
@@ -29,6 +31,7 @@ class BookShow extends Component {
 
   componentDidMount() {
     this.props.fetchBooks().then(() => {
+      this.setState({book: this.props.book})
       const booking = this.props.book.bookshelves;
       const users = [];
       booking.map((match) => {
@@ -109,26 +112,28 @@ class BookShow extends Component {
     this.setState({ btnClass: "want2" });
   }
 
-  addBooking(title, id) {
-    this.state.result[id] = title;
-    if (this.state.btnClass === 'want') {
-      this.setState({ btnName: "Read", btnClass: "want2" })
+  addBooking(title, id, bookId) {
+    if (!this.state.result[id]) {
+      this.state.result[id] = title;
+      if (this.state.btnClass === "want") {
+        this.setState({ btnName: "Read", btnClass: "want2" });
+      }
+      const shelves = Object.values(this.state.bookshelves);
+      const arr = [];
+      shelves.map((shelf) => {
+        if (shelf.user_id === this.props.user.id && shelf.title === title) {
+          arr.push(shelf);
+        }
+      });
+      const booking = { book_id: this.props.book.id, bookshelf_id: arr[0].id };
+      this.props.addBooking(booking);
+    } else {
+      console.log(this.state.result, "pre");
+      let obj = Object.assign({}, this.state.result);
+      delete obj[id];
+      console.log(obj, "obj")
+      this.setState({result: obj}, () => {this.props.destroyBooking(bookId, id)})
     }
-    const shelves = Object.values(this.state.bookshelves);
-    const arr = [];
-    const arr1 = [];
-    shelves.map((shelf) => {
-      if (shelf.user_id === this.props.user.id && shelf.title === title) {
-        arr.push(shelf);
-      }
-      if (shelf.user_id === this.props.user.id && shelf.title === "Read") {
-        arr1.push(shelf);
-      }
-    });
-    const booking = { book_id: this.props.book.id, bookshelf_id: arr[0].id };
-    // const booking1 = { book_id: this.props.book.id, bookshelf_id: arr1[0].id };
-    this.props.addBooking(booking);
-    // this.props.addBooking(booking1);
   }
 
   handleClick(title) {
@@ -146,15 +151,18 @@ class BookShow extends Component {
   }
 
   render() {
-    if (this.props.books.length === 0 || !this.props.book) {
+    if (this.props.books.length === 0 || !this.props.book || !this.state.book) {
       return <div>Loading...</div>;
     } else {
       const { book, user } = this.props;
+      const newBook = this.state.book
 
-      for (let i = 0; i < book.bookshelves.length; i++) {
-        let shlf = book.bookshelves[i];
-        if (shlf.user_id === user.id) {
-          this.state.result[shlf.id] = shlf.title;
+      if (Object.keys(this.state.result).length === 0) {
+        for (let i = 0; i < newBook.bookshelves.length; i++) {
+          let shlf = newBook.bookshelves[i];
+          if (shlf.user_id === user.id) {
+            this.state.result[shlf.id] = shlf.title;
+          }
         }
       }
 
@@ -167,15 +175,12 @@ class BookShow extends Component {
           return (
             <li
               key={bookshelf.id}
-              className={
-                this.state.result[bookshelf.id]
-                  ? "there"
-                  : "nn2"
-              }
+              className={this.state.result[bookshelf.id] ? "there" : "nn2"}
               onClick={this.addBooking.bind(
                 this,
                 bookshelf.title,
-                bookshelf.id
+                bookshelf.id,
+                book.id
               )}
             >
               {bookshelf.title}

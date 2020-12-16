@@ -6,6 +6,8 @@ export const NEW_BOOKSHELF = "NEW_BOOKSHELF";
 export const DELETE_BOOKSHELF = "DELETE_BOOKSHELF";
 export const NEW_BOOKING = "ADD_BOOKING";
 export const RECEIVE_ERRORS_SHELF = "RECEIVE_ERRORS";
+export const DELETE_BOOKING = "DELETE_BOOKING";
+
 
 export const receiveBookshelf = (bookshelf) => {
   return {
@@ -41,6 +43,14 @@ export const receiveNewBooking = (booking) => {
     booking,
   };
 };
+
+export const deleteBooking = (bookingId) => {
+  return {
+    type: DELETE_BOOKING,
+    bookingId,
+  };
+};
+
 
 export const receiveErrorsShelf = (errors) => {
   return {
@@ -79,3 +89,11 @@ export const addBooking = (booking) => (dispatch) => {
     dispatch(receiveNewBooking(booking))
   );
 };
+
+export const destroyBooking = (bookId, shelfId) => (dispatch) => {
+  return BookshelfApiUtil.deleteBooking(bookId, shelfId).then((bookingId) =>
+    dispatch(deleteBooking(bookingId))
+  );
+};
+
+
