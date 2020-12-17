@@ -71,7 +71,10 @@ class BookshelfIndex extends Component {
 
   render() {
     const bookList = {};
-   
+    const list = {};
+    const listReviews = {};
+    
+    
     if (Object.values(this.props.bookshelves).length === 0 && this.props.books) {
       return <div>Loading....</div>;
     }
@@ -79,8 +82,23 @@ class BookshelfIndex extends Component {
     const bookshelfList = Object.values(this.props.bookshelves).map(
       (bookshelf) => {
         if (bookshelf.books_on_shelf) {
-          bookshelf.books_on_shelf.map((book) => (bookList[book.id] = book));
-          return (
+          bookshelf.books_on_shelf.map((book) => {
+            if (this.props.books[book.id]) {
+              this.props.books[book.id].reviews.map((review) => {
+                if (review.user_id === this.props.user.id) {
+                  listReviews[book.id] = review;
+                }
+              });
+            }
+            bookList[book.id] = book;
+
+            if (list[book.title]) {
+              list[book.title].push(bookshelf.title)
+            } else {
+              list[book.title] = [bookshelf.title];
+            }
+          })
+            return (
             <BookshelfIndexItem
               key={bookshelf.id + 1}
               bookshelf={bookshelf}
@@ -88,10 +106,10 @@ class BookshelfIndex extends Component {
               books={bookshelf.books_on_shelf}
             />
           );
-        } else {
-          bookshelf.bookshelf.books_on_shelf.map(
-            (book) => (bookList[book.id] = book)
-          );
+        } else if (bookshelf.bookshelf.books_on_shelf) {
+            bookshelf.bookshelf.books_on_shelf.map(
+              (book) => (bookList[book.id] = book)
+            );
           return (
             <BookshelfIndexItem
               key={bookshelf.id + 1}
@@ -103,7 +121,6 @@ class BookshelfIndex extends Component {
         }
       }
     );
-
 
     return (
       <div>
@@ -170,6 +187,8 @@ class BookshelfIndex extends Component {
                           user={this.props.user}
                           createReview={this.props.createReview}
                           shelves={this.props.bookshelves}
+                          list={list}
+                          listReviews={listReviews}
                         />
                       );
                     })}

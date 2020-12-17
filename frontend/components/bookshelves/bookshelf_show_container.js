@@ -9,6 +9,7 @@ import {
   addBooking,
 } from "../../actions/bookshelf_action";
 import { createNewReview } from "../../actions/review_action";
+import { searchBooks, fetchBooks } from "../../actions/book_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const bookshelfId = ownProps.match.params.bookshelfId;
@@ -17,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
     bookshelf,
     user: state.entities.users[state.session.id],
     bookshelves: state.bookshelves,
+    books: state.entities.books,
     errors: state.errors.shelf,
   };
 };
@@ -25,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
     logout: () => dispatch(logout()),
     searchBooks: (keyword) => dispatch(searchBooks(keyword)),
     fetchBookshelves: () => dispatch(fetchBookshelves()),
+    fetchBooks: () => dispatch(fetchBooks()),
     addBookshelf: (bookshelf) => dispatch(addBookshelf(bookshelf)),
     addBooking: (booking) => dispatch(addBooking(booking)),
     createReview: (review) => dispatch(createNewReview(review)),

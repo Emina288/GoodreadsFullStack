@@ -26,19 +26,19 @@ class BookShelf extends React.Component {
   }
 
   render() {
-    const { book, user} = this.props;
+    const { book, user } = this.props;
 
     let users;
 
-    user.reviews.map((review) => {
+    Object.values(this.props.listReviews).map((review) => {
       if (review.book_id === book.id) {
         users = review;
       }
     });
-
-    const titles = user.newOne[book.title].map((shelf) => {
+    
+    const titles = this.props.list[book.title].map((shelf, i) => {
       if (shelf) {
-        return <li key={shelf.id}>{shelf.title}</li>;
+        return <li key={i}>{shelf}</li>;
       }
     });
 

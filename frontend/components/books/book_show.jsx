@@ -128,10 +128,8 @@ class BookShow extends Component {
       const booking = { book_id: this.props.book.id, bookshelf_id: arr[0].id };
       this.props.addBooking(booking);
     } else {
-      console.log(this.state.result, "pre");
       let obj = Object.assign({}, this.state.result);
       delete obj[id];
-      console.log(obj, "obj")
       this.setState({result: obj}, () => {this.props.destroyBooking(bookId, id)})
     }
   }
@@ -286,7 +284,7 @@ class BookShow extends Component {
               history={this.props.history}
               logout={this.props.logout}
               searchBooks={this.props.searchBooks}
-              shelves={shelfBook}
+              shelves={Object.values(this.state.result)}
             />
             <ReviewIndex book={book} />
           </div>

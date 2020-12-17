@@ -59,8 +59,8 @@ class ReviewForm extends Component {
         <div className="review-shelf">
           <h2>Shelves </h2>
           <ul>
-            {this.props.shelves.map((shelf) => {
-              return <li key={shelf.id}> {shelf.title}</li>;
+            {this.props.shelves.map((shelf, i) => {
+              return <li key={i}> {shelf}</li>;
             })}
           </ul>
         </div>
